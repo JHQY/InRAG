@@ -1,0 +1,692 @@
+[
+  {
+    "id": "8",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "correctness": 0,
+          "evidence_use": 0,
+          "no_hallucination": 5,
+          "structure": 4,
+          "fidelity": 0
+        },
+        "stage3": {
+          "correctness": 0,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        }
+      },
+      "best": "stage3",
+      "comment": "stage3基于输入作答且格式规范，但两者均未正确回答问题。"
+    }
+  },
+  {
+    "id": "2",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        }
+      },
+      "best": "tie",
+      "comment": "两个模型均基于输入条款正确作答，结论与标准答案一致。"
+    }
+  },
+  {
+    "id": "18",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "correctness": 0,
+          "evidence_use": 0,
+          "no_hallucination": 5,
+          "structure": 4,
+          "fidelity": 0
+        },
+        "stage3": {
+          "correctness": 0,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        }
+      },
+      "best": "stage3",
+      "comment": "stage3模型正确识别了输入中缺乏相关信息并拒绝作答，而baseline模型未能回答问题。"
+    }
+  },
+  {
+    "id": "16",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "correctness": 0,
+          "evidence_use": 0,
+          "no_hallucination": 5,
+          "structure": 3,
+          "fidelity": 0
+        },
+        "stage3": {
+          "correctness": 0,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 0
+        }
+      },
+      "best": "tie",
+      "comment": "两模型均未正确回答问题，但stage3在证据使用和格式上更优。"
+    }
+  },
+  {
+    "id": "15",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 0,
+          "evidence_use": 0,
+          "no_hallucination": 5,
+          "structure": 2,
+          "fidelity": 0
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline正确回答了问题，stage3因检索结果无关而未能作答。"
+    }
+  },
+  {
+    "id": "9",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "correctness": 0,
+          "evidence_use": 0,
+          "no_hallucination": 5,
+          "structure": 4,
+          "fidelity": 0
+        },
+        "stage3": {
+          "correctness": 0,
+          "evidence_use": 0,
+          "no_hallucination": 0,
+          "structure": 5,
+          "fidelity": 0
+        }
+      },
+      "best": "baseline",
+      "comment": "两者均未回答问题，但baseline未引入幻觉，stage3则虚构了答案。"
+    }
+  },
+  {
+    "id": "7",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "correctness": 0,
+          "evidence_use": 0,
+          "no_hallucination": 5,
+          "structure": 4,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 0,
+          "evidence_use": 0,
+          "no_hallucination": 0,
+          "structure": 5,
+          "fidelity": 0
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline未作答但未编造信息，stage3编造了与输入无关的答案。"
+    }
+  },
+  {
+    "id": "6",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 2,
+          "evidence_use": 4,
+          "no_hallucination": 3,
+          "structure": 2,
+          "fidelity": 2
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline正确回答了问题，stage3的结论与格式均存在明显错误。"
+    }
+  },
+  {
+    "id": "28",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 0,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline正确利用了有效条款作答，stage3因检索结果不匹配而无法给出正确结论。"
+    }
+  },
+  {
+    "id": "39",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "correctness": 3,
+          "evidence_use": 5,
+          "no_hallucination": 4,
+          "structure": 5,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 2,
+          "evidence_use": 4,
+          "no_hallucination": 3,
+          "structure": 3,
+          "fidelity": 3
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline 回答更完整且紧扣问题，stage3 存在格式偏差和解释不足。"
+    }
+  },
+  {
+    "id": "1",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        }
+      },
+      "best": "tie",
+      "comment": "两个模型均基于输入正确作答，结论一致且格式规范。"
+    }
+  },
+  {
+    "id": "3",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        }
+      },
+      "best": "tie",
+      "comment": "两模型均基于输入条款正确作答，结论一致且无幻觉。"
+    }
+  },
+  {
+    "id": "34",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "correctness": 4,
+          "evidence_use": 5,
+          "no_hallucination": 4,
+          "structure": 5,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 1,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 3,
+          "fidelity": 2
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline正确利用了输入信息作答，stage3因检索结果不匹配而拒绝回答，但未尝试处理核心问题。"
+    }
+  },
+  {
+    "id": "40",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 3,
+          "evidence_use": 4,
+          "no_hallucination": 3,
+          "structure": 2,
+          "fidelity": 2
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline的回答完整、准确且格式规范，而stage3的回答结构混乱且未能有效回答问题。"
+    }
+  },
+  {
+    "id": "17",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 0,
+          "evidence_use": 0,
+          "no_hallucination": 0,
+          "structure": 0,
+          "fidelity": 0
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline正确依据给定条款作答，stage3完全无视了核心输入信息导致回答错误。"
+    }
+  },
+  {
+    "id": "20",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 5,
+          "evidence_use": 4,
+          "no_hallucination": 5,
+          "structure": 3,
+          "fidelity": 4
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline回答更规范完整，stage3格式和指令遵循略有不足。"
+    }
+  },
+  {
+    "id": "30",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "correctness": 0,
+          "evidence_use": 0,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 0,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        }
+      },
+      "best": "stage3",
+      "comment": "stage3 严格依据输入作答，而 baseline 在缺乏依据的情况下给出了错误判断。"
+    }
+  },
+  {
+    "id": "38",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "correctness": 3,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 2,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline在正确性上更优，stage3的解释存在偏差。"
+    }
+  },
+  {
+    "id": "32",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 4,
+          "evidence_use": 4,
+          "no_hallucination": 4,
+          "structure": 3,
+          "fidelity": 4
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline回答更完整、规范，stage3在格式和解释深度上略有不足。"
+    }
+  },
+  {
+    "id": "21",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        }
+      },
+      "best": "tie",
+      "comment": "两个模型均基于各自收到的有效条款，正确、简洁地得出了不赔付的结论。"
+    }
+  },
+  {
+    "id": "23",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "correctness": 5,
+          "evidence_use": 1,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        }
+      },
+      "best": "stage3",
+      "comment": "stage3 在正确性相同的基础上，更充分地利用了输入证据进行推理。"
+    }
+  },
+  {
+    "id": "14",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 1,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 3,
+          "fidelity": 2
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline基于给定条款正确回答了问题，而stage3因检索结果不相关而未能给出有效结论。"
+    }
+  },
+  {
+    "id": "27",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 4,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        }
+      },
+      "best": "tie",
+      "comment": "两个模型均基于各自收到的正确条款，给出了准确、简洁且无幻觉的答案。"
+    }
+  },
+  {
+    "id": "36",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "correctness": 4,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 3,
+          "evidence_use": 4,
+          "no_hallucination": 4,
+          "structure": 3,
+          "fidelity": 4
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline的回答更完整、规范且紧扣条款，stage3的回答结构松散且引入了无关解释。"
+    }
+  },
+  {
+    "id": "35",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "correctness": 4,
+          "evidence_use": 5,
+          "no_hallucination": 4,
+          "structure": 5,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 3,
+          "evidence_use": 4,
+          "no_hallucination": 3,
+          "structure": 4,
+          "fidelity": 4
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline回答更完整、准确，stage3解释部分存在幻觉且结构稍弱。"
+    }
+  },
+  {
+    "id": "13",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "correctness": 0,
+          "evidence_use": 0,
+          "no_hallucination": 5,
+          "structure": 4,
+          "fidelity": 2
+        },
+        "stage3": {
+          "correctness": 0,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        }
+      },
+      "best": "stage3",
+      "comment": "stage3模型严格依据输入作答，格式规范，而baseline未能回答问题。"
+    }
+  },
+  {
+    "id": "19",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "correctness": 0,
+          "evidence_use": 0,
+          "no_hallucination": 5,
+          "structure": 4,
+          "fidelity": 2
+        },
+        "stage3": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        }
+      },
+      "best": "stage3",
+      "comment": "stage3基于检索到的条款准确回答了问题，而baseline因未收到有效输入而无法作答。"
+    }
+  },
+  {
+    "id": "24",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        }
+      },
+      "best": "tie",
+      "comment": "两个模型均基于各自输入中的有效条款，准确、简洁地给出了正确答案。"
+    }
+  },
+  {
+    "id": "29",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        }
+      },
+      "best": "tie",
+      "comment": "两个模型均基于各自收到的输入，正确、简洁地给出了与标准答案一致的结论。"
+    }
+  },
+  {
+    "id": "22",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 5,
+          "evidence_use": 4,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        }
+      },
+      "best": "baseline",
+      "comment": "两者结论均正确，但baseline更简洁地依据了唯一相关条款作答。"
+    }
+  }
+]

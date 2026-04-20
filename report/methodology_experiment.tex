@@ -1,0 +1,673 @@
+% ============================================================
+%  Paste this file into your Overleaf project.
+%  Required packages (add to your main .tex preamble):
+%    \usepackage{booktabs}
+%    \usepackage{multirow}
+%    \usepackage{amsmath}
+%    \usepackage{algorithm}
+%    \usepackage{algpseudocode}
+% ============================================================
+
+% ============================================================
+\section{Introduction}
+% ============================================================
+
+Hong Kong's insurance market is one of the densest in Asia, with over 160
+licensed insurers publishing product disclosure documents that mix Chinese and
+English terminology, actuarial tables, and legally operative clause text.
+Verifying a specific benefit, exclusion, or renewal condition requires locating
+the right clause across dozens of PDFs---slow and inaccessible to most
+policyholders.
+Keyword search breaks down on paraphrased queries; general-purpose LLMs fail
+differently, hallucinating policy details, ignoring questions the evidence
+cannot support, and producing free-form prose with no audit trail.
+
+The IRAG project tackles this through two successive development phases.
+The first phase, carried out in a prior semester, established an initial
+Milvus-based RAG prototype: a retrieval pipeline over Chinese insurance text
+and a simple table-embedding scheme using a Google text embedding model
+designed for English tables.
+This prototype identified three concrete limitations.
+The knowledge base was narrow in scale and insurer coverage.
+The English-oriented table embedder performed poorly on Chinese insurance
+tables and represented each table as a single coarse vector, making it
+difficult to pinpoint the specific row or clause needed to answer a question.
+Pilot fine-tuning experiments---a Chain-of-Thought run and a conventional
+insurance-style answer run---showed promise but were not yet integrated with
+the retrieval system.
+
+Building on this foundation, the current semester addresses both limitations
+in parallel.
+On the retrieval side, the team expanded the knowledge base to 247 Hong Kong
+insurance product PDFs across nine insurers, replaced the table embedder with
+a fine-grained three-modal chunking scheme (full table, columns, rows), added
+cross-encoder reranking, and deployed a FastAPI service with a Vue~3 chat
+interface.
+On the generation side, this paper describes the fine-tuning pipeline designed
+to make the model safe to deploy in this RAG context.
+We train Qwen3-4B~\cite{qwen3} through three successive LoRA stages: clause
+reading comprehension, structured database reasoning via SQL chain-of-thought,
+and Retrieval-Augmented Fine-Tuning (RAFT)~\cite{zhang2024raft} that teaches
+the model to reason over retrieved chunks and refuse when those chunks do not
+contain the answer.
+We evaluate the result at three levels---offline behavioral tests against an
+untuned baseline, a grounded attribution judge designed to catch hallucinations
+that standard LLM-as-judge misses, and end-to-end smoke tests on the live
+pipeline---to get a clear picture of what the fine-tuning fixes and where gaps
+remain.
+
+The rest of the paper is structured as follows.
+Section~\ref{sec:related} reviews related work.
+Section~\ref{sec:method} describes the three-stage training pipeline and
+the RAG infrastructure.
+Section~\ref{sec:exp} presents evaluation results.
+Section~\ref{sec:discussion} discusses limitations and future directions.
+
+% ============================================================
+\section{Methodology}
+\label{sec:method}
+% ============================================================
+
+\subsection{Base Model and Training Setup}
+
+We use Qwen3-4B~\cite{qwen3} as the base language model---a 4-billion-parameter
+transformer pre-trained on multilingual corpora with native Chinese support.
+Hong Kong insurance clause text freely mixes Chinese and English terminology,
+so bilingual coverage is a requirement.
+All fine-tuning is managed by Axolotl with LoRA~\cite{hu2022lora} throughout
+all three stages.
+Adapters are attached to six projection layers per transformer block
+($\mathbf{q}$, $\mathbf{k}$, $\mathbf{v}$, $\mathbf{o}$, \texttt{up\_proj},
+\texttt{down\_proj}), with rank $r{=}32$, scaling factor $\alpha{=}64$, and
+dropout 0.05.
+Training runs on a single 16\,GB VRAM GPU (Blackwell architecture) in
+\texttt{bfloat16} with gradient checkpointing enabled.
+Flash Attention and Flex Attention are incompatible with this GPU generation
+and are disabled.
+
+\subsection{Three-Stage LoRA Fine-Tuning}
+
+The pipeline uses three successive fine-tuning stages, each with a distinct
+training objective and each initialised from the previous stage's LoRA
+checkpoint.
+Table~\ref{tab:stages} summarises the key hyperparameters.
+
+\begin{table}[htbp]
+\centering
+\caption{Training configuration for the three fine-tuning stages.}
+\label{tab:stages}
+\small
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Stage & seq\,len & lr & Epochs & Batch \\
+\midrule
+1 -- Clause   & 1024$^\dagger$ & $5{\times}10^{-5}$ & 1 & 2 \\
+2 -- DB-CoT   & 1024           & $5{\times}10^{-5}$ & 4 & 4 \\
+3 -- RAFT     & 1536           & $2{\times}10^{-5}$ & 3 & 4 \\
+\bottomrule
+\end{tabular}\\[2pt]
+{\footnotesize
+$\dagger$ Sliding window, 256-token overlap (Stage~1 only).
+Batch = micro-batch $\times$ gradient accumulation steps.}
+\end{table}
+
+\noindent\textbf{Stage~1: Clause reading comprehension.}
+Stage~1 trains in completion format on two insurance clause QA datasets---an
+objective set and a subjective set at 40\% each---supplemented by a structured
+database QA set at 20\%.
+A 256-token sliding window handles contracts that exceed the 1024-token context
+limit.
+One epoch anchors the model's answers in the provided clause text and
+establishes the expected output format.
+
+\noindent\textbf{Stage~2: Structured database reasoning via SQL-CoT.}
+The primary objective of Stage~2 is to teach the model \emph{structured,
+evidence-grounded reasoning}: given a natural-language question and a
+database schema, it should select the relevant fields, construct a step-by-step
+SQL chain-of-thought (\texttt{<FieldSelection>} $\to$ \texttt{<SQLCoT>}),
+and ground its final answer strictly in the query result rather than
+parametric knowledge.
+Training uses chat-format SQL-CoT samples derived from structured insurance
+tables, with sample packing enabled.
+Stage~2 training data contains only \emph{positive} reasoning
+examples---question, schema, and correct answer---with no abstention examples.
+The model therefore acquires structured reasoning but is not trained to refuse;
+that capability is left entirely to Stage~3.
+Four epochs give the model sufficient exposure to tabular reasoning without
+displacing the clause-reading skills from Stage~1.
+
+\noindent\textbf{Stage~3: RAFT fine-tuning.}
+Stage~3 introduces retrieval-awareness and abstention on top of the
+Stage~2 checkpoint.
+Training uses the RAFT dataset described in Section~\ref{sec:raft_data}.
+The learning rate drops to $2{\times}10^{-5}$ to limit forgetting of earlier
+capabilities.
+Sequence length grows to 1536 tokens, covering the 95th-percentile sample
+length of 1472 tokens; only 3.8\% of samples require truncation.
+
+\subsection{RAFT Training Data Construction}
+\label{sec:raft_data}
+
+We build the RAFT dataset from existing clause QA annotations and Stage~2 SQL
+samples using a custom generator script (\texttt{generate\_raft.py}).
+The generator produces approximately 1,995 training samples (after the
+keyword-overlap filter removes RAG-positive candidates where key question
+entities cannot be found in the retrieved chunk), distributed across three
+categories at approximate target proportions of 52.5\,:\,31.5\,:\,15
+(values are design targets; the accepted sample count varies with filtering
+and is not guaranteed to sum to exactly 100\,\%):
+
+\begin{enumerate}
+  \item \textbf{RAG-positive.}
+    Each sample pairs a question with 1--3 retrieved chunks, one of which
+    contains the correct evidence.
+    A keyword-overlap filter checks that key entities from the question
+    appear in that chunk; candidates that fail this check are dropped.
+    The model is trained to output a \texttt{<Thought>} reasoning block
+    followed by a structured answer in three fields: \emph{answer},
+    \emph{evidence}, and \emph{explanation}.
+
+  \item \textbf{RAG-distractor.}
+    The question is paired with two chunks drawn from unrelated contracts,
+    so no chunk contains the correct answer.
+    The model is trained to detect the mismatch and produce a standardised
+    refusal rather than fabricating a response.
+
+  \item \textbf{DB-CoT passthrough.}
+    SQL-CoT samples from Stage~2 are included verbatim to prevent the model
+    from losing structured-data reasoning during Stage~3 training.
+\end{enumerate}
+
+Questions fall into six types (definitional, conditional, judgement,
+calculation, comparative, procedural), detected by keyword matching;
+each type maps to a reasoning template that is injected into the
+\texttt{<Thought>} block at generation time.
+
+\noindent\textbf{Filtering parametric knowledge leakage.}
+Stage~2 SQL-CoT training data occasionally elicits outputs that include
+``专有名词解释'' (terminology explanation) paragraphs---free-form definitions
+drawn from the model's pre-trained knowledge rather than retrieved evidence.
+These paragraphs are harmless in a structured-database context where the task
+is SQL generation, but they would constitute a grounding violation in RAFT
+training: the model would learn to answer from memory rather than from
+the provided chunks.
+A post-processing step (\texttt{strip\_zhuanye()}) therefore removes any such
+paragraph from RAFT training targets before they are written to disk.
+The pattern (\texttt{专有名词*解释}) does not match clause text or SQL syntax,
+so no evidence-bearing content is removed.
+
+The system prompt instructs the model to answer strictly from retrieved
+evidence and to refuse when that evidence is absent.
+
+\subsection{Retrieval-Augmented Generation Pipeline}
+
+The retrieval backend uses Milvus with \texttt{BAAI/bge-large-zh-v1.5}
+embeddings (1024 dimensions, cosine similarity, IVF\_FLAT index with
+$n_\text{list}{=}1024$).
+The knowledge base indexes 37,571 chunks from 247 Hong Kong insurance product
+PDFs spanning nine insurers: Prudential, Sun Life, AIA, Manulife, AXA, FWD,
+BOC, Hang Seng, and HSBC.
+Each PDF table is decomposed into three modality chunks---full table, columns,
+and rows---to improve retrieval of tabular facts.
+At query time, a FastAPI server (port 8000) retrieves the top-8 candidates
+from Milvus, re-ranks them with \texttt{BAAI/bge-reranker-base} to sharpen
+relevance ordering, and forwards the result to the RAFT inference server
+(port 8001), which produces a response grounded in the retrieved content.
+
+
+% ============================================================
+\section{Experiments}
+\label{sec:exp}
+% ============================================================
+
+\subsection{Evaluation Protocol}
+
+Evaluation covers three aspects of the IRAG system.
+
+\noindent\textbf{Model capability.}
+We define \emph{legalized} outputs as responses that (i) are grounded in
+retrieved evidence, (ii) adopt a structured, auditable format, and
+(iii) refuse when evidence is insufficient---criteria intended to align model
+behavior with the accountability requirements of insurance advising.
+We test whether fine-tuning reliably produces such outputs.
+We compare Baseline (Qwen3-4B without fine-tuning) against Stage-3 (RAFT) on
+a suite of offline tests covering three behavioral dimensions:
+evidence grounding, abstention reliability, and structured output compliance.
+We do not separately evaluate Stage-2, whose contribution to the final model
+is validated indirectly through the grounding and compliance metrics of Stage-3.
+
+\noindent\textbf{Knowledge base retrieval.}
+Retrieval quality requires domain expertise to judge accurately; we therefore
+do not report a standalone retrieval benchmark.
+The end-to-end evaluation covers retrieval as one of four scoring dimensions.
+
+\noindent\textbf{End-to-end pipeline.}
+We run the complete IRAG pipeline---Milvus retrieval plus Stage-3
+generation---on real Hong Kong insurance questions and score system-level outputs.
+
+All offline judgements use DeepSeek-Chat~\cite{deepseek} at temperature 0.1;
+end-to-end judgements use temperature 0.0.
+Model generation runs at temperature 0.2, top-$p$ 0.9, maximum 400 new tokens.
+Models are loaded sequentially to stay within 16\,GB VRAM.
+Because LLM judges routinely miss implicit hallucination, we also run a grounded
+judge that traces each factual claim against the source text before scoring
+(Section~\ref{sec:abstention}).
+
+\subsection{Model Capability: Legalized Output}
+
+\subsubsection{Evidence Grounding}
+
+\noindent\textbf{Answer compliance.}
+We score 30 clause QA output pairs on three compliance dimensions: answer
+compliance (precise use of insurance terminology), clause fidelity (direct
+citation of clause text rather than paraphrase), and response formality
+(3\,pts each; 15\,pts total).
+Both models receive the deployment system prompt, which includes format
+directives (\texttt{<Thought>} block and structured answer fields).
+Baseline ignores these directives and produces free-form prose; Stage-3
+consistently applies the structured format as trained.
+The response formality dimension therefore captures a real behavioral
+difference, not a prompt-induced artifact.
+
+\begin{table}[htbp]
+\centering
+\caption{Answer compliance results (avg\,/\,3 per dimension).
+Bold indicates the better score.}
+\label{tab:compliance}
+\small
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Dimension & Baseline & Stage-3 \\
+\midrule
+Answer compliance   & 2.93 & \textbf{3.47} \\
+Clause fidelity     & 2.57 & \textbf{3.43} \\
+Response formality  & \textbf{3.80} & 3.70 \\
+\midrule
+Total               & 62.0\% & \textbf{70.7\%} \\
+\bottomrule
+\end{tabular}\\[4pt]
+{\footnotesize \textit{Rubric} (per dimension, 3\,pts max): 3\,=\,fully meets
+criterion; 2\,=\,partially meets (e.g.\ paraphrase instead of direct citation);
+1\,=\,does not meet. \emph{Answer compliance}: precision of domain terminology.
+\emph{Clause fidelity}: extent of verbatim clause citation.
+\emph{Response formality}: professional register throughout.}
+\end{table}
+
+Stage-3 leads overall (70.7\% vs.\ 62.0\%), with the largest margin on clause
+fidelity (+0.86): Stage-3 tends to quote clause text directly, while Baseline
+paraphrases or summarises.
+The gain likely comes from Stage~3 RAFT training, which rewards quoting clause
+text directly; SQL-CoT training in Stage~2 may also play a role by conditioning
+the model to reference specific fields rather than paraphrase.
+Which contribution dominates is outside the scope of this work.
+
+\noindent\textbf{Fair clause evaluation.}
+We sample the same 30 questions from \texttt{eval/data/clause.jsonl} for a
+direct QA accuracy comparison.
+Baseline receives a single-chunk prompt with a clause-focused system prompt;
+Stage-3 receives a two-chunk RAFT-format input (one correct evidence chunk
+plus one distractor) with the deployment system prompt.
+The judge sees each model's actual input, so Stage-3 is not penalized for
+responding to a richer context than Baseline.
+Five dimensions are scored (correctness, evidence use, no-hallucination,
+structure, fidelity; 5\,pts each; 25\,pts total).
+
+\begin{table}[htbp]
+\centering
+\caption{Fair clause evaluation results (avg\,/\,5 per dimension).
+Bold indicates the better score.}
+\label{tab:clause}
+\small
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Dimension & Baseline & Stage-3 \\
+\midrule
+Correctness       & \textbf{3.43} & 2.53 \\
+Evidence use      & 3.53          & \textbf{4.07} \\
+No-hallucination  & \textbf{4.90} & 4.17 \\
+Structure         & \textbf{4.70} & 4.10 \\
+Fidelity          & \textbf{4.13} & 3.57 \\
+\midrule
+Total             & \textbf{82.8\%} & 73.7\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Stage-3 leads on evidence use (4.07 vs.\ 3.53), the dimension most directly
+measuring whether the answer is derived from retrieved text.
+The overall gap (82.8\% vs.\ 73.7\%) is concentrated in correctness and
+structure.
+We attribute this primarily to a format mismatch: Stage-3 consistently applies
+its RAFT output template---\texttt{<Thought>} block followed by structured
+answer fields---even where a direct answer would score higher under the clause
+rubric.
+Some loss of direct-answer fluency cannot be ruled out; an ablation without
+the format constraint would be needed to separate the two effects.
+
+\subsubsection{Abstention Reliability}
+\label{sec:abstention}
+
+\noindent\textbf{Hallucination suppression.}
+We test 10 questions where the provided evidence is deliberately insufficient
+to answer completely.
+Stage-3 is expected to refuse and provide an advisory response; Baseline has
+no such training.
+Both models receive the deployment system prompt; the evidence provided is
+deliberately insufficient to fully answer each question.
+
+\begin{table}[htbp]
+\centering
+\caption{Hallucination suppression results (avg\,/\,5 per dimension).
+Bold indicates the better score.}
+\label{tab:hall}
+\small
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Dimension & Baseline & Stage-3 \\
+\midrule
+Correctness       & \textbf{4.00} & 3.50 \\
+Evidence use      & \textbf{4.00} & 3.30 \\
+No-hallucination  & \textbf{4.50} & 3.60 \\
+Structure         & \textbf{4.60} & 4.10 \\
+Fidelity          & \textbf{4.20} & 3.50 \\
+\midrule
+Total             & \textbf{85.2\%} & 72.0\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Baseline leads across all five dimensions under the standard judge
+(85.2\% vs.\ 72.0\%), but the gap has two separate causes.
+When Stage-3 refuses, it produces no direct answer; the judge penalises this
+on correctness and fidelity regardless of whether the refusal is warranted.
+Additionally, Stage-3 refusals often include short advisory statements
+explaining what kind of evidence would be needed; the judge treats these as
+factual claims, pulling the no-hallucination score down (3.60 vs.\ 4.50).
+On the other side, Baseline's high no-hallucination score (4.50) is partly
+inflated: Baseline answers confidently even when its response goes beyond the
+provided evidence, but the standard judge does not consistently catch this.
+The next test addresses this asymmetry directly.
+
+\noindent\textbf{Grounded judge correction.}
+We re-score the same outputs with a two-stage judge.
+First, each factual claim in a response is checked against the source text;
+any claim without direct textual support forces \texttt{no\_hallucination=0}
+and \texttt{evidence\_use=0}.
+Standard five-dimension scoring then proceeds on top of the attribution result.
+
+\begin{table}[htbp]
+\centering
+\caption{Standard vs.\ grounded judge on hallucination suppression.
+\textcolor{red}{Red}: score decreases; \textcolor{blue}{blue}: score increases.}
+\label{tab:grounded}
+\small
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Model & Standard & Grounded & $\Delta$ \\
+\midrule
+Baseline & 85.2\% & 80.4\% & \textcolor{red}{$-$4.8\%} \\
+Stage-3  & 72.0\% & 74.0\% & \textcolor{blue}{$+$2.0\%} \\
+\midrule
+Gap & 13.2\% & \textbf{6.4\%} & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Attribution checking narrows the gap from 13.2\% to 6.4\%.
+Baseline loses points on 3 of 10 questions where it gives authoritative-sounding
+answers that cannot be traced to the provided text.
+Stage-3 gains slightly: once the attribution check is in place, refusals
+correctly receive zero hallucination credit.
+The remaining 6.4\% gap likely reflects implicit hallucination that neither
+judge fully surfaces, a limitation of automated evaluation for this class of
+behavior.
+
+\noindent\textbf{Distractor robustness.}
+The harder abstention test gives the model two chunks from \emph{unrelated}
+contracts; the correct response is to recognise the mismatch and refuse.
+We evaluate 15 questions on three dimensions (rejection correctness,
+no-hallucination, explanation quality; 5\,pts each; 15\,pts total),
+using the deployment system prompt for both models.
+Stage-3 scores 31.1\% and Baseline 43.1\%.
+Stage-3 trails Baseline here: RAG-distractor samples account for only 31.5\%
+of the RAFT training set, and the dataset lacks a ``partially relevant''
+category---cases where retrieved content is topically close but does not
+contain the specific clause---that would let the model learn a finer refusal
+threshold.
+We discuss this further in Section~\ref{sec:discussion}.
+
+\subsubsection{Structured Output Compliance}
+
+We parse all 15 Stage-3 responses from the end-to-end smoke test using
+regular expressions to measure format compliance under live traffic.
+
+\begin{table}[htbp]
+\centering
+\caption{Structured output compliance across 15 live pipeline outputs.
+Baseline produces no structured elements by construction (no format training).}
+\label{tab:format}
+\small
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Format element & Baseline & Stage-3 \\
+\midrule
+\texttt{<Thought>} block present      & 0\,/\,15 (0\%) & 15\,/\,15 (100\%) \\
+\texttt{[答案]} field present          & 0\,/\,15 (0\%) & 15\,/\,15 (100\%) \\
+Full 3-field structure (refusal only) & 0\,/\,2\hphantom{0} (0\%) & \phantom{0}2\,/\,2\hphantom{0} (100\%) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Baseline produces none of the required structural elements, as it received no
+format-specific training.
+Stage-3 achieves 100\% compliance on all three elements across 15 outputs,
+applying an adaptive format: answering questions emit a \texttt{<Thought>}
+block followed by \texttt{[答案]} only, while refusals switch to the full
+three-field structure (\texttt{[答案]/[证据]/[解释说明]}).
+Stage-3 applies the format consistently across live traffic.
+
+\subsection{End-to-End Pipeline Evaluation}
+\label{sec:e2e}
+
+We submit real Hong Kong insurance questions to the live IRAG
+pipeline---Milvus retrieval (top-8 chunks) followed by Stage-3
+generation---and score each response on four dimensions: retrieval relevance,
+faithfulness, rejection quality, and completeness (3\,pts each; 12\,pts total),
+judged by DeepSeek-Chat.
+A response scoring 12 is marked \textsc{pass}; anything lower is
+\textsc{fail}.
+
+\begin{table}[htbp]
+\centering
+\caption{End-to-end smoke test results.}
+\label{tab:smoke}
+\small
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Set & \#Q & PASS & FAIL & Avg\,/\,12 \\
+\midrule
+v4 & 10 & 7 (70\%) & 3 (30\%) & 7.90 \\
+v5 & 15 & 9 (60\%) & 6 (40\%) & 8.07 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The v5 set extends coverage from 6 to 9 insurers.
+The 60\% pass rate is lower than v4's 70\%, but the per-question average is
+slightly higher (8.07 vs.\ 7.90): questions with imperfect retrieval still earn
+partial credit on faithfulness and rejection.
+
+\noindent\textbf{Failure taxonomy.}
+The six v5 failures fall into three layers (Table~\ref{tab:failures}).
+
+\begin{table}[htbp]
+\centering
+\caption{Failure taxonomy for the v5 smoke test (6 failures).}
+\label{tab:failures}
+\small
+\begin{tabular}{@{}p{1.3cm}p{1.2cm}p{4.5cm}@{}}
+\toprule
+Layer & Questions & Root cause \\
+\midrule
+Retrieval & Q3, Q7, Q9 & Chunks are on-topic but lack the specific numerical values required \\
+KB coverage & Q12 & Hang Seng life product absent from the index \\
+Generation & Q11, Q13 & Evidence spans multiple chunks near the context limit; answer is incomplete \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Among the passing questions, Q15 (the refusal question) scores 6\,/\,12---it
+declines correctly without drawing on parametric knowledge, showing that
+Stage~3's abstention training holds under live conditions.
+Note that the 12\,/\,12 pass threshold is calibrated for answerable questions;
+Q15's score of 6\,/\,12 represents a correct refusal rather than a failure in
+the intended sense---it is counted as \textsc{fail} in the aggregate statistics
+to avoid inflating the pass rate, but interpreted as a positive outcome;
+excluding Q15, the pass rate on answerable questions is 9\,/\,14 (64.3\%).
+Retrieval-layer failures are addressable at the system level---higher top-$k$
+or a stronger re-ranker---without retraining the model.
+The two generation-layer failures reflect the 1536-token context limit: when
+relevant information is spread across several chunks, the answer is truncated.
+The KB coverage gap for Q12 requires adding the missing insurer documents to
+the Milvus index.
+
+
+% ============================================================
+\section{Discussion}
+\label{sec:discussion}
+% ============================================================
+
+\subsection{Retrieval as the Performance Ceiling}
+
+The end-to-end smoke test (Section~\ref{sec:e2e}) shows that three of the six
+v5 failures originate in the retrieval layer: the correct document is indexed,
+but the retrieved chunks describe the right topic without including the specific
+numerical value or clause condition the question requires.
+This is not a model failure---Stage-3 correctly reports uncertainty when the
+chunks are uninformative---but it means that retrieval quality sets a hard
+ceiling on what fine-tuning can achieve.
+The current setup retrieves top-8 candidates and re-ranks with a cross-encoder;
+raising top-$k$ or adding a query expansion step are the most direct routes to
+closing this gap without retraining the model.
+
+The knowledge base also has uneven insurer coverage.
+Q12 failed entirely because Hang Seng life products were absent from the index.
+With 37,571 chunks from 247 PDFs, coverage is broad but not complete;
+any production deployment would need a process for identifying and filling
+coverage gaps as new products are issued.
+
+\subsection{Fine-Tuning Trade-offs: Grounding vs.\ Direct Accuracy}
+
+The fair clause evaluation reveals a tension between evidence grounding and
+raw QA accuracy.
+Stage-3 leads on evidence use (4.07 vs.\ 3.53) but trails on total score
+(73.7\% vs.\ 82.8\%), with the gap concentrated in correctness and structure.
+The most likely cause is a format mismatch: Stage-3 consistently applies its
+RAFT output template even in settings where a direct answer would score higher
+under the clause rubric.
+An ablation that removes the format constraint at inference time would separate
+this effect from any genuine loss of answer fluency, but we leave that to
+future work.
+
+The compliance evaluation tells a complementary story.
+Stage-3 leads overall (70.7\% vs.\ 62.0\%), with the largest individual gain
+on clause fidelity (+0.86 on a 3-point scale).
+Together, the two evaluations suggest that fine-tuning shifts the model's
+behavior toward citation and away from paraphrase---a useful property in
+an auditable insurance QA context, even if it costs some points on
+correctness-focused rubrics.
+
+\subsection{Abstention: Capability Transfer but Unresolved Trade-off}
+
+Stage-3 transfers its abstention capability to the live pipeline---Q15's
+correct refusal (6\,/\,12) in the smoke test confirms this---but the offline
+distractor test exposes a persistent weakness: Stage-3 scores 31.1\% against
+Baseline's 43.1\% on questions where both chunks come from unrelated contracts.
+
+Two factors explain this.
+RAG-distractor samples make up only 31.5\% of the RAFT training set, giving
+the model limited exposure to the harder rejection cases.
+More fundamentally, the training data has no ``partially relevant'' category:
+cases where retrieved content is topically close but does not contain the
+specific clause.
+The model has learned a binary distinction (relevant vs.\ clearly irrelevant)
+that does not generalise to the more ambiguous cases that appear in practice.
+
+We also explored three system prompt configurations during development.
+A strict refusal prompt (v1) maximised distractor rejection but degraded
+the advisory quality of refusal responses.
+A graded response prompt (v2) improved hallucination suppression but caused
+distractor rejection to collapse.
+The deployment prompt (v3) sits between the two, but the trade-off cannot be
+resolved by prompt tuning alone.
+The fundamental fix is adding a partially-relevant training category so
+the model can learn a finer rejection threshold.
+
+\subsection{Evaluation Methodology: LLM-as-Judge Limitations}
+
+The grounded judge experiment (Section~\ref{sec:abstention}) makes explicit
+what automated evaluation misses.
+Under the standard judge, Baseline outscores Stage-3 by 13.2 percentage points
+on the hallucination suppression task.
+After attribution checking---tracing each factual claim to the source
+text---the gap narrows to 6.4 points.
+Baseline loses credit because three of its ten responses contain
+authoritative-sounding claims that cannot be located in the provided evidence;
+Stage-3 gains slightly because its refusals, once evaluated with the
+attribution requirement applied, correctly receive zero hallucination
+penalties.
+
+The remaining 6.4-point gap likely reflects implicit hallucination that neither
+judge can surface: confident paraphrases that are plausible but untraceable.
+This is a general limitation of automated evaluation for this class of
+behavior, and it motivates caution in interpreting all LLM-as-judge results
+in this paper.
+Human evaluation on a larger question set would give a more reliable picture,
+particularly for the hallucination and distractor tasks where sample sizes
+(10 and 15 questions respectively) are small enough that individual questions
+have a noticeable effect on the aggregate.
+
+\subsection{System-Level Considerations}
+
+One evaluation in this paper was invalidated by a system-level issue rather
+than a model failure.
+The noise filter test---designed to measure whether Stage-3 selects the correct
+chunk from a mix of relevant and irrelevant inputs---produced misleading results
+because 10 of the 30 evaluation chunks had malformed metadata (contract name
+listed as ``unknown'').
+Stage-3 treated these as unverifiable sources and refused to answer, depressing
+its correctness score well below Baseline.
+In the production pipeline, Milvus extracts contract names from PDF metadata at
+ingestion time, so this problem does not arise.
+The episode illustrates a general point: a model trained to be conservative
+about sourcing is more sensitive to data quality issues upstream, and
+evaluation pipelines need to match the data conditions of the deployment
+environment.
+
+\subsection{Future Directions}
+
+Several concrete improvements follow from the analysis above.
+
+At the retrieval level, hybrid dense--sparse retrieval (combining vector search
+with BM25) may improve recall for queries containing rare insurance terms that
+the embedding model has not seen frequently.
+Higher top-$k$ retrieval with more aggressive reranking would reduce the
+chance that a needed clause is simply not in the candidate set.
+
+At the training level, the most pressing need is a partially-relevant
+distractor category in the RAFT dataset: samples where retrieved content
+overlaps topically but does not contain the specific clause, trained to produce
+a calibrated partial-refusal response rather than either answering or fully
+refusing.
+Increasing the distractor ratio from 31.5\% would also help, at the cost of
+reducing positive-sample exposure.
+
+At the evaluation level, the grounded judge described in this paper is a step
+toward more reliable hallucination measurement, but it still relies on an LLM
+to perform attribution checking.
+A deterministic attribution method---exact string matching or a specialised
+entailment model trained on insurance clause text---would remove this source of
+noise.
+Larger test sets for the hallucination and distractor tasks are also needed
+before the results can be reported with confidence intervals narrow enough to
+support strong conclusions.

@@ -1,0 +1,813 @@
+{
+  "summary": {
+    "run_at": "2026-04-09T11:44:24.293668",
+    "total_tests": 10,
+    "pass": 2,
+    "partial": 0,
+    "fail": 6,
+    "error": 2,
+    "avg_score_12": 2.62
+  },
+  "tests": [
+    {
+      "id": 1,
+      "category": "定义类",
+      "expected": "有答案",
+      "note": "常见条款，多数重疾险有90天等待期",
+      "prompt": "重大疾病保险的等待期（观察期）是多长时间？",
+      "mode": "raft",
+      "top_k": 5,
+      "latency_total_s": 12.29,
+      "latency_eval_s": 0.56,
+      "retrieval": [
+        {
+          "rank": 1,
+          "company": "AXA",
+          "category": "critical_illness",
+          "product_name": "LPPM 889-2507SC Care For All_Product brochure_SC",
+          "source": "sourcepdf/AXA/critical_illness/LPPM 889-2507SC Care For All_Product brochure_SC.pdf",
+          "modality": "text",
+          "page_number": 14,
+          "score": 0.0,
+          "text_preview": "重 要信息 计划特点 产品概覧 保障表 备注 重要信息（续） 等候期 自「盛满爱」的生效日期起，设有90天等候期。如果被保人在「盛满爱」的等候期内（i）已出现任何一种受保疾病的病征 或症状（即使被保人没有咨询医生），或（ii）为任何一种受保疾病接受治疗、药物治疗或进行检查，或（iii）被诊断为 患上任何一种受保严重疾病，我们将不支付「盛满爱」的严重疾病保险赔偿下的任何保险赔偿。 不适用于在等候期内"
+        },
+        {
+          "rank": 2,
+          "company": "prudential",
+          "category": "accident",
+          "product_name": "pruchoice-personal-accident-plus-product-brochure",
+          "source": "sourcepdf/prudential/accident/pruchoice-personal-accident-plus-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 9,
+          "score": 0.3258,
+          "text_preview": "is subject to a waiting period, which is the first 5 days from the effective date of this policy. No benefit will be payable for any bodily injury occurred during the waiting period. II. 意外醫療費用保障項目於等候"
+        },
+        {
+          "rank": 3,
+          "company": "prudential",
+          "category": "critical_illness",
+          "product_name": "pruhealth-critical-illness-extended-care-iii-product-brochure",
+          "source": "sourcepdf/prudential/critical_illness/pruhealth-critical-illness-extended-care-iii-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 19,
+          "score": 0.7191,
+          "text_preview": "特別紅利 索償嚴重疾病延伸保障的等候期和生存期 • 特別紅利為一次性的非保證紅利。 • 您可就嚴重疾病延伸保障提出索償，惟已獲接納索償 • 特別紅利一般根據我們每年公佈的紅利率而釐定， 的嚴重病況與其後的嚴重病況的相關診斷日期必須 紅利率可不時更改，也或會因應計劃的貨幣選項而有所 相距： 不同，以及並非保證。我們將會由第5個保單週年日起 - 最少1年；以及 公佈您計劃下的特別紅利。 - 假如前後索"
+        },
+        {
+          "rank": 4,
+          "company": "AXA",
+          "category": "critical_illness",
+          "product_name": "LPPM 671-2311C HealthSelect II Product Brochure_HK&MA_Chi",
+          "source": "sourcepdf/AXA/critical_illness/LPPM 671-2311C HealthSelect II Product Brochure_HK&MA_Chi.pdf",
+          "modality": "text",
+          "page_number": 23,
+          "score": 0.9537,
+          "text_preview": "主要不保事項 n 若被保人於保單日期或保單的任何復效日期 (以日期較後者為準) 起計1年內自殺身故，無論自殺當時被保人的神志是否 正常，身故賠償將只限於退還已繳付的保費 (但不包括其利息)。將予退還的保費數額將由保單日期或保單的任何復效 日期 (以日期較後者為準) 起開始計算。 若被保人於基本計劃保額的任何調高批准日期起計1年內自殺身故，無論自殺當時被保人的神志是否正常，在釐定 應支付身故賠償時，"
+        },
+        {
+          "rank": 5,
+          "company": "AXA",
+          "category": "critical_illness",
+          "product_name": "LPPM 908-2407SC TotalAssure & TotalAssure - BabyPro Product Brochure_HK & MA (SC)",
+          "source": "sourcepdf/AXA/critical_illness/LPPM 908-2407SC TotalAssure & TotalAssure - BabyPro Product Brochure_HK & MA (SC).pdf",
+          "modality": "text",
+          "page_number": 5,
+          "score": 1.1413,
+          "text_preview": "计划特点 受保疾病 产品概览 重要信息 备注 多重赔偿和持续支持 4,11 总保障高达保额 的1000%（续） 癌症适用 2,12,14 「持续癌症保险赔偿」选项 享短至1年等候期 2,8 2,12 此外，在严重疾病保险赔偿 已支付后，如果被保人其后诊断患上癌症，除了严重疾病多重保险赔偿 外，您也可选择 收取为癌症而设的持续赔偿选项，确保您在对抗癌的道路上获得长期的经济支持。 保险赔偿选项 2,1"
+        }
+      ],
+      "model_cot": "问题类型: 定义类\n关键实体: 保险、重大疾病、等待期\n证据匹配:\n  - 结果1（《LPPM 889-2507SC Care For All_P...》）: 包含目标信息，可用\n  - 结果2（《pruchoice-personal-accident-plus-pr...》）: 关联度低，忽略\n  - 结果3（《pruhealth-critical-illness-extended...》）: 关联度低，忽略\n  - 结果4（《LPPM 671-2311C HealthSelect II Pro...》）: 关联度低，忽略\n  - 结果5（《LPPM 908-2407SC TotalAssure & Tot...》）: 关联度低，忽略\n推理路径: 定位相关条款 → 提取术语定义 → 说明适用范围",
+      "final_answer": "[答案] 90天。**等待期**是指自保险生效日起90天内，保险公司不承担保险责任的时期。在这段时间内，如果被保险人发生任何一种合同中规定的疾病，保险公司将不支付保险金。",
+      "raw_model_output": "<Thought>\n问题类型: 定义类\n关键实体: 保险、重大疾病、等待期\n证据匹配:\n  - 结果1（《LPPM 889-2507SC Care For All_P...》）: 包含目标信息，可用\n  - 结果2（《pruchoice-personal-accident-plus-pr...》）: 关联度低，忽略\n  - 结果3（《pruhealth-critical-illness-extended...》）: 关联度低，忽略\n  - 结果4（《LPPM 671-2311C HealthSelect II Pro...》）: 关联度低，忽略\n  - 结果5（《LPPM 908-2407SC TotalAssure & Tot...》）: 关联度低，忽略\n推理路径: 定位相关条款 → 提取术语定义 → 说明适用范围\n</Thought>\n[答案] 90天。**等待期**是指自保险生效日起90天内，保险公司不承担保险责任的时期。在这段时间内，如果被保险人发生任何一种合同中规定的疾病，保险公司将不支付保险金。",
+      "evaluation": {
+        "retrieval_relevance": -1,
+        "faithfulness": -1,
+        "rejection_quality": -1,
+        "completeness": -1,
+        "total": -1,
+        "verdict": "ERROR",
+        "reason": "评估解析失败: <think>\n\n</think>\n\n<Thought>\n</Thought>\n<sql>\n</sql>"
+      }
+    },
+    {
+      "id": 2,
+      "category": "流程类",
+      "expected": "有答案",
+      "note": "身故理赔流程，预期文档中有相关条款",
+      "prompt": "被保险人身故后，身故保险金应如何申请理赔？",
+      "mode": "raft",
+      "top_k": 5,
+      "latency_total_s": 11.04,
+      "latency_eval_s": 1.91,
+      "retrieval": [
+        {
+          "rank": 1,
+          "company": "AXA",
+          "category": "wealth",
+          "product_name": "LPPM 753-2404SC Wealth Advance II - Classic Product Brochure_SC (HK)",
+          "source": "sourcepdf/AXA/wealth/LPPM 753-2404SC Wealth Advance II - Classic Product Brochure_SC (HK).pdf",
+          "modality": "text",
+          "page_number": 5,
+          "score": 0.1976,
+          "text_preview": "传承财富予后代 4,5 在首个保单年度结束后，您可根据本公司当时的行政规定更换保单的被保人 ，让您规划长远 的理财计划时更添灵活性。 100 6 更换被保人不会影响您的保单价值，而保险保障期将会更改为直至最新被保人的 岁 ，让 您的心意和财富得以继续传承，代代相传。 保障您与挚爱的未来 人寿保障守护家人 “稳进”提供人寿保障，守护您的挚爱家人。如果发生不幸事故，指定受益人将可获得的身故 保险赔偿相"
+        },
+        {
+          "rank": 2,
+          "company": "AXA",
+          "category": "wealth",
+          "product_name": "LPPM 771-2406SC Wealth Genuis Income Plan Product Brochure_HK (SC)",
+          "source": "sourcepdf/AXA/wealth/LPPM 771-2406SC Wealth Genuis Income Plan Product Brochure_HK (SC).pdf",
+          "modality": "text",
+          "page_number": 7,
+          "score": 0.243,
+          "text_preview": "保障您和挚爱的未来 人寿保障和灵活的身故保险赔偿支付选项 当被保人不幸身故，指定的受益人将可获发的身故保险赔偿相当于： 此两项中较高者： 累积可支取现金（如有） (i) 现金价值；以及 累积周年红利（如有） (ii) 15 12 总名义保费 累积可支取现金和周年红利的利息（如有） 扣除名义可支取 16 终期红利（如有） 现金总和 任何欠款和未缴的应付保费 为增加灵活性以配合您和挚爱的需要，我们可按"
+        },
+        {
+          "rank": 3,
+          "company": "prudential",
+          "category": "wealth",
+          "product_name": "prime-eternity-product-brochure",
+          "source": "sourcepdf/prudential/wealth/prime-eternity-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 13,
+          "score": 0.2769,
+          "text_preview": "计划为您带来什么优势？ 终身身故保障加上灵活的 当不幸患上任何受保疾病 身故赔偿支付选择 可透过无行为能力选项向指定家人 提供一次性金额 解决经济上的燃眉之急 倘若受保人在保单生效期间不幸身故，而保单没有后备受保人接替成为 假如您作为保单持有人兼受保人，在保单生效期间不幸患上任何受保 下一位受保人，我们将向您的指定受益人提供身故赔偿。此身故赔偿至 疾病而导致在精神或身体上无行为能力，并因此无法管理"
+        },
+        {
+          "rank": 4,
+          "company": "hangseng",
+          "category": "wealth",
+          "product_name": "IncomePower_Tc",
+          "source": "sourcepdf/hangseng/wealth/IncomePower_Tc.pdf",
+          "modality": "text",
+          "page_number": 12,
+          "score": 0.3035,
+          "text_preview": "身故保障 如受保人於保單生效期間身故，受益人可獲得以下身故賠償（於受保 人身故日期計算）： (i) 基本計劃之已繳總保費(13)101%；或 (ii) 保證現金價值加上特別紅利（如有）； 以較高者為準； 加上積存每月入息(1)及利息(7（) 如有）； 並扣除債項（如有）。 如已支付醫療預支保障(3)並且受保人在已支付醫療預支保障的扣除期 內身故，已支付醫療預支保障的扣除部分(12)將從應付的身故保"
+        },
+        {
+          "rank": 5,
+          "company": "boc",
+          "category": "wealth",
+          "product_name": "IncomeJoy_Sc",
+          "source": "sourcepdf/boc/wealth/IncomeJoy_Sc.pdf",
+          "modality": "text",
+          "page_number": 15,
+          "score": 0.3493,
+          "text_preview": "12 「智富长传」 身故赔偿 预设保单指示 支付选项 个 承保機構： 「智富长传」预设保单指示 以智启富，以爱长传 中銀集團人壽保險有限公司（「中銀人壽」）的指定計劃1提供「智富長傳」預設 保單指示（2「指示」），讓保單權益人從12個不同的身故賠償支付選項（包括 付款安排及／或給付選項）中為受益人作選擇，協助您的家庭作財務規劃並 從容地應對未來變數。 保單權益人可以書面向中銀人壽申請「智富長傳」預"
+        }
+      ],
+      "model_cot": "问题类型: 流程类\n关键实体: 身故、理赔、被保险人\n证据匹配:\n  - 结果1（《LPPM 753-2404SC Wealth Advance II...》）: 与查询目标不匹配，不可用\n  - 结果2（《LPPM 771-2406SC Wealth Genuis In...》）: 与查询目标不匹配，不可用\n  - 结果3（《prime-eternity-product-brochure...》）: 与查询目标不匹配，不可用\n  - 结果4（《IncomePower_Tc...》）: 与查询目标不匹配，不可用\n  - 结果5（《IncomeJoy_Sc...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答",
+      "final_answer": "[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+      "raw_model_output": "<Thought>\n问题类型: 流程类\n关键实体: 身故、理赔、被保险人\n证据匹配:\n  - 结果1（《LPPM 753-2404SC Wealth Advance II...》）: 与查询目标不匹配，不可用\n  - 结果2（《LPPM 771-2406SC Wealth Genuis In...》）: 与查询目标不匹配，不可用\n  - 结果3（《prime-eternity-product-brochure...》）: 与查询目标不匹配，不可用\n  - 结果4（《IncomePower_Tc...》）: 与查询目标不匹配，不可用\n  - 结果5（《IncomeJoy_Sc...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答\n</Thought>\n[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+      "evaluation": {
+        "retrieval_relevance": 0,
+        "faithfulness": 0,
+        "rejection_quality": 0,
+        "completeness": 0,
+        "total": 0,
+        "verdict": "FAIL",
+        "reason": "提供的检索结果均与问题无关，无法提供有效依据。"
+      }
+    },
+    {
+      "id": 3,
+      "category": "边界条款",
+      "expected": "有答案",
+      "note": "自杀免责条款，多数寿险合同有两年自杀不赔规定",
+      "prompt": "如果被保险人在保险合同生效后两年内自杀，保险公司是否赔付？",
+      "mode": "raft",
+      "top_k": 5,
+      "latency_total_s": 11.07,
+      "latency_eval_s": 3.43,
+      "retrieval": [
+        {
+          "rank": 1,
+          "company": "prudential",
+          "category": "wealth",
+          "product_name": "evergreen-wealth-income-plus-product-brochure",
+          "source": "sourcepdf/prudential/wealth/evergreen-wealth-income-plus-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 17,
+          "score": 0.2154,
+          "text_preview": "计划的详细信息 关于股东全资分红计划 重要事项 计划特点 保障概览 计划如何帮到您 重要信息 自殺條款 假如受保人在保單生效日或任何復效日期（以較後者為準）起計1年內自殺，不論當時神智正常或失常，身故賠償將只 限於退還已繳交的保費（不附利息），並扣除我們就本保單曾支付的任何金額和任何您未償還的欠款。 在更換受保人後，假如新受保人在更換受保人的生效日起計1年內或其後的任何保單複效日期起計1年內（以較"
+        },
+        {
+          "rank": 2,
+          "company": "AIA",
+          "category": "life",
+          "product_name": "EasyGuardTermLife_tc",
+          "source": "sourcepdf/AIA/life/EasyGuardTermLife_tc.pdf",
+          "modality": "text",
+          "page_number": 7,
+          "score": 0.2812,
+          "text_preview": "保費調整 自殺 若受保人於保單生效起計一年內自殺身亡，我們就此保單的賠償 為了持續向您提供保障，我們會不時覆核您計劃下的保費。如有需 責任只限退還於此計劃下扣除所有向我們償還的款項後的已付保費 要，我們會於每年度終結時作出相應調整。我們在覆核時會考慮的 （不包括利息）。 因素包括但不限於： 不得提出異議 • 此計劃下所有保單的理賠成本及未來的預期理賠支出（反映死 亡的發生率之改變所帶來的影響）; "
+        },
+        {
+          "rank": 3,
+          "company": "prudential",
+          "category": "medical",
+          "product_name": "prumyhealth-prestige-medical-plan-2025-product-brochure",
+          "source": "sourcepdf/prudential/medical/prumyhealth-prestige-medical-plan-2025-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 26,
+          "score": 0.2913,
+          "text_preview": "重要信息 自杀条款 假如受保人在保单生效日或任何复效日期（以较迟者为准）起计1年内自杀，不论当时神智正常或失常，身故赔偿将只限于 退还已缴交的保费（不附利息），并扣除我们就本保单曾支付的任何金额和任何您未偿还的欠款。 取消保单的权利 购买人寿保险计划的客户有权在冷静期（即「犹豫期」）内取消保单，并可获退回已扣除任何曾提取现金款项后的任何已缴付 保费和保费征费。只要保单未曾作出索偿，客户可在（1）保"
+        },
+        {
+          "rank": 4,
+          "company": "prudential",
+          "category": "medical",
+          "product_name": "pruhealth-medical-plus-2024-product-brochure",
+          "source": "sourcepdf/prudential/medical/pruhealth-medical-plus-2024-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 21,
+          "score": 0.3533,
+          "text_preview": "重要信息 自杀条款 假如受保人在保单生效日或任何复效日期（以较后者为准）起计1年内自杀，不论当时神智正常或失常，身故赔偿将只限于退还 已缴交的保费（不附利息），并扣除我们就本保单曾支付的任何金额和任何您未偿还的欠款。 取消保单的权利 购买人寿保险计划的客户有权在冷静期（即「犹豫期」）内取消保单，并可获退回已扣除任何曾提取现金款项后的任何已缴付 保费和保费征费。只要保单未曾作出索偿，客户可在（1）保"
+        },
+        {
+          "rank": 5,
+          "company": "prudential",
+          "category": "medical",
+          "product_name": "pruhealth-essential-critical-care-product-brochure",
+          "source": "sourcepdf/prudential/medical/pruhealth-essential-critical-care-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 12,
+          "score": 0.3758,
+          "text_preview": "重要信息 自殺條款 假如受保人在保單生效日或任何復效日期（以較後者為準）起計1年內自殺，不論當時神智正常或失常，身故賠償將只限於退還 已繳交的保費（不附利息），並扣除我們就本保單曾支付的任何金額和任何您未償還的欠款。 取消保單的權利 購買人壽保險計劃的客戶有權在冷靜期（即「猶豫期」）內取消保單，並可獲退回已扣除任何曾提取現金款項後的任何已繳付 保費和保費征費。只要保單未曾作出索償，客戶可在 (1)"
+        }
+      ],
+      "model_cot": "问题类型: 判断类\n关键实体: 被保险人、保险公司、合同\n证据匹配:\n  - 结果1（'evergreen-wealth-income-plus-pro...’）: 包含目标信息，可用\n  - 结果2（'EasyGuardTermLife_tc’）: 关联度低，忽略\n  - 结果3（'prumyhealth-prestige-medical-plan...’）: 关联度低，忽略\n  - 结果4（'pruhealth-medical-plus-2024-produc...’）: 关联度低，忽略\n  - 结果5（'pruhealth-essential-critical-care-pro...’）: 包含目标信息，可用\n推理路径: 明确判断标准 → 对照条款规定 → 得出是否结论",
+      "final_answer": "[答案] 否，保险公司不赔付。根据材料，如果被保险人在保险合同生效后1年内自杀，保险公司只退还已缴交的保费（不附利息），并扣除已支付的金额和欠款。如果被保险人在1年后自杀，保险公司将不再赔付。",
+      "raw_model_output": "<Thought>\n问题类型: 判断类\n关键实体: 被保险人、保险公司、合同\n证据匹配:\n  - 结果1（'evergreen-wealth-income-plus-pro...’）: 包含目标信息，可用\n  - 结果2（'EasyGuardTermLife_tc’）: 关联度低，忽略\n  - 结果3（'prumyhealth-prestige-medical-plan...’）: 关联度低，忽略\n  - 结果4（'pruhealth-medical-plus-2024-produc...’）: 关联度低，忽略\n  - 结果5（'pruhealth-essential-critical-care-pro...’）: 包含目标信息，可用\n推理路径: 明确判断标准 → 对照条款规定 → 得出是否结论\n</Thought>\n[答案] 否，保险公司不赔付。根据材料，如果被保险人在保险合同生效后1年内自杀，保险公司只退还已缴交的保费（不附利息），并扣除已支付的金额和欠款。如果被保险人在1年后自杀，保险公司将不再赔付。",
+      "evaluation": {
+        "retrieval_relevance": 3,
+        "faithfulness": 3,
+        "rejection_quality": 0,
+        "completeness": 3,
+        "total": 9,
+        "verdict": "PASS",
+        "reason": "材料中明确提到，如果被保险人在保险合同生效后1年内自杀，保险公司只退还已缴交的保费（不附利息），并扣除已支付的金额和欠款。因此，保险公司不进行赔付。"
+      }
+    },
+    {
+      "id": 4,
+      "category": "定义类",
+      "expected": "有答案",
+      "note": "犹豫期（冷静期）条款，通常为10-15天",
+      "prompt": "投保人购买保险后可以反悔吗？犹豫期是多少天？",
+      "mode": "raft",
+      "top_k": 5,
+      "latency_total_s": 10.61,
+      "latency_eval_s": 6.53,
+      "retrieval": [
+        {
+          "rank": 1,
+          "company": "prudential",
+          "category": "medical",
+          "product_name": "prumed-lifelong-care-plan-product-brochure",
+          "source": "sourcepdf/prudential/medical/prumed-lifelong-care-plan-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 25,
+          "score": 0.0588,
+          "text_preview": "重要信息 取消保单的权利 购买人寿保险计划的客户有权在冷静期内（即「犹豫期」）取消保单，并可获退回已扣除任何曾提取现金款项后的任何已缴付 保费和保费征费。只要保单未曾作出索偿，客户可在（1）保单或（2）有关通知书（以说明保单已经备妥和犹豫期的届满天）交付 给客户或其指定代表的当天起计的21个历日内，以较先者为准，以书面通知我们提出取消保单。该通知书必须由客户签署并由 保诚保险有限公司在香港九龙尖沙"
+        },
+        {
+          "rank": 2,
+          "company": "prudential",
+          "category": "medical",
+          "product_name": "prumyhealth-prestige-medical-plan-2025-product-brochure",
+          "source": "sourcepdf/prudential/medical/prumyhealth-prestige-medical-plan-2025-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 26,
+          "score": 0.2824,
+          "text_preview": "重要信息 自杀条款 假如受保人在保单生效日或任何复效日期（以较迟者为准）起计1年内自杀，不论当时神智正常或失常，身故赔偿将只限于 退还已缴交的保费（不附利息），并扣除我们就本保单曾支付的任何金额和任何您未偿还的欠款。 取消保单的权利 购买人寿保险计划的客户有权在冷静期（即「犹豫期」）内取消保单，并可获退回已扣除任何曾提取现金款项后的任何已缴付 保费和保费征费。只要保单未曾作出索偿，客户可在（1）保"
+        },
+        {
+          "rank": 3,
+          "company": "prudential",
+          "category": "medical",
+          "product_name": "pruhealth-medical-plus-2024-product-brochure",
+          "source": "sourcepdf/prudential/medical/pruhealth-medical-plus-2024-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 21,
+          "score": 0.3272,
+          "text_preview": "重要信息 自杀条款 假如受保人在保单生效日或任何复效日期（以较后者为准）起计1年内自杀，不论当时神智正常或失常，身故赔偿将只限于退还 已缴交的保费（不附利息），并扣除我们就本保单曾支付的任何金额和任何您未偿还的欠款。 取消保单的权利 购买人寿保险计划的客户有权在冷静期（即「犹豫期」）内取消保单，并可获退回已扣除任何曾提取现金款项后的任何已缴付 保费和保费征费。只要保单未曾作出索偿，客户可在（1）保"
+        },
+        {
+          "rank": 4,
+          "company": "prudential",
+          "category": "critical_illness",
+          "product_name": "pruhealth-guardian-critical-illness-plan-series-product-brochure",
+          "source": "sourcepdf/prudential/critical_illness/pruhealth-guardian-critical-illness-plan-series-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 32,
+          "score": 0.3418,
+          "text_preview": "重要信息 自杀条款 假如受保人在保单生效日或任何复效日期（以较后者为准）起计1年内自杀，不论当时神智正常或失常，所有保障收益将只限 于退还已缴交的保费（不附利息），并扣除我们就本保单曾支付的任何金额和任何您未偿还的欠款。 取消保单的权利 购买人寿保险计划的客户有权在冷静期（即「犹豫期」）内取消保单，并可获退回已扣除任何曾提取现金款项后的任何已缴付 保费和保费征费。只要保单未曾作出索偿，客户可在 ("
+        },
+        {
+          "rank": 5,
+          "company": "prudential",
+          "category": "medical",
+          "product_name": "encash-product-brochure",
+          "source": "sourcepdf/prudential/medical/encash-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 19,
+          "score": 0.3549,
+          "text_preview": "计划的详细信息 关于股东全资分红计划 重要事项 计划特点 重点保障 保障表 主要不受保范围 重要信息 自杀条款 假如受保人在保单生效日或任何复效日期（以较后者为准）起计1年内自杀，不论当时神智正常或失常，所有保障收益将只限于 退还已缴保费（不附利息），并扣除我们就本保单曾支付的任何金额和任何您未偿还的欠款。 取消保单的权利 购买人寿保险计划的客户有权在冷静期（即「犹豫期」）内取消保单，并可获退回已"
+        }
+      ],
+      "model_cot": "问题类型: 判断类\n关键实体: 投保人、投保\n证据匹配:\n  - 结果1（《prumed-lifelong-care-plan-product-bro...》）: 包含目标信息，可用\n  - 结果2（《prumyhealth-prestige-medical-plan-...》）: 关联度低，忽略\n  - 结果3（《pruhealth-medical-plus-2024-produc...》）: 关联度低，忽略\n  - 结果4（《pruhealth-guardian-critical-illness...》）: 关联度低，忽略\n  - 结果5（《encash-product-brochure》）: 关联度低，忽略\n推理路径: 明确判断标准 → 对照条款规定 → 得出是否结论",
+      "final_answer": "[答案] 是的，投保人在**犹豫期**内可以取消保险合同。**犹豫期**为21天。**犹豫期**是指从保险合同生效日起21天内，投保人有权无条件解除合同。",
+      "raw_model_output": "<Thought>\n问题类型: 判断类\n关键实体: 投保人、投保\n证据匹配:\n  - 结果1（《prumed-lifelong-care-plan-product-bro...》）: 包含目标信息，可用\n  - 结果2（《prumyhealth-prestige-medical-plan-...》）: 关联度低，忽略\n  - 结果3（《pruhealth-medical-plus-2024-produc...》）: 关联度低，忽略\n  - 结果4（《pruhealth-guardian-critical-illness...》）: 关联度低，忽略\n  - 结果5（《encash-product-brochure》）: 关联度低，忽略\n推理路径: 明确判断标准 → 对照条款规定 → 得出是否结论\n</Thought>\n[答案] 是的，投保人在**犹豫期**内可以取消保险合同。**犹豫期**为21天。**犹豫期**是指从保险合同生效日起21天内，投保人有权无条件解除合同。",
+      "evaluation": {
+        "retrieval_relevance": -1,
+        "faithfulness": -1,
+        "rejection_quality": -1,
+        "completeness": -1,
+        "total": -1,
+        "verdict": "ERROR",
+        "reason": "评估解析失败: <think>\n\n</think>\n\n<Thought>\n问题类型: 判断类\n关键实体: 投保人、投保\n证据匹配:\n  - 结果1（《prumed-lifelong-care-plan-product-bro...》）: 包含目标信息，可用\n  - 结果2（《prumyhealth-prestige-medical-plan-...》）: 关联度低，忽略\n  - 结果3（《pruhealth-me"
+      }
+    },
+    {
+      "id": 5,
+      "category": "英文-免责条款",
+      "expected": "有答案",
+      "note": "既往症免责条款，英文查询",
+      "prompt": "What are the exclusions for pre-existing medical conditions in the health insurance policy?",
+      "mode": "raft",
+      "top_k": 5,
+      "latency_total_s": 7.63,
+      "latency_eval_s": 2.79,
+      "retrieval": [
+        {
+          "rank": 1,
+          "company": "hsbc",
+          "category": "medical",
+          "product_name": "2025-sep-product-brochure",
+          "source": "sourcepdf/hsbc/medical/2025-sep-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 23,
+          "score": 0.25,
+          "text_preview": "Introduction Product key facts Key risk and Benefit schedule Premium table and Important notes Key exclusions Endnotes Key features Extensive coverage and support in every stage of your medical journe"
+        },
+        {
+          "rank": 2,
+          "company": "hsbc",
+          "category": "medical",
+          "product_name": "2025-sep-product-brochure",
+          "source": "sourcepdf/hsbc/medical/2025-sep-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 38,
+          "score": 2.7972,
+          "text_preview": "Important Product key facts Key risk and Introduction Benefit schedule Premium table and notes Key exclusions Endnotes Important notes Termination We have the right to terminate your policy under any "
+        },
+        {
+          "rank": 3,
+          "company": "prudential",
+          "category": "accident",
+          "product_name": "pruchoice-personal-accident-plus-product-brochure",
+          "source": "sourcepdf/prudential/accident/pruchoice-personal-accident-plus-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 9,
+          "score": 3.2852,
+          "text_preview": "Period of Insurance 保險期 Policy commences on (dd/ mm/ yy) for one year. 本保單由 （日/ 月/ 年）起生效，為期一年。 Insurance Details 投保資料 1. Does any person to be covered suffer from any illness, mental disease, physical"
+        },
+        {
+          "rank": 4,
+          "company": "prudential",
+          "category": "medical",
+          "product_name": "pruchoice-healthcheck-product-brochure",
+          "source": "sourcepdf/prudential/medical/pruchoice-healthcheck-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 9,
+          "score": 3.3908,
+          "text_preview": ""
+        },
+        {
+          "rank": 5,
+          "company": "hsbc",
+          "category": "medical",
+          "product_name": "2025-sep-product-brochure",
+          "source": "sourcepdf/hsbc/medical/2025-sep-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 36,
+          "score": 3.4134,
+          "text_preview": "programme or insurance policy provided by any government, company or other third party. • War (declared or undeclared), civil war, invasion, acts of foreign enemies, hostilities, rebellion, revolution"
+        }
+      ],
+      "model_cot": "问题类型: 定义类\n关键实体: （见问题）\n证据匹配:\n  - 结果1（《2025-sep-product-brochure...》）: 包含目标信息，可用\n  - 结果2（《2025-sep-product-brochure...》）: 关联度低，忽略\n  - 结果3（《pruchoice-personal-accident-plus...》）: 关联度低，忽略\n  - 结果4（《2025-sep-product-brochure...》）: 关联度低，忽略\n推理路径: 定位相关条款 → 提取术语定义 → 说明适用范围",
+      "final_answer": "[答案] The policy does not exclude pre-existing medical conditions. It provides immediate protection for unknown pre-existing conditions.",
+      "raw_model_output": "<Thought>\n问题类型: 定义类\n关键实体: （见问题）\n证据匹配:\n  - 结果1（《2025-sep-product-brochure...》）: 包含目标信息，可用\n  - 结果2（《2025-sep-product-brochure...》）: 关联度低，忽略\n  - 结果3（《pruchoice-personal-accident-plus...》）: 关联度低，忽略\n  - 结果4（《2025-sep-product-brochure...》）: 关联度低，忽略\n推理路径: 定位相关条款 → 提取术语定义 → 说明适用范围\n</Thought>\n[答案] The policy does not exclude pre-existing medical conditions. It provides immediate protection for unknown pre-existing conditions.",
+      "evaluation": {
+        "retrieval_relevance": 3,
+        "faithfulness": 3,
+        "rejection_quality": 0,
+        "completeness": 3,
+        "total": 12,
+        "verdict": "PASS",
+        "reason": "The answer directly addresses the question and provides the specific information requested, which is found in the provided reference material."
+      }
+    },
+    {
+      "id": 6,
+      "category": "权利义务",
+      "expected": "有答案",
+      "note": "合同变更权利，保险法基本条款",
+      "prompt": "保险公司可以单方面变更合同条款吗？投保人有哪些权利？",
+      "mode": "raft",
+      "top_k": 5,
+      "latency_total_s": 10.6,
+      "latency_eval_s": 2.34,
+      "retrieval": [
+        {
+          "rank": 1,
+          "company": "AXA",
+          "category": "wealth",
+          "product_name": "LPPM 930-2505SC Max Goal II Insurance Plan Product brochure SC (HK)",
+          "source": "sourcepdf/AXA/wealth/LPPM 930-2505SC Max Goal II Insurance Plan Product brochure SC (HK).pdf",
+          "modality": "text",
+          "page_number": 26,
+          "score": 0.225,
+          "text_preview": "备注 计划特点 产品概览 重要信息 ※ 本公司拥有全权和绝对酌情权决定批准或不批准由后备持有人或暂托人（视情况而定）接替持有权： 情況 结果 ※ （a） 如果本公司批准由后备持有人或其法定代表人 后备持有人或其法定代表人（视情况而定）将成为新的保单 接替保单持有权（视情况而定） 持有人，并应当承担保单下的所有义务，以及有权行使保单 持有人的所有权利 ※ （b） 如果本公司批准由暂托人 取代原保单持"
+        },
+        {
+          "rank": 2,
+          "company": "AXA",
+          "category": "wealth",
+          "product_name": "LPPM 930-2505SC Max Goal II Insurance Plan Product brochure SC (HK)",
+          "source": "sourcepdf/AXA/wealth/LPPM 930-2505SC Max Goal II Insurance Plan Product brochure SC (HK).pdf",
+          "modality": "text",
+          "page_number": 26,
+          "score": 0.521,
+          "text_preview": ""
+        },
+        {
+          "rank": 3,
+          "company": "AIA",
+          "category": "wealth",
+          "product_name": "SimplyLoveEncore5_sc",
+          "source": "sourcepdf/AIA/wealth/SimplyLoveEncore5_sc.pdf",
+          "modality": "text",
+          "page_number": 8,
+          "score": 0.6166,
+          "text_preview": "7 儲蓄及退休收入 「簡愛‧延續」保障計劃5 保障一覽（續） 退保利益 退保利益將包括: ‧保證現金價值；及 ‧任何保單內累積的非保證週年紅利及利息；及 ‧任何非保證終期紅利；及 ‧任何終期紅利鎖定戶口余額（如適用）。 我們支付退保利益前，將先扣除保單內所有未償還的欠款。 更改受保人選項 根據我們的批准，您可透過更改受保人選項無限次更改受保人。 在申請行使更改受保人選項時 ‧您可在原有受保人在生時"
+        },
+        {
+          "rank": 4,
+          "company": "prudential",
+          "category": "wealth",
+          "product_name": "evergreen-wealth-income-plus-product-brochure",
+          "source": "sourcepdf/prudential/wealth/evergreen-wealth-income-plus-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 17,
+          "score": 0.9577,
+          "text_preview": "计划的详细信息 关于股东全资分红计划 重要事项 计划特点 保障概览 计划如何帮到您 重要信息 自殺條款 假如受保人在保單生效日或任何復效日期（以較後者為準）起計1年內自殺，不論當時神智正常或失常，身故賠償將只 限於退還已繳交的保費（不附利息），並扣除我們就本保單曾支付的任何金額和任何您未償還的欠款。 在更換受保人後，假如新受保人在更換受保人的生效日起計1年內或其後的任何保單複效日期起計1年內（以較"
+        },
+        {
+          "rank": 5,
+          "company": "hangseng",
+          "category": "life",
+          "product_name": "PhoenixLife_Tc",
+          "source": "sourcepdf/hangseng/life/PhoenixLife_Tc.pdf",
+          "modality": "text",
+          "page_number": 12,
+          "score": 1.0994,
+          "text_preview": "後續保單持有人 ‧ 保單持有人在保單生效期內可提出書面申請指定1位後續保單持 有人。 ‧ 保單持有人同一時間只可指定1位個別人士為後續保單持有人。 ‧ 後續保單持有人一經成為保單持有人，任何於「恒生保險」記錄 上之受益人將自動被撤銷。 更改受保人 ‧ 當保單生效時，保單持有人可以於首個保單周年日後的任何時間 申請更改受保人。 ‧ 每份保單能申請更換受保人共3次，並不需支付任何行政費用惟 須受有關條"
+        }
+      ],
+      "model_cot": "问题类型: 判断类\n关键实体: 投保人、保险公司、合同\n证据匹配:\n  - 结果1（《LPPM 930-2505SC Max Goal II...》）: 与查询目标不匹配，不可用\n  - 结果2（《SimplyLoveEncore5_sc...》）: 与查询目标不匹配，不可用\n  - 结果3（《evergreen-wealth-income-plus-product...》）: 与查询目标不匹配，不可用\n  - 结果4（《PhoenixLife_Tc...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答",
+      "final_answer": "[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+      "raw_model_output": "<Thought>\n问题类型: 判断类\n关键实体: 投保人、保险公司、合同\n证据匹配:\n  - 结果1（《LPPM 930-2505SC Max Goal II...》）: 与查询目标不匹配，不可用\n  - 结果2（《SimplyLoveEncore5_sc...》）: 与查询目标不匹配，不可用\n  - 结果3（《evergreen-wealth-income-plus-product...》）: 与查询目标不匹配，不可用\n  - 结果4（《PhoenixLife_Tc...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答\n</Thought>\n[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+      "evaluation": {
+        "retrieval_relevance": 0,
+        "faithfulness": 0,
+        "rejection_quality": 0,
+        "completeness": 0,
+        "total": 0,
+        "verdict": "FAIL",
+        "reason": "提供的检索结果与问题完全不相关，无法提供任何有效依据。"
+      }
+    },
+    {
+      "id": 7,
+      "category": "数值类",
+      "expected": "有答案",
+      "note": "免赔额和报销比例，可能因产品而异",
+      "prompt": "医疗保险的免赔额是多少？超过免赔额的部分按什么比例报销？",
+      "mode": "raft",
+      "top_k": 5,
+      "latency_total_s": 8.25,
+      "latency_eval_s": 1.84,
+      "retrieval": [
+        {
+          "rank": 1,
+          "company": "prudential",
+          "category": "medical",
+          "product_name": "prumed-lifelong-care-plan-product-brochure",
+          "source": "sourcepdf/prudential/medical/prumed-lifelong-care-plan-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 14,
+          "score": 0.2824,
+          "text_preview": "额外医疗计划（自选）(10) 额外医疗计划下的 终身赔偿保障额(11) （ 由紧接受保人达75岁 150,000美元∕1,200,000港元  下次生日年龄后的 保单周年日起生效） (a)额外医疗经典保障(10) (12) (b)网络额外保障(8) (10) 普通病房 半私家病房 私家病房 普通病房 半私家病房 私家病房 总赔偿限额 总赔偿限额(12) （每次病患∕受伤∕住院(2)） （每次病"
+        },
+        {
+          "rank": 2,
+          "company": "prudential",
+          "category": "medical",
+          "product_name": "prumed-lifelong-care-plan-product-brochure",
+          "source": "sourcepdf/prudential/medical/prumed-lifelong-care-plan-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 13,
+          "score": 0.3431,
+          "text_preview": "额外医疗计划（自选）(10) 额外医疗计划下的 终身赔偿保障额(11) （ 由紧接受保人达75岁 150,000美元∕1,200,000港元  下次生日年龄后的 保单周年日起生效） (a)额外医疗经典保障(10) (12) (b)网络额外保障(8) (10) 普通病房 半私家病房 私家病房 普通病房 半私家病房 私家病房 总赔偿限额 总赔偿限额(12) （每次病患∕受伤∕住院(2)） （每次病"
+        },
+        {
+          "rank": 3,
+          "company": "AIA",
+          "category": "critical_illness",
+          "product_name": "SmartEliteUltra_sc",
+          "source": "sourcepdf/AIA/critical_illness/SmartEliteUltra_sc.pdf",
+          "modality": "text",
+          "page_number": 10,
+          "score": 0.9647,
+          "text_preview": "Column: 賠償額, Values=,預支原有保額的 40%▽,,原有保額的 100%,最高2次賠償， 每次賠償為 原有保額的100%"
+        },
+        {
+          "rank": 4,
+          "company": "prudential",
+          "category": "medical",
+          "product_name": "pruhealth-flexichoice-medical-plan-r-product-brochure",
+          "source": "sourcepdf/prudential/medical/pruhealth-flexichoice-medical-plan-r-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 15,
+          "score": 1.1751,
+          "text_preview": "额外医疗计划（自选保障） 最高赔偿限额 保障项目(1) （网络关怀保障和非网络关怀保障的赔偿总额不可超过额外医疗计划的赔偿限额） 保障项目(1) 网络关怀保障(9) 非网络关怀保障 普通病房 半私家病房 私家病房 普通病房 半私家病房 私家病房 美元 港元 美元 港元 美元 港元 美元 港元 美元 港元 美元 港元 II. 外科手术保障 外科医生费 1 100% 80% （ 每项手术） 麻醉科医生"
+        },
+        {
+          "rank": 5,
+          "company": "AXA",
+          "category": "medical",
+          "product_name": "HPPM801-2307C_AXA-Smart-MediCare_PB_Jul23C",
+          "source": "sourcepdf/AXA/medical/HPPM801-2307C_AXA-Smart-MediCare_PB_Jul23C.pdf",
+          "modality": "text",
+          "page_number": 10,
+          "score": 1.1789,
+          "text_preview": "7 （ ） 「真智安心醫療保障」之額外醫療附加保障 （自選）保障表（只適用於住院） 賠償限額 (1) 保障項目 標準 特級 至尊 實際住院開支在扣除「真智 安心醫療保障」的保障額後 80% 80% 80% (a) –– （即列於上表的保障項目 20% 20% 20% （相等於 共同保險） （相等於 共同保險） （相等於 共同保險） (h) 的保障額），賠償餘額之 百分比，惟受限於以下限額 額外醫療"
+        }
+      ],
+      "model_cot": "问题类型: 计算类\n关键实体: 免赔额、报销\n证据匹配:\n  - 结果1（《prumed-lifelong-care-plan-product-bro...》）: 与查询目标不匹配，不可用\n  - 结果2（《prumed-lifelong-care-plan-product-bro...》）: 与查询目标不匹配，不可用\n  - 结果3（《SmartEliteUltra_sc...》）: 与查询目标不匹配，不可用\n  - 结果4（《pruhealth-flexichoice-medical-plan-r...》）: 与查询目标不匹配，不可用\n  - 结果5（《HPPM801-2307C_AXA-Smart-MediCare...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答",
+      "final_answer": "[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+      "raw_model_output": "<Thought>\n问题类型: 计算类\n关键实体: 免赔额、报销\n证据匹配:\n  - 结果1（《prumed-lifelong-care-plan-product-bro...》）: 与查询目标不匹配，不可用\n  - 结果2（《prumed-lifelong-care-plan-product-bro...》）: 与查询目标不匹配，不可用\n  - 结果3（《SmartEliteUltra_sc...》）: 与查询目标不匹配，不可用\n  - 结果4（《pruhealth-flexichoice-medical-plan-r...》）: 与查询目标不匹配，不可用\n  - 结果5（《HPPM801-2307C_AXA-Smart-MediCare...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答\n</Thought>\n[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+      "evaluation": {
+        "retrieval_relevance": 0,
+        "faithfulness": 0,
+        "rejection_quality": 0,
+        "completeness": 0,
+        "total": 0,
+        "verdict": "FAIL",
+        "reason": "提供的检索结果与问题无关，无法提供有效依据。"
+      }
+    },
+    {
+      "id": 8,
+      "category": "热点-边界",
+      "expected": "拒答（证据不足）",
+      "note": "新冠相关条款，多数合同签署时无此条款，预期拒答",
+      "prompt": "新冠肺炎（COVID-19）是否属于该保险合同的重大疾病保障范围？",
+      "mode": "raft",
+      "top_k": 5,
+      "latency_total_s": 9.41,
+      "latency_eval_s": 1.85,
+      "retrieval": [
+        {
+          "rank": 1,
+          "company": "hsbc",
+          "category": "critical_illness",
+          "product_name": "2022-jul-product-brochure",
+          "source": "sourcepdf/hsbc/critical_illness/2022-jul-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 10,
+          "score": 0.35,
+          "text_preview": "保障摘要 危疾清单 残疾 ‧ 失明 ‧ 失聪 ‧ 不能独立生活^ ‧ 丧失肢体 ‧ 失去一只眼睛和一肢 ‧ 丧失语言能力 ‧ 小儿麻痹症⁄脊髓灰质炎 ‧ 完全及永久伤残^ 手术及深切治疗相关 ‧ 重大医疗治疗1^ 其他疾病 ‧ 因输血感染爱滋病/人类免疫力缺乏病毒‧ 再生障碍性贫血 ‧ 克罗恩氏病 ‧ 伊波拉 ‧ 象皮病 ‧ 破伤风 ‧ 溶血性链球菌引致之坏疽 ‧ 因突击感染人类免疫力缺乏病毒 ‧"
+        },
+        {
+          "rank": 2,
+          "company": "manulife",
+          "category": "critical_illness",
+          "product_name": "incomeshield-critical-illness-protector",
+          "source": "sourcepdf/manulife/critical_illness/incomeshield-critical-illness-protector.pdf",
+          "modality": "text",
+          "page_number": 23,
+          "score": 0.5,
+          "text_preview": "重要事项 计划特点 其他特点 增值服务 案例 计划概览 注 17. 不保事项和限制 如果因为以下任何一项导致危疾， 本公司将不会作出任何在生保障赔偿： i. 直接或间接因患上后天免疫力缺乏症候群 (艾滋病)、 与艾滋病有关的并发症、 或感染人类免疫力缺乏症病毒而引致患上危疾； ii . 不论事发时精神是否健全， 由于自杀、 试图自杀或蓄意自我伤害而受伤引致患上危疾； iii . 在任何符合条款「 "
+        },
+        {
+          "rank": 3,
+          "company": "hsbc",
+          "category": "critical_illness",
+          "product_name": "2022-jul-product-brochure",
+          "source": "sourcepdf/hsbc/critical_illness/2022-jul-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 11,
+          "score": 0.55,
+          "text_preview": "重要事项 不保事项 「危疾」不包括以下情况： (1) 受保人在签发日期、保单日期或最后一次保单复效的生效日期（以较迟者为准）前已知已存在的状况； 或 (2) 受保人在签发日期、保单日期或最后一次保单复效的生效日期（以较迟者为准）起计首九十（90）日内 患上的任何疾病；或 (3) 并非经注册医生处方的药物中毒或酒精滥用；或 (4) 任何人体免疫力缺乏病毒（HIV）或任何与HIV有关的疾病，包括后天免"
+        },
+        {
+          "rank": 4,
+          "company": "manulife",
+          "category": "critical_illness",
+          "product_name": "manubright-care-2-plus",
+          "source": "sourcepdf/manulife/critical_illness/manubright-care-2-plus.pdf",
+          "modality": "text",
+          "page_number": 4,
+          "score": 0.575,
+          "text_preview": "您知道吗？ 延伸保障至危疾以外情况 2003 (SARS) 2019 疾病总是突如其来，难以预测。正如 年的严重急性呼吸系统综合症 及 年 2019 开始的 冠状病毒病，疫情的发展难以估计并迅速扩散，患者更可能需接受深切治疗。 2019年香港 2 因此，活耀人生危疾保 (加强版)除了涵盖常见危疾及疾病，更进一步就深切治疗住院提 1 供保障，而且包括受伤及将来未知的疾病。 主要致死原因 ： • 癌症"
+        },
+        {
+          "rank": 5,
+          "company": "manulife",
+          "category": "critical_illness",
+          "product_name": "manubright-care-2-plus",
+          "source": "sourcepdf/manulife/critical_illness/manubright-care-2-plus.pdf",
+          "modality": "text",
+          "page_number": 5,
+          "score": 0.59,
+          "text_preview": "您知道吗？ 延伸保障至危疾以外情况 2003 (SARS) 2019 疾病总是突如其来，难以预测。正如 年的严重急性呼吸系统综合症 及 年 2019 开始的 冠状病毒病，疫情的发展难以估计并迅速扩散，患者更可能需接受深切治疗。 2019年香港 2 因此，活耀人生危疾保 (加强版)除了涵盖常见危疾及疾病，更进一步就深切治疗住院提 1 供保障，而且包括受伤及将来未知的疾病。 主要致死原因 ： • 癌症"
+        }
+      ],
+      "model_cot": "问题类型: 判断类\n关键实体: 范围、疾病、新冠肺炎\n证据匹配:\n  - 结果1（《2022-jul-product-brochure...》）: 与查询目标不匹配，不可用\n  - 结果2（《incomeshield-critical-illness-prot...》）: 与查询目标不匹配，不可用\n  - 结果3（《2022-jul-product-brochure...》）: 与查询目标不匹配，不可用\n  - 结果4（《manubright-care-2-plus...》）: 与查询目标不匹配，不可用\n  - 结果5（《manubright-care-2-plus...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答",
+      "final_answer": "[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+      "raw_model_output": "<Thought>\n问题类型: 判断类\n关键实体: 范围、疾病、新冠肺炎\n证据匹配:\n  - 结果1（《2022-jul-product-brochure...》）: 与查询目标不匹配，不可用\n  - 结果2（《incomeshield-critical-illness-prot...》）: 与查询目标不匹配，不可用\n  - 结果3（《2022-jul-product-brochure...》）: 与查询目标不匹配，不可用\n  - 结果4（《manubright-care-2-plus...》）: 与查询目标不匹配，不可用\n  - 结果5（《manubright-care-2-plus...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答\n</Thought>\n[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+      "evaluation": {
+        "retrieval_relevance": 0,
+        "faithfulness": 0,
+        "rejection_quality": 0,
+        "completeness": 0,
+        "total": 0,
+        "verdict": "FAIL",
+        "reason": "提供的检索结果与问题无关，无法提供有效依据。"
+      }
+    },
+    {
+      "id": 9,
+      "category": "复杂流程",
+      "expected": "有答案",
+      "note": "多受益人及受益人先亡场景，条款较为复杂",
+      "prompt": "保险合同的受益人可以指定为多人吗？如果受益人先于被保险人身故怎么办？",
+      "mode": "raft",
+      "top_k": 5,
+      "latency_total_s": 10.16,
+      "latency_eval_s": 2.59,
+      "retrieval": [
+        {
+          "rank": 1,
+          "company": "AIA",
+          "category": "wealth",
+          "product_name": "GlobalPowerMultiCurrencyPlan3_sc",
+          "source": "sourcepdf/AIA/wealth/GlobalPowerMultiCurrencyPlan3_sc.pdf",
+          "modality": "text",
+          "page_number": 20,
+          "score": 0.2657,
+          "text_preview": "19 儲蓄及退休收入 「盈御多元貨幣計劃3」 保障一覽（續） 第二受保人選項 根據我們的批准，您可透過第二受保人選項無限次更改第二受保人。 在指定第二受保人時 • 受限於我們的批准，您可於原有受保人在生時無限次指定、轉換或移除第二受保 人。 • 擬定之第二受保人的年齡須為15日至60歲。 • 您及受益人必須對擬定之第二受保人存在可保利益關係。 • 每份保單於保障年期內任何時間只可有一位第二受保人。"
+        },
+        {
+          "rank": 2,
+          "company": "AIA",
+          "category": "wealth",
+          "product_name": "SimplyLoveEncore5_sc",
+          "source": "sourcepdf/AIA/wealth/SimplyLoveEncore5_sc.pdf",
+          "modality": "text",
+          "page_number": 5,
+          "score": 0.2806,
+          "text_preview": "儲蓄及退休收入 4 「簡愛‧延續」保障計劃5 更改受保人選項及 如受保人不幸身故 第二受保人選項 可自選賠償支付方式 財富無限次傳承 若受保人不幸身故及沒有第二受保人成為新的受保人，我 後代 們將支付身故賠償予您的指定保單受益人。 在原有受保人在生時及由第1個保單年度終結後起，「更 身故賠償將包括（以較高者為準）： 改受保人選項」可讓您更改受保人為您的摯愛家人（須與 i. 保證現金價值；或 您及受"
+        },
+        {
+          "rank": 3,
+          "company": "AXA",
+          "category": "wealth",
+          "product_name": "LPPM 930-2505SC Max Goal II Insurance Plan Product brochure SC (HK)",
+          "source": "sourcepdf/AXA/wealth/LPPM 930-2505SC Max Goal II Insurance Plan Product brochure SC (HK).pdf",
+          "modality": "text",
+          "page_number": 12,
+          "score": 0.3056,
+          "text_preview": "计划特点 产品概览 重要信息 备注 保单 被保人 执行人 持有人 无限次更换被保人 �� 从第�个保单周年日开始，保单持有人可在符合本公司规定的情况下无限次更换保单被保人 。保险 �� 保障期将会更改为直至最新被保人���岁 为止，让您的财富惠泽后代。更换被保人不会影响保单 下的保单价值。 更换保单被保人 保单持有人可无限次更换保单被保人 更换保单被保人 更换保单被保人 被保人 保险保障期延续至 "
+        },
+        {
+          "rank": 4,
+          "company": "FWD",
+          "category": "wealth",
+          "product_name": "Easy_WealthPlus_2_TC",
+          "source": "sourcepdf/FWD/wealth/Easy_WealthPlus_2_TC.pdf",
+          "modality": "text",
+          "page_number": 4,
+          "score": 0.3379,
+          "text_preview": "主要產品特點 指定後續被保人及後續保單權益人 保單延續無憂 7 您可於保單生效且被保人仍在生時，預先指定後續被保人。倘若被保人不幸 身故，後續被保人將成為新被保人，免除保單因被保人突然過世而被終止的 8 風險。另外，您亦可於保單生效時，預先指定後續保單權益人，若原有保單 權益人不幸離世，保單可按您的意願由指定的後續保單權益人管理，讓財富 管理更有計劃。 投保簡便 申請手續簡易，毋須驗身。 3"
+        },
+        {
+          "rank": 5,
+          "company": "prudential",
+          "category": "wealth",
+          "product_name": "prime-eternity-product-brochure",
+          "source": "sourcepdf/prudential/wealth/prime-eternity-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 19,
+          "score": 0.4066,
+          "text_preview": "4. 每月分期支付，直至您唯一的受益人： • 无论任何时候，受益人均不可更改身故赔偿支付选择。 > 达到 ∕已达指定年龄；或 • 我们会在下列情况下取消任何身故赔偿支付选择，并以一次性形式支付有关 > 结婚；或 身故赔偿： > 生育（包括您的受益人或其配偶）；或 – 转让保单权益（就有关把保单权益转让至后续持有人的情况，请参阅下列 > 大学毕业；或 「 后续持有人」部分）；或 > 确诊癌症、心脏病"
+        }
+      ],
+      "model_cot": "问题类型: 判断类\n关键实体: 身故、受益人、被保险人\n证据匹配:\n  - 结果1（《GlobalPowerMultiCurrencyPlan3_sc...》）: 与查询目标不匹配，不可用\n  - 结果2（《SimplyLoveEncore5_sc...》）: 与查询目标不匹配，不可用\n  - 结果3（《LPPM 930-2505SC Max Goal II...》）: 与查询目标不匹配，不可用\n  - 结果4（《Easy_WealthPlus_2_TC...》）: 与查询目标不匹配，不可用\n  - 结果5（《prime-eternity-product-brochure...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答",
+      "final_answer": "[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+      "raw_model_output": "<Thought>\n问题类型: 判断类\n关键实体: 身故、受益人、被保险人\n证据匹配:\n  - 结果1（《GlobalPowerMultiCurrencyPlan3_sc...》）: 与查询目标不匹配，不可用\n  - 结果2（《SimplyLoveEncore5_sc...》）: 与查询目标不匹配，不可用\n  - 结果3（《LPPM 930-2505SC Max Goal II...》）: 与查询目标不匹配，不可用\n  - 结果4（《Easy_WealthPlus_2_TC...》）: 与查询目标不匹配，不可用\n  - 结果5（《prime-eternity-product-brochure...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答\n</Thought>\n[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+      "evaluation": {
+        "retrieval_relevance": 0,
+        "faithfulness": 0,
+        "rejection_quality": 0,
+        "completeness": 0,
+        "total": 0,
+        "verdict": "FAIL",
+        "reason": "提供的检索结果与问题无关，无法提供有效依据。"
+      }
+    },
+    {
+      "id": 10,
+      "category": "基础信息",
+      "expected": "有答案",
+      "note": "保障期限和续保条款，基础信息查询",
+      "prompt": "这份保险合同的保险期限是多久？续保时保费会调整吗？",
+      "mode": "raft",
+      "top_k": 5,
+      "latency_total_s": 9.65,
+      "latency_eval_s": 1.85,
+      "retrieval": [
+        {
+          "rank": 1,
+          "company": "sunlife",
+          "category": "life",
+          "product_name": "One_Five_Term_TC",
+          "source": "sourcepdf/sunlife/life/One_Five_Term_TC.pdf",
+          "modality": "text",
+          "page_number": 5,
+          "score": 0.1307,
+          "text_preview": "II II 一╱五年定期壽險計劃 ╱一╱五年定期壽險保障 五年定期壽險計劃 1. 此計劃的保費預期會於保單續保時而增加及我們將不時檢視並調整此基本計劃的保費以反映過往經驗及修訂將來預算。我們保留權利於保費繳付 期內的每個保單周年日，調整任何風險狀況類似之受保人組別的保費。在檢視保費時，我們會考慮並反映多項因素，包括但不限於下列因素： a. 此基本計劃下已作出的賠償開支及將來預算的賠償開支 b. 與"
+        },
+        {
+          "rank": 2,
+          "company": "manulife",
+          "category": "critical_illness",
+          "product_name": "careguard-critical-illness-benefit",
+          "source": "sourcepdf/manulife/critical_illness/careguard-critical-illness-benefit.pdf",
+          "modality": "text",
+          "page_number": 14,
+          "score": 0.24,
+          "text_preview": "重要事项 11. 1. 缓接期 产品性质 缓接期是指在下列日期（以较晚者为准）起计90 天内： i. 本产品是一份没有储蓄成分的危疾保障计划，并为一项附加保障。本产品没有现金价值。本产品适合有保险产品需要（如本产品宣传单所述）及在 如果本附加保障是在保单签发时已包含在内，在保单签发日或保单生效日（以较晚者为准）；或 ii 有保障需要（如本产品宣传单所述）时有能力缴付保费的客户。因此，您应预备足够的"
+        },
+        {
+          "rank": 3,
+          "company": "manulife",
+          "category": "critical_illness",
+          "product_name": "careguard-critical-illness-benefit",
+          "source": "sourcepdf/manulife/critical_illness/careguard-critical-illness-benefit.pdf",
+          "modality": "text",
+          "page_number": 15,
+          "score": 0.25,
+          "text_preview": "重要事项 11. 1. 缓接期 产品性质 缓接期是指在下列日期（以较晚者为准）起计90 天内： i. 本产品是一份没有储蓄成分的危疾保障计划，并为一项附加保障。本产品没有现金价值。本产品适合有保险产品需要（如本产品宣传单所述）及在 如果本附加保障是在保单签发时已包含在内，在保单签发日或保单生效日（以较晚者为准）；或 ii 有保障需要（如本产品宣传单所述）时有能力缴付保费的客户。因此，您应预备足够的"
+        },
+        {
+          "rank": 4,
+          "company": "hsbc",
+          "category": "life",
+          "product_name": "2023-feb-product-brochure",
+          "source": "sourcepdf/hsbc/life/2023-feb-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 6,
+          "score": 0.3868,
+          "text_preview": "计划摘要 保单货币 港币 投保年龄 19至60岁（年龄是指受保人下一次生日年龄） 保障年期 至80岁 最低投保额 港币1,000,000元 (以每保单计算) 最高投保额 19岁至50岁（下次生日年龄)：港币7,000,000元 (以每受保人计算) 51岁60岁（下次生日年龄)：港币3,500,000元 身故赔偿 相等于投保额扣除任何未缴保费后之金额（如有） 缴付保费方式 按月透过以下方式缴付: ‧"
+        },
+        {
+          "rank": 5,
+          "company": "AXA",
+          "category": "critical_illness",
+          "product_name": "LPPM 667-2311C HealthVital II Product Brochure_HK&MA_Chi",
+          "source": "sourcepdf/AXA/critical_illness/LPPM 667-2311C HealthVital II Product Brochure_HK&MA_Chi.pdf",
+          "modality": "text",
+          "page_number": 22,
+          "score": 0.4055,
+          "text_preview": "保費調整 保費參照多個因素 (包括但不限於保單繕發時被保人的年齡、性別、吸煙習慣及風險級別) 計算，隨後並不會根據被保人的 已屆年齡而遞增。惟保費率並非保證，我們保留權利參照理賠經驗、投資回報、保單續保率及開支等因素的過往表現及 未來前景，於每個保單週年日檢討及調整保費率。 暫停繳付保費 您應在整個保費繳付年期內繳付保費。在寬限期完結時 (即保費到期日後31天) 仍未繳付保費，可能會導致保單終止。"
+        }
+      ],
+      "model_cot": "问题类型: 定义类\n关键实体: 保险期、续保、合同\n证据匹配:\n  - 结果1（《One_Five_Term_TC...》）: 与查询目标不匹配，不可用\n  - 结果2（《careguard-critical-illness-benefit...》）: 与查询目标不匹配，不可用\n  - 结果3（《careguard-critical-illness-benefit...》）: 与查询目标不匹配，不可用\n  - 结果4（《2023-feb-product-brochure...》）: 与查询目标不匹配，不可用\n  - 结果5（《LPPM 667-2311C HealthVital II Pro...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答",
+      "final_answer": "[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+      "raw_model_output": "<Thought>\n问题类型: 定义类\n关键实体: 保险期、续保、合同\n证据匹配:\n  - 结果1（《One_Five_Term_TC...》）: 与查询目标不匹配，不可用\n  - 结果2（《careguard-critical-illness-benefit...》）: 与查询目标不匹配，不可用\n  - 结果3（《careguard-critical-illness-benefit...》）: 与查询目标不匹配，不可用\n  - 结果4（《2023-feb-product-brochure...》）: 与查询目标不匹配，不可用\n  - 结果5（《LPPM 667-2311C HealthVital II Pro...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答\n</Thought>\n[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+      "evaluation": {
+        "retrieval_relevance": 0,
+        "faithfulness": 0,
+        "rejection_quality": 0,
+        "completeness": 0,
+        "total": 0,
+        "verdict": "FAIL",
+        "reason": "提供的检索结果均与问题无关，无法提供有效依据。"
+      }
+    }
+  ]
+}

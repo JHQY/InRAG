@@ -1,0 +1,106 @@
+base_model: /home/jhqy/IRF/finetuning/qwen3/Qwen3-4B
+trust_remote_code: true
+strict: false
+force_no_bitsandbytes: true
+
+chat_template: qwen3
+
+# ======================================
+#  数据集（三类任务，completion 格式）
+# ======================================
+datasets:
+  - path: /home/jhqy/IRF/finetuning/qwen3/data/clause_subjective_completion.jsonl
+    type: completion
+    split: train
+    #sampling_ratio: 0.5
+
+  - path: /home/jhqy/IRF/finetuning/qwen3/data/clause_objective_completion.jsonl
+    type: completion
+    split: train
+    #sampling_ratio: 0.5
+
+
+
+# validation split
+val_set_size: 0.05
+
+output_dir: /home/jhqy/IRF/finetuning/qwen3/outputs/qwen3-4b-lora-clause-3
+# 强制重新 prepare 保证 sliding_window 生效
+dataset_prepared_path: null
+
+# ======================================
+#   模型输入参数（1024 + sliding_window）
+# ======================================
+sequence_len: 1024
+
+# 强制 sliding window 切片（completion 模式有效）
+sliding_window: true
+sliding_window_size: 1024
+sliding_overlap: 256     # 推荐值，可增加连续性，不加也可以
+
+# —— 必须关闭 sample_packing，否则 sliding_window 无效且会报错 —— 
+sample_packing: false
+eval_sample_packing: false
+
+pad_to_sequence_len: true
+
+adapter: lora
+# adapter_path: /home/jhqy/IRF/finetuning/qwen3/outputs/qwen3-4b-lora-clause-2
+# resume_from_checkpoint: /home/jhqy/IRF/finetuning/qwen3/outputs/qwen3-4b-lora-clause-2/checkpoint-2453
+
+# ======================================
+#     LoRA 设置（沿用第一阶段）
+# ======================================
+adapter: lora
+lora_r: 32
+lora_alpha: 64
+lora_dropout: 0.05
+lora_target_modules:
+  - q_proj
+  - v_proj
+
+
+# ======================================
+#        Batch / Epoch 设置
+# ======================================
+micro_batch_size: 1
+gradient_accumulation_steps: 2
+num_epochs: 5
+
+
+# ======================================
+#     优化器 & 学习率
+# ======================================
+learning_rate: 5e-4
+warmup_ratio: 0.1
+lr_scheduler: cosine
+
+weight_decay: 0.01
+max_grad_norm: 1.0
+
+
+# ======================================
+#     混合精度 & 显存优化
+# ======================================
+bf16: true
+fp16: false
+tf32: true
+
+gradient_checkpointing: true
+gradient_checkpointing_kwargs:
+  use_reentrant: false
+
+flash_attention: false
+flex_attention: false
+
+
+# ======================================
+#           日志 / 断点
+# ======================================
+logging_steps: 10
+evals_per_epoch: 1
+saves_per_epoch: 1
+save_strategy: epoch
+
+wandb_project: qwen3_stage3_clause2
+wandb_run_name: qwen3_lora_stage3_clause2

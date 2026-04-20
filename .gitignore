@@ -1,0 +1,47 @@
+# 模型权重（体积过大）
+finetuning/qwen3/Qwen3-4B/
+finetuning/qwen3/outputs/
+
+# 训练数据（含保险条款原文，不入库）
+finetuning/qwen3/data/
+
+# 知识库 PDF 原文（版权，不入库）
+rag_service/sourcepdf/
+
+# Milvus 本地数据卷
+rag_service/volumes/
+
+# 虚拟环境
+finetuning/qwen3/.venv/
+rag_service/.venv/
+
+# Axolotl 训练中间文件
+finetuning/qwen3/wandb/
+finetuning/qwen3/last_run_prepared/
+
+# 敏感文件
+finetuning/qwen3/eval/apikey
+finetuning/qwen3/eval/terms/
+
+# 压缩包
+*.tar.gz
+
+# Python 缓存
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+
+# 环境变量（含密钥）
+.env
+rag_service/.env
+
+# 外部数据集（不入库）
+finetuning/qwen3/InsQABench/
+
+# Claude Code 本地配置
+.claude/
+
+# 编辑器
+.vscode/
+.idea/
+*.swp

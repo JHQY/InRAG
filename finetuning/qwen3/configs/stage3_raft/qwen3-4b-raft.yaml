@@ -1,0 +1,85 @@
+base_model: /home/jhqy/IRF/finetuning/qwen3/Qwen3-4B
+trust_remote_code: true
+strict: false
+force_no_bitsandbytes: true
+
+chat_template: qwen3
+
+datasets:
+  - path: /home/jhqy/IRF/finetuning/qwen3/data/raft/raft_train.jsonl
+    type: chat_template
+    split: train
+    field_messages: conversations
+    message_property_mappings:
+      role: from
+      content: value
+
+val_set_size: 0.1
+output_dir: /home/jhqy/IRF/finetuning/qwen3/outputs/qwen3-4b-lora-raft-v2
+dataset_prepared_path: null
+
+# ==== 从 stage2 混合checkpoint继续训练 ====
+# adapter_path 加载已有LoRA权重（包含SQL-CoT和clause格式能力）
+adapter: lora
+lora_model_dir: /home/jhqy/IRF/finetuning/qwen3/outputs/qwen3-4b-lora-stage2
+
+# ==== 从epoch 2末尾续训（CUDA崩溃后恢复）====
+# resume_from_checkpoint: /home/jhqy/IRF/finetuning/qwen3/outputs/qwen3-4b-lora-raft/checkpoint-850
+
+# ==== 序列长度 ====
+# 实测token分布：95分位=1472，99分位=1941，与stage2最优设置一致
+# 超过1536的样本仅占3.8%，axolotl自动截断，损失极小
+sequence_len: 1536
+sample_packing: false          # 多chunk样本长度差异大，关闭packing避免截断
+eval_sample_packing: false
+pad_to_sequence_len: true
+
+# ==== LoRA（与stage2保持一致）====
+lora_r: 32
+lora_alpha: 64
+lora_dropout: 0.05
+lora_target_modules:
+  - q_proj
+  - k_proj
+  - v_proj
+  - o_proj
+  - down_proj
+  - up_proj
+
+# ==== 批大小（sequence_len=1536，与stage2显存压力相近）====
+micro_batch_size: 1
+gradient_accumulation_steps: 4
+# -> 等效 batch size = 4，sample_packing关闭时显存压力更大，降低micro_batch
+
+# ==== Epoch（1995条样本，3 epoch足够）====
+num_epochs: 3
+
+# ==== 学习率（继续微调用更小lr防止遗忘）====
+learning_rate: 2e-5
+warmup_ratio: 0.1
+lr_scheduler: cosine
+
+# ==== 正则与稳定 ====
+weight_decay: 0.01
+max_grad_norm: 1.0
+
+# ==== 精度 ====
+bf16: true
+fp16: false
+tf32: true
+
+# ==== 显存优化 ====
+gradient_checkpointing: true
+gradient_checkpointing_kwargs:
+  use_reentrant: false
+
+# ==== 注意力优化 ====
+flash_attention: false         # Blackwell 不兼容
+flex_attention: false
+
+# ==== 日志 ====
+logging_steps: 5
+evals_per_epoch: 2
+saves_per_epoch: 1
+wandb_project: qwen3_ift
+wandb_run_name: qwen3_4b_lora_raft

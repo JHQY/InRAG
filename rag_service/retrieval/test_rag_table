@@ -1,0 +1,24 @@
+# test_rag_table.py
+from retriever import RAGInterface
+import json
+
+def test_table_retrieval(query: str, top_k: int = 3):
+    print(f"🔎 测试查询: {query}\n")
+    rag = RAGInterface()
+
+    results = rag.retrieve(query, top_k=top_k)
+
+    if not results:
+        print("⚠️ 未检索到任何结果")
+        return
+
+    for i, r in enumerate(results, start=1):
+        print(f"\n{i}. [modality={r['modality']}] [score={r['score']}]")
+        print(">>> TEXT:", r['text'][:300], "...")
+        print(">>> TABLE STRUCT:", json.dumps(r['table'], ensure_ascii=False, indent=2))
+        print(">>> META:", r['metadata'])
+
+if __name__ == "__main__":
+    # 示例问题，可改成你的表格相关查询
+    query = "AIA意外险的赔付范围是什么？"
+    test_table_retrieval(query)

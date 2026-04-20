@@ -1,0 +1,11 @@
+torch
+sentence-transformers
+pymilvus
+pdfminer.six
+numpy
+python-dotenv
+tqdm
+fastapi
+uvicorn[standard]
+transformers
+pandas

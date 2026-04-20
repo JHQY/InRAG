@@ -1,0 +1,662 @@
+[
+  {
+    "id": "8",
+    "correct_contract": "未知合同",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "evidence_selection": 0,
+          "no_contamination": 0,
+          "correctness": 0,
+          "source_attribution": 0
+        },
+        "stage3": {
+          "evidence_selection": 0,
+          "no_contamination": 0,
+          "correctness": 0,
+          "source_attribution": 0
+        }
+      },
+      "best": "tie",
+      "comment": "两个模型均未能识别出正确证据（未知合同），且都错误地依赖了干扰信息或未给出有效答案。"
+    }
+  },
+  {
+    "id": "2",
+    "correct_contract": "未知合同",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 5,
+          "source_attribution": 0
+        },
+        "stage3": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 2,
+          "source_attribution": 0
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline 正确识别并应用了证据，stage3 虽然选择了正确证据但推理不完整，未能得出明确结论。"
+    }
+  },
+  {
+    "id": "18",
+    "correct_contract": "未知合同",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "evidence_selection": 0,
+          "no_contamination": 5,
+          "correctness": 0,
+          "source_attribution": 0
+        },
+        "stage3": {
+          "evidence_selection": 0,
+          "no_contamination": 5,
+          "correctness": 0,
+          "source_attribution": 0
+        }
+      },
+      "best": "tie",
+      "comment": "两个模型均未能识别出正确chunk（未知合同）包含答案，都因问题内容缺失而无法作答。"
+    }
+  },
+  {
+    "id": "16",
+    "correct_contract": "未知合同",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "evidence_selection": 0,
+          "no_contamination": 0,
+          "correctness": 0,
+          "source_attribution": 0
+        },
+        "stage3": {
+          "evidence_selection": 0,
+          "no_contamination": 0,
+          "correctness": 0,
+          "source_attribution": 0
+        }
+      },
+      "best": "tie",
+      "comment": "两个模型均未能识别正确证据，且都错误地依赖了干扰chunk来生成答案。"
+    }
+  },
+  {
+    "id": "15",
+    "correct_contract": "泰康防癌医疗保险条款",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 5,
+          "source_attribution": 0
+        },
+        "stage3": {
+          "evidence_selection": 0,
+          "no_contamination": 5,
+          "correctness": 0,
+          "source_attribution": 0
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline 正确识别并使用了合同片段中的关键证据，而 stage3 过度过滤了所有输入，导致无法作答。"
+    }
+  },
+  {
+    "id": "9",
+    "correct_contract": "未知合同",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "evidence_selection": 0,
+          "no_contamination": 5,
+          "correctness": 0,
+          "source_attribution": 0
+        },
+        "stage3": {
+          "evidence_selection": 0,
+          "no_contamination": 5,
+          "correctness": 0,
+          "source_attribution": 0
+        }
+      },
+      "best": "tie",
+      "comment": "两个模型均未能识别出正确chunk（未知合同），且因问题内容缺失而无法给出有效答案。"
+    }
+  },
+  {
+    "id": "7",
+    "correct_contract": "泰康住院费用医疗险",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "evidence_selection": 0,
+          "no_contamination": 5,
+          "correctness": 0,
+          "source_attribution": 0
+        },
+        "stage3": {
+          "evidence_selection": 0,
+          "no_contamination": 0,
+          "correctness": 0,
+          "source_attribution": 0
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline 因未回答问题而避免了污染，stage3 则错误选择了干扰证据并给出了无关答案。"
+    }
+  },
+  {
+    "id": "6",
+    "correct_contract": "阳光财险—家财综合险",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "evidence_selection": 3,
+          "no_contamination": 1,
+          "correctness": 2,
+          "source_attribution": 5
+        },
+        "stage3": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 0,
+          "source_attribution": 0
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline 能正确归因但被干扰信息污染，stage3 能完美过滤噪声但结论完全错误且未归因。"
+    }
+  },
+  {
+    "id": "28",
+    "correct_contract": "众安互联网医疗险",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 5,
+          "source_attribution": 0
+        },
+        "stage3": {
+          "evidence_selection": 0,
+          "no_contamination": 5,
+          "correctness": 0,
+          "source_attribution": 0
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline 正确识别并使用了相关证据，而 stage3 在噪声过滤中过度保守，完全忽略了可用的正确信息。"
+    }
+  },
+  {
+    "id": "39",
+    "correct_contract": "众安旅行险",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 4,
+          "source_attribution": 0
+        },
+        "stage3": {
+          "evidence_selection": 0,
+          "no_contamination": 0,
+          "correctness": 1,
+          "source_attribution": 0
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline 准确识别并引用了正确证据，而 stage3 完全误判了相关证据，未能过滤干扰信息。"
+    }
+  },
+  {
+    "id": "1",
+    "correct_contract": "安联境外旅行保障计划条款",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 5,
+          "source_attribution": 0
+        },
+        "stage3": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 5,
+          "source_attribution": 0
+        }
+      },
+      "best": "tie",
+      "comment": "两个模型均能准确识别并仅使用正确证据，但都未在答案中明确提及来源合同名称。"
+    }
+  },
+  {
+    "id": "3",
+    "correct_contract": "未知合同",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 5,
+          "source_attribution": 0
+        },
+        "stage3": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 5,
+          "source_attribution": 0
+        }
+      },
+      "best": "tie",
+      "comment": "两个模型均能准确识别并仅使用正确证据，但都未明确提及合同名称。"
+    }
+  },
+  {
+    "id": "34",
+    "correct_contract": "新华健康告知",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "evidence_selection": 5,
+          "no_contamination": 3,
+          "correctness": 4,
+          "source_attribution": 5
+        },
+        "stage3": {
+          "evidence_selection": 0,
+          "no_contamination": 5,
+          "correctness": 0,
+          "source_attribution": 0
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline 成功识别并引用了正确证据，但混入了干扰信息；stage3 过度过滤，完全忽略了可用证据。"
+    }
+  },
+  {
+    "id": "40",
+    "correct_contract": "泰康住院医疗险",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 4,
+          "source_attribution": 5
+        },
+        "stage3": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 3,
+          "source_attribution": 0
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline 正确引用了来源并紧扣条款，stage3 虽过滤了干扰但未归因且解释偏离了合同约定核心。"
+    }
+  },
+  {
+    "id": "17",
+    "correct_contract": "阳光财险家庭财产综合险",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 5,
+          "source_attribution": 0
+        },
+        "stage3": {
+          "evidence_selection": 0,
+          "no_contamination": 5,
+          "correctness": 0,
+          "source_attribution": 0
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline 正确识别并使用了合同片段中的关键证据，而 stage3 因过度依赖检索结果而完全忽略了直接提供的合同片段，导致无法作答。"
+    }
+  },
+  {
+    "id": "20",
+    "correct_contract": "中国平安住院费用医疗保险",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 5,
+          "source_attribution": 0
+        },
+        "stage3": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 5,
+          "source_attribution": 0
+        }
+      },
+      "best": "tie",
+      "comment": "两个模型均能准确识别并仅使用正确chunk中的证据，但都未在最终答案中明确提及合同名称。"
+    }
+  },
+  {
+    "id": "30",
+    "correct_contract": "阳光意外险",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "evidence_selection": 1,
+          "no_contamination": 5,
+          "correctness": 0,
+          "source_attribution": 0
+        },
+        "stage3": {
+          "evidence_selection": 0,
+          "no_contamination": 5,
+          "correctness": 0,
+          "source_attribution": 0
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline 至少识别了正确 chunk 的部分相关性，而 stage3 完全忽略了所有可用证据。"
+    }
+  },
+  {
+    "id": "38",
+    "correct_contract": "新华重疾",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 4,
+          "source_attribution": 5
+        },
+        "stage3": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 3,
+          "source_attribution": 0
+        }
+      },
+      "best": "baseline",
+      "comment": "两个模型都能准确选择正确证据且无污染，但stage3未明确提及来源名称，且对等待期目的的解释不如baseline贴近标准答案。"
+    }
+  },
+  {
+    "id": "32",
+    "correct_contract": "太平重疾保险",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 4,
+          "source_attribution": 5
+        },
+        "stage3": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 2,
+          "source_attribution": 0
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline 能准确引用来源并解释合同终止逻辑，stage3 虽过滤了噪声但未提及来源且解释偏离核心原因。"
+    }
+  },
+  {
+    "id": "21",
+    "correct_contract": "未知合同",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 5,
+          "source_attribution": 0
+        },
+        "stage3": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 5,
+          "source_attribution": 0
+        }
+      },
+      "best": "tie",
+      "comment": "两个模型均能准确识别并仅使用正确chunk中的证据，但都未提及合同名称「未知合同」。"
+    }
+  },
+  {
+    "id": "23",
+    "correct_contract": "众安个人意外伤害保险",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 5,
+          "source_attribution": 0
+        },
+        "stage3": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 0,
+          "source_attribution": 0
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline 正确理解了条款限定范围并得出准确结论，stage3 虽然也选择了正确证据但推理逻辑错误导致结论与标准答案相反。"
+    }
+  },
+  {
+    "id": "14",
+    "correct_contract": "人保意外伤害保险条款",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "evidence_selection": 0,
+          "no_contamination": 5,
+          "correctness": 4,
+          "source_attribution": 0
+        },
+        "stage3": {
+          "evidence_selection": 0,
+          "no_contamination": 5,
+          "correctness": 0,
+          "source_attribution": 0
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline 能基于通用知识给出合理推断，而 stage3 因过度依赖检索结果而完全拒答。"
+    }
+  },
+  {
+    "id": "27",
+    "correct_contract": "泰康重大疾病保险",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 5,
+          "source_attribution": 0
+        },
+        "stage3": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 5,
+          "source_attribution": 0
+        }
+      },
+      "best": "tie",
+      "comment": "两个模型均能准确识别并仅使用正确chunk中的证据，但都未在最终答案中明确提及合同名称。"
+    }
+  },
+  {
+    "id": "36",
+    "correct_contract": "平安住院医疗险",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 5,
+          "source_attribution": 5
+        },
+        "stage3": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 3,
+          "source_attribution": 0
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline 能准确引用来源并完整解释免责逻辑，stage3 虽过滤了干扰但未明确归因且解释不完整。"
+    }
+  },
+  {
+    "id": "35",
+    "correct_contract": "太平意外险",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "evidence_selection": 5,
+          "no_contamination": 0,
+          "correctness": 4,
+          "source_attribution": 5
+        },
+        "stage3": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 3,
+          "source_attribution": 0
+        }
+      },
+      "best": "tie",
+      "comment": "baseline 正确归因但污染了证据，stage3 完美过滤噪声但未明确来源且结论表述不准确。"
+    }
+  },
+  {
+    "id": "13",
+    "correct_contract": "未知合同",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "evidence_selection": 0,
+          "no_contamination": 5,
+          "correctness": 0,
+          "source_attribution": 0
+        },
+        "stage3": {
+          "evidence_selection": 0,
+          "no_contamination": 5,
+          "correctness": 0,
+          "source_attribution": 0
+        }
+      },
+      "best": "tie",
+      "comment": "两个模型均因问题内容缺失而无法识别正确证据，但都避免了干扰信息污染。"
+    }
+  },
+  {
+    "id": "19",
+    "correct_contract": "未知合同",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "evidence_selection": 0,
+          "no_contamination": 0,
+          "correctness": 0,
+          "source_attribution": 0
+        },
+        "stage3": {
+          "evidence_selection": 0,
+          "no_contamination": 0,
+          "correctness": 0,
+          "source_attribution": 0
+        }
+      },
+      "best": "tie",
+      "comment": "两个模型均未能识别出正确证据（未知合同），且都错误地依赖了干扰信息来回答问题。"
+    }
+  },
+  {
+    "id": "24",
+    "correct_contract": "新华长期寿险条款",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 5,
+          "source_attribution": 0
+        },
+        "stage3": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 5,
+          "source_attribution": 0
+        }
+      },
+      "best": "tie",
+      "comment": "两个模型均能准确识别并仅使用正确chunk中的信息，但在来源归因方面均未明确提及合同名称。"
+    }
+  },
+  {
+    "id": "29",
+    "correct_contract": "平安学生意外保险",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 5,
+          "source_attribution": 0
+        },
+        "stage3": {
+          "evidence_selection": 0,
+          "no_contamination": 0,
+          "correctness": 5,
+          "source_attribution": 0
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline 准确识别了正确证据，而 stage3 错误地选择了干扰证据，导致证据选择完全失败。"
+    }
+  },
+  {
+    "id": "22",
+    "correct_contract": "未知合同",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 5,
+          "source_attribution": 0
+        },
+        "stage3": {
+          "evidence_selection": 5,
+          "no_contamination": 5,
+          "correctness": 5,
+          "source_attribution": 0
+        }
+      },
+      "best": "tie",
+      "comment": "两个模型均能准确识别并仅使用正确证据，但都未在答案中明确提及合同名称「未知合同」。"
+    }
+  }
+]

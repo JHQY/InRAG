@@ -1,0 +1,17 @@
+===== DB-CoT Evaluation Summary =====
+
+Total samples: 15
+
+Win Rate:
+  Baseline wins: 1
+  Finetuned wins: 13
+  Ties: 1
+
+Average Scores (0–5):
+- field_selection      | base=2.933 | ft=4.533
+- sql_reasoning        | base=2.133 | ft=4.100
+- sql_correctness      | base=2.367 | ft=4.667
+- structure            | base=2.933 | ft=4.867
+- hallucination        | base=4.533 | ft=5.000
+- fidelity             | base=4.333 | ft=4.733
+- similarity_to_gold   | base=0.333 | ft=3.000

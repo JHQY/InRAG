@@ -1,0 +1,662 @@
+[
+  {
+    "id": "8",
+    "question": "…",
+    "baseline_ans": "您好，请提供您需要查询的保险合同片段或具体问题，我将根据提供的信息为您解答。",
+    "stage3_ans": "[答案] 本合同中没有关于“累计给付轻症次数”的定义。",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "answer_compliance": 3,
+          "clause_fidelity": 0,
+          "response_formality": 5
+        },
+        "stage3": {
+          "answer_compliance": 5,
+          "clause_fidelity": 5,
+          "response_formality": 5
+        }
+      },
+      "best": "stage3",
+      "comment": "stage3 严格依据条款表述给出明确结论，术语规范且忠实于条款，而 baseline 仅作流程性回应，未涉及具体条款内容。"
+    }
+  },
+  {
+    "id": "2",
+    "question": "你是一名专业保险合同分析助手。\n\n【任务类型】\n客观判断\n\n【合同片段】\n第7.2条：保险金申请资料不完整的，本公司可要求补充资料。\n\n【用户提问】\n如果申请资料不完整，保险公司能否直接拒赔？\n\n请给",
+    "baseline_ans": "否。",
+    "stage3_ans": "[答案] 根据材料第7.2条，保险公司**可以要求补充资料**，但**没有直接拒赔**的权利。",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "answer_compliance": 1,
+          "clause_fidelity": 0,
+          "response_formality": 1
+        },
+        "stage3": {
+          "answer_compliance": 5,
+          "clause_fidelity": 5,
+          "response_formality": 5
+        }
+      },
+      "best": "stage3",
+      "comment": "stage3 严格依据条款原文进行专业表述，而 baseline 仅给出简单结论，缺乏条款依据和规范表达。"
+    }
+  },
+  {
+    "id": "18",
+    "question": "…",
+    "baseline_ans": "您好，请提供您需要查询的保险合同片段或具体问题，我将根据提供的信息为您解答。",
+    "stage3_ans": "[答案] 本问题无法作答，因为提供的检索结果中没有包含有关“…”的信息。",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "answer_compliance": 3,
+          "clause_fidelity": 0,
+          "response_formality": 5
+        },
+        "stage3": {
+          "answer_compliance": 3,
+          "clause_fidelity": 0,
+          "response_formality": 5
+        }
+      },
+      "best": "tie",
+      "comment": "两个模型均未涉及具体保险条款内容，但都保持了专业、规范的表述框架，在无法作答时均未做出超出已知信息的承诺。"
+    }
+  },
+  {
+    "id": "16",
+    "question": "…",
+    "baseline_ans": "您好，请提供您需要查询的保险合同片段或具体问题，我将根据提供的信息为您解答。",
+    "stage3_ans": "[答案] 本合同不承保因建筑结构老化导致的漏水损失。",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "answer_compliance": 0,
+          "clause_fidelity": 0,
+          "response_formality": 3
+        },
+        "stage3": {
+          "answer_compliance": 3,
+          "clause_fidelity": 1,
+          "response_formality": 3
+        }
+      },
+      "best": "stage3",
+      "comment": "baseline 因未提供实质答案而三项均低，stage3 虽使用了保险表述但未引用条款且结论过于绝对。"
+    }
+  },
+  {
+    "id": "15",
+    "question": "你是一名专业保险合同分析助手。\n【任务类型】主观解释\n【合同片段】癌症的初次确诊需符合“专科医师诊断 + 病理检查”双重条件。\n【用户提问】只有影像学检查但无病理报告是否属于确诊癌症？\n请生成包含：结",
+    "baseline_ans": "**结论**：只有影像学检查但无病理报告不属于癌症的初次确诊。  \n\n**证据**：根据合同片段规定，“癌症的初次确诊需符合‘专科医师诊断 + 病理检查’双重条件”。  \n\n**解释说明**：保险合同中明确要求癌症的初次确诊必须同时满足两个条件：一是专科医师的诊断，二是病理检查的结果。影像学检查虽然可以用于发现异常病变，但仅凭影像学检查无法确定病变的性质是否为癌症，因此不能单独作为确诊依据。只有在",
+    "stage3_ans": "[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n* 无\n* 无\n* 无",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "answer_compliance": 5,
+          "clause_fidelity": 5,
+          "response_formality": 5
+        },
+        "stage3": {
+          "answer_compliance": 0,
+          "clause_fidelity": 0,
+          "response_formality": 0
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline 严格遵循条款原文进行专业解释，stage3 因未提供实质内容而完全不符合评估要求。"
+    }
+  },
+  {
+    "id": "9",
+    "question": "…",
+    "baseline_ans": "您好，请提供您需要查询的保险合同片段或具体问题，我将根据提供的信息为您解答。",
+    "stage3_ans": "[答案] **意外**是指外来的、突发的、非本意的事件。",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "answer_compliance": 0,
+          "clause_fidelity": 0,
+          "response_formality": 5
+        },
+        "stage3": {
+          "answer_compliance": 5,
+          "clause_fidelity": 5,
+          "response_formality": 5
+        }
+      },
+      "best": "stage3",
+      "comment": "baseline 因无条款内容而无法提供专业回答，stage3 则精准使用了保险条款中的标准定义，体现了高度合规性。"
+    }
+  },
+  {
+    "id": "7",
+    "question": "…",
+    "baseline_ans": "您好，请提供您需要查询的保险合同片段或具体问题，我将根据提供的信息为您解答。",
+    "stage3_ans": "[答案] **意外**是指外来的、突发的、非本意的事件，包括但不限于交通事故、疾病、自然灾害等。",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "answer_compliance": 0,
+          "clause_fidelity": 0,
+          "response_formality": 5
+        },
+        "stage3": {
+          "answer_compliance": 1,
+          "clause_fidelity": 0,
+          "response_formality": 1
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline 在表述规范性上严谨克制，而 stage3 在未提供条款的情况下自行定义保险术语且包含明显错误（如将疾病纳入意外定义），存在严重合规风险。"
+    }
+  },
+  {
+    "id": "6",
+    "question": "你是一名专业保险合同分析助手。\n\n【任务类型】\n主观解释\n\n【合同片段】\n若因台风导致住房损坏，保险公司按实际损失赔偿。\n\n【用户提问】\n台风造成室外物品损坏是否属于保障范围？\n\n请生成包含：结论、证",
+    "baseline_ans": "**结论**：台风造成室外物品损坏不属于保障范围。\n\n**证据**：合同中明确约定“若因台风导致住房损坏，保险公司按实际损失赔偿。”该条款仅涵盖“住房”损坏的情况，未提及“室外物品”是否在保障范围内。\n\n**解释说明**：根据合同条款的表述，“住房损坏”应理解为与住房直接相关的损失，如房屋结构、内部设施等。而“室外物品”通常指位于房屋外部的财物，如阳台上的物品、户外家具等，这些物品的损坏并未被合同",
+    "stage3_ans": "[答案] 是的，根据材料，台风造成的住房损坏属于保障范围，保险公司将按实际损失进行赔偿。但是，台风造成的室外物品损坏是否属于保障范围，材料中没有明确说明。因此，无法确定台风造成的室外物品损坏是否属于保障范围。\n- 材料片段：若因台风导致住房损坏，保险公司按实际损失赔偿。",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "answer_compliance": 3,
+          "clause_fidelity": 5,
+          "response_formality": 5
+        },
+        "stage3": {
+          "answer_compliance": 1,
+          "clause_fidelity": 3,
+          "response_formality": 3
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline 严格依据条款原文进行严谨推理，stage3 则存在口语化概括且结论表述不够严谨。"
+    }
+  },
+  {
+    "id": "28",
+    "question": "你是一名专业保险合同分析助手。\n\n【任务类型】\n客观判断\n\n【合同片段】\n合同：众安互联网医疗险\n片段内容：本合同对既往症不承担责任，但经核保同意的除外。\n\n【用户提问】\n若投保前患有慢性胃炎但核保通",
+    "baseline_ans": "可以赔付。",
+    "stage3_ans": "[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "answer_compliance": 1,
+          "clause_fidelity": 1,
+          "response_formality": 1
+        },
+        "stage3": {
+          "answer_compliance": 5,
+          "clause_fidelity": 5,
+          "response_formality": 5
+        }
+      },
+      "best": "stage3",
+      "comment": "baseline 过于简略且未引用条款依据，stage3 严格遵循条款原文表述并说明了回答的局限性，符合保险专业规范。"
+    }
+  },
+  {
+    "id": "39",
+    "question": "你是一名专业保险合同分析助手。\n\n【任务类型】\n主观解释\n\n【合同名称】\n众安旅行险\n\n【合同片段】\n若被保险人违反当地法律法规导致人身损害，保险人不承担责任。\n\n【用户提问】\n为什么违法行为不在保障",
+    "baseline_ans": "**结论**：违法行为不在保障范围内，是因为保险合同中明确约定，若被保险人违反当地法律法规导致人身损害，保险人不承担责任。\n\n**证据**：合同片段中明确载明：“若被保险人违反当地法律法规导致人身损害，保险人不承担责任。”该条款直接说明了违法行为不在保险责任范围内。\n\n**解释说明**：保险合同中的这一条款属于免责条款，其目的是为了明确保险人在特定情况下不承担赔偿责任。违法行为通常涉及法律禁止的行",
+    "stage3_ans": "[答案] 材料中提到“若被保险人违反当地法律法规导致人身损害，保险人不承担责任”，这表明违法行为不在保障范围内。**保障范围**是指保险合同中约定的保险人负责赔偿的损失或费用的范围。\n- **保险人**: 提供保险保障并承担赔偿责任的公司或机构。\n- **被保险人**: 购买保险并受到保险保障保护的人。\n- **人身损害**: 指因意外事故或疾病造成的人身伤害或死亡。",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "answer_compliance": 5,
+          "clause_fidelity": 5,
+          "response_formality": 5
+        },
+        "stage3": {
+          "answer_compliance": 3,
+          "clause_fidelity": 3,
+          "response_formality": 2
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline 严格遵循保险条款解释规范，完整引用条款并专业说明免责逻辑；stage3 仅做术语解释且表述结构松散，未形成完整的条款解释框架。"
+    }
+  },
+  {
+    "id": "1",
+    "question": "你是一名专业保险合同分析助手。\n\n【任务类型】\n客观判断\n\n【合同片段】\n这段文字来自合同：《安联境外旅行保障计划条款》\n片段内容：第4.3条 若被保险人未按照约定时间支付续保保险费，自宽限期届满之日",
+    "baseline_ans": "否。",
+    "stage3_ans": "[答案] 否，保险合同自宽限期届满之日起合同效力终止，不再生效。",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "answer_compliance": 1,
+          "clause_fidelity": 0,
+          "response_formality": 1
+        },
+        "stage3": {
+          "answer_compliance": 5,
+          "clause_fidelity": 5,
+          "response_formality": 5
+        }
+      },
+      "best": "stage3",
+      "comment": "stage3 严格遵循条款原文表述并使用了专业术语，而 baseline 仅给出简单否定，未体现条款依据与专业表达。"
+    }
+  },
+  {
+    "id": "3",
+    "question": "你是一名专业保险合同分析助手。\n\n【任务类型】\n客观判断\n\n【合同片段】\n第10.1条：被保险人因投保时已存在的疾病或症状而导致的重大疾病，本公司不承担给付保险金的责任。\n\n【用户提问】\n如果被保险人",
+    "baseline_ans": "根据合同片段第10.1条的规定，如果被保险人在投保时已存在的疾病或症状导致重大疾病，保险公司不承担给付保险金的责任。因此，如果被保险人在投保前已有某疾病，后续该疾病发作是否可以理赔的结论是：**不可以理赔**。",
+    "stage3_ans": "[答案] 根据材料第10.1条，如果被保险人在投保时已存在的疾病或症状导致重大疾病，保险公司不承担理赔责任。因此，如果被保险人在投保前已有该疾病，后续该疾病发作时，保险公司不承担理赔责任。",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "answer_compliance": 5,
+          "clause_fidelity": 5,
+          "response_formality": 5
+        },
+        "stage3": {
+          "answer_compliance": 5,
+          "clause_fidelity": 5,
+          "response_formality": 5
+        }
+      },
+      "best": "tie",
+      "comment": "两个模型均严格引用条款原文术语，结论明确且表述严谨，在合规表达上无明显差异。"
+    }
+  },
+  {
+    "id": "34",
+    "question": "你是一名专业保险合同分析助手。\n\n【任务类型】\n主观解释\n\n【合同名称】\n新华健康告知\n\n【合同片段】\n若投保时未如实告知既往疾病，保险公司有权解除合同，但需退还保单现金价值。\n\n【用户提问】\n为什么",
+    "baseline_ans": "**结论**：健康告知必须如实填写，是为了确保保险公司能够准确评估投保人的健康状况，从而合理确定保险风险并制定相应的保险方案。\n\n**证据**：根据合同片段中的规定，“若投保时未如实告知既往疾病，保险公司有权解除合同，但需退还保单现金价值。”这表明，投保人有义务如实告知自身健康状况，否则将承担相应的法律后果。\n\n**解释说明**：健康告知是保险合同签订过程中的重要环节，其目的是让保险公司了解投保人",
+    "stage3_ans": "[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n- 来源：无\n- 说明：无",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "answer_compliance": 4,
+          "clause_fidelity": 4,
+          "response_formality": 5
+        },
+        "stage3": {
+          "answer_compliance": 0,
+          "clause_fidelity": 0,
+          "response_formality": 1
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline 完整运用了保险专业术语并紧扣条款逻辑进行解释，而 stage3 因未提供实质回答而完全不符合评估要求。"
+    }
+  },
+  {
+    "id": "40",
+    "question": "你是一名专业保险合同分析助手。\n\n【任务类型】\n主观解释\n\n【合同名称】\n泰康住院医疗险\n\n【合同片段】\n被保险人因既往已确诊的慢性病住院，若未如实告知，保险公司可拒赔。\n\n【用户提问】\n为什么未如实",
+    "baseline_ans": "**结论**：未如实告知既往病史会被拒赔，是因为保险公司在承保时无法准确评估风险，从而可能面临更高的赔付风险。\n\n**证据**：合同中明确载明：“被保险人因既往已确诊的慢性病住院，若未如实告知，保险公司可拒赔。”\n\n**解释说明**：根据保险合同的基本原则，投保人在投保时有义务如实告知其健康状况和既往病史。如果被保险人未如实告知既往已确诊的慢性病，保险公司无法在投保时充分了解被保险人的健康状况，从",
+    "stage3_ans": "[答案] 根据材料，被保险人因既往已确诊的慢性病住院，若未如实告知，保险公司可拒赔。**既往病史**是指被保险人在投保前已经存在的疾病或健康问题。**慢性病**是指病程较长、恢复较慢的疾病，如高血压、糖尿病等。**拒赔**是指保险公司拒绝承担保险责任。\n- 材料中提到“被保险人因既往已确诊的慢性病住院，若未如实告知，保险公司可拒赔。”",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "answer_compliance": 5,
+          "clause_fidelity": 5,
+          "response_formality": 5
+        },
+        "stage3": {
+          "answer_compliance": 3,
+          "clause_fidelity": 4,
+          "response_formality": 2
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline 完整遵循了保险专业表达规范，而 stage3 在术语解释上存在冗余且表述结构松散。"
+    }
+  },
+  {
+    "id": "17",
+    "question": "你是一名专业保险合同分析助手。\n【任务类型】主观解释\n【合同片段】因管道爆裂引起的家庭财产损失属于保障范围，但因维护不当导致的损失除外。\n【用户提问】如果因多年未维护导致老化爆裂，是否属于保障范围？\n",
+    "baseline_ans": "**结论**：不属于保障范围。\n\n**证据**：合同中明确指出，“因管道爆裂引起的家庭财产损失属于保障范围，但因维护不当导致的损失除外。”\n\n**解释说明**：根据合同条款，保障范围仅限于“因管道爆裂”引起的损失，但排除了“因维护不当”导致的损失。如果管道因多年未维护而老化爆裂，属于“维护不当”导致的损失，因此不在保障范围内。该条款的表述具有明确的排除性，即只要损失是由于维护不当引起的，无论是否直",
+    "stage3_ans": "[答案] 材料中没有提供关于管道爆裂是否因维护不当导致的信息，因此无法判断此类情况是否属于保障范围。",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "answer_compliance": 5,
+          "clause_fidelity": 5,
+          "response_formality": 5
+        },
+        "stage3": {
+          "answer_compliance": 1,
+          "clause_fidelity": 0,
+          "response_formality": 1
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline 严格依据条款逻辑进行专业分析，stage3 则回避条款适用性分析，不符合保险解释的实务要求。"
+    }
+  },
+  {
+    "id": "20",
+    "question": "你是一名专业保险合同分析助手。\n【任务类型】主观解释\n【合同片段】可赔付项目需在当地物价部门或医院收费目录内。\n【用户提问】若医院推荐的进口耗材不在收费目录中，是否能赔？\n请生成包含：结论、证据、解释",
+    "baseline_ans": "**结论**：不能赔付。  \n\n**证据**：合同中明确约定“可赔付项目需在当地物价部门或医院收费目录内”，即只有在收费目录内的项目才能被认定为可赔付项目。  \n\n**解释说明**：根据合同条款，赔付的范围严格限定在“当地物价部门或医院收费目录内”的项目。若医院推荐的进口耗材未被列入收费目录，则该耗材的费用不属于合同约定的可赔付范围，因此保险公司不承担赔付责任。该条款旨在确保赔付项目具有合理性和合",
+    "stage3_ans": "[答案] 否，根据材料中“可赔付项目需在当地物价部门或医院收费目录内”这一规定，只有当地物价部门或医院收费目录内的项目才能进行赔付。因此，如果医院推荐的进口耗材不在收费目录中，则不能进行赔付。",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "answer_compliance": 5,
+          "clause_fidelity": 5,
+          "response_formality": 5
+        },
+        "stage3": {
+          "answer_compliance": 3,
+          "clause_fidelity": 3,
+          "response_formality": 3
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline 严格遵循保险条款原文术语与结构，表述严谨完整；stage3 虽结论正确但表述简略，未充分体现保险专业解释的规范性。"
+    }
+  },
+  {
+    "id": "30",
+    "question": "你是一名专业保险合同分析助手。\n\n【任务类型】\n客观判断\n\n【合同片段】\n合同：阳光意外险\n片段内容：若被保险人因攀岩、潜水等高风险运动导致事故，保险公司不承担责任。\n\n【用户提问】\n滑雪摔伤算免责吗",
+    "baseline_ans": "否。",
+    "stage3_ans": "[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "answer_compliance": 1,
+          "clause_fidelity": 0,
+          "response_formality": 1
+        },
+        "stage3": {
+          "answer_compliance": 3,
+          "clause_fidelity": 5,
+          "response_formality": 5
+        }
+      },
+      "best": "stage3",
+      "comment": "stage3 严格遵循条款原文的表述边界并说明局限性，而 baseline 直接给出超出条款明确范围的结论。"
+    }
+  },
+  {
+    "id": "38",
+    "question": "你是一名专业保险合同分析助手。\n\n【任务类型】\n主观解释\n\n【合同名称】\n新华重疾\n\n【合同片段】\n若在等待期内确诊重大疾病，保险公司仅退还保费。\n\n【用户提问】\n为什么等待期内确诊只能退保费？\n\n请",
+    "baseline_ans": "**结论**：在等待期内确诊重大疾病，保险公司仅退还保费，是因为等待期是保险合同中设定的免责期，保险公司在此期间不承担赔付责任。\n\n**证据**：合同中明确载明：“若在等待期内确诊重大疾病，保险公司仅退还保费。”\n\n**解释说明**：  \n保险合同中的等待期是指在投保人缴纳保费后，保险公司尚未开始承担保险责任的期限。在此期间，即使被保险人罹患重大疾病，保险公司也不承担赔付责任，仅退还已收保费。这是",
+    "stage3_ans": "[答案] 等待期内确诊重大疾病，保险公司仅退还保费，是因为等待期内保险公司无法保证被保险人不会发生重大疾病，因此不承担重大疾病保险金的责任。\n\n[证据] 根据材料中的描述，“若在等待期内确诊重大疾病，保险公司仅退还保费”，这表明在等待期内发生重大疾病，保险公司不承担重大疾病保险金的责任，但会退还已缴纳的保费。\n\n[解释说明] 等待期是指保险合同生效后，被保险人发生保险事故的时间限制。在此期间内，根",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "answer_compliance": 5,
+          "clause_fidelity": 5,
+          "response_formality": 5
+        },
+        "stage3": {
+          "answer_compliance": 3,
+          "clause_fidelity": 3,
+          "response_formality": 3
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline 在术语使用、条款引用和表述严谨性上均优于 stage3，后者存在术语不准确和表述模糊的问题。"
+    }
+  },
+  {
+    "id": "32",
+    "question": "你是一名专业保险合同分析助手。\n\n【任务类型】\n主观解释\n\n【合同名称】\n太平重疾保险\n\n【合同片段】\n第十条 重疾给付 若被保险人确诊合同所列重大疾病，按基本保险金额给付，给付后合同终止。\n\n【用户",
+    "baseline_ans": "**结论**：根据合同条款，重疾给付后合同终止的原因是被保险人已确诊合同所列的重大疾病，保险责任已履行完毕，合同不再具有继续有效的法律效力。\n\n**证据**：合同第十条明确规定：“若被保险人确诊合同所列重大疾病，按基本保险金额给付，给付后合同终止。”\n\n**解释说明**：保险合同中，重疾给付条款的设置目的是在被保险人确诊重大疾病时，提供一次性经济补偿，以帮助其应对治疗和康复的费用。一旦被保险人被确",
+    "stage3_ans": "[答案] 根据材料第十条，重疾给付后合同终止，是因为被保险人确诊了合同中列出的重大疾病，保险公司已经履行了保障责任，不再具有继续履行的必要性。\n\n[证据]: 材料第十条明确指出，“若被保险人确诊合同所列重大疾病，按基本保险金额给付，给付后合同终止。”\n\n[解释说明]: 重大疾病是指对身体造成严重伤害、危及生命的疾病，如癌症、心脏病、中风等。保险合同中列出的重大疾病，是保险公司承保范围内疾病的清单。",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "answer_compliance": 5,
+          "clause_fidelity": 5,
+          "response_formality": 5
+        },
+        "stage3": {
+          "answer_compliance": 3,
+          "clause_fidelity": 5,
+          "response_formality": 3
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline 在术语合规性与表述规范性上更严谨，stage3 的解释说明存在口语化概括且未紧扣条款逻辑。"
+    }
+  },
+  {
+    "id": "21",
+    "question": "你是一名专业保险合同分析助手。\n\n【任务类型】\n客观判断\n\n【合同片段】\n这段文字来自的合同是：中国平安住院费用医疗保险条款\n片段内容：第六条 等待期除因意外伤害外，被保险人在本合同生效之日起三十日内",
+    "baseline_ans": "不赔付。",
+    "stage3_ans": "[答案] 根据材料第六条，等待期除因意外伤害外，被保险人在本合同生效之日起三十日内发生的疾病所导致的医疗费用，保险人不承担给付保险金的责任。因此，在投保生效的前30天因疾病住院，保险公司不赔付。",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "answer_compliance": 3,
+          "clause_fidelity": 0,
+          "response_formality": 1
+        },
+        "stage3": {
+          "answer_compliance": 5,
+          "clause_fidelity": 5,
+          "response_formality": 5
+        }
+      },
+      "best": "stage3",
+      "comment": "stage3 完整引用条款原文并严谨说明依据，而 baseline 仅给出结论未引用条款，表述过于简略且不严谨。"
+    }
+  },
+  {
+    "id": "23",
+    "question": "你是一名专业保险合同分析助手。\n\n【任务类型】\n客观判断\n\n【合同片段】\n合同：众安个人意外伤害保险\n片段内容：第五条 若被保险人酒后驾驶机动车发生意外，本公司不承担给付保险金责任。\n\n【用户提问】\n",
+    "baseline_ans": "否。",
+    "stage3_ans": "[答案] 根据材料第五条，如果被保险人在酒后驾驶机动车发生意外，保险公司不承担赔付保险金的责任。但是，本问题中提到的酒后骑电动车，并不属于机动车的范畴，因此不属于免责范围。**免责范围**: 指保险合同中约定的保险公司不承担赔付保险金的责任的情况。",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "answer_compliance": 1,
+          "clause_fidelity": 0,
+          "response_formality": 1
+        },
+        "stage3": {
+          "answer_compliance": 5,
+          "clause_fidelity": 5,
+          "response_formality": 5
+        }
+      },
+      "best": "stage3",
+      "comment": "stage3 严格依据条款术语和范围进行严谨分析，而 baseline 仅给出结论且未引用条款，不符合保险专业表达规范。"
+    }
+  },
+  {
+    "id": "14",
+    "question": "你是一名专业保险合同分析助手。\n【任务类型】主观解释\n【合同片段】第7.1条 自驾车辆需具备合法有效驾驶证，否则不承担意外责任。\n【用户提问】如果驾驶证被暂扣期间发生事故，是否视为无有效驾驶证？\n请生",
+    "baseline_ans": "**结论**：驾驶证被暂扣期间发生事故，一般视为无有效驾驶证，保险人不承担意外责任。\n\n**证据**：根据合同第7.1条的规定，“自驾车辆需具备合法有效驾驶证，否则不承担意外责任。”该条款明确指出，只有在持有合法有效驾驶证的情况下，保险人才承担意外责任。驾驶证被暂扣期间，驾驶人已不具备合法驾驶资格，因此不符合合同中“合法有效驾驶证”的要求。\n\n**解释说明**：驾驶证被暂扣期间，驾驶人虽未被正式吊",
+    "stage3_ans": "[答案] 根据提供的材料，无法判断暂扣驾驶证是否视为无有效驾驶证。材料中仅提到“无有效驾驶证”将导致不承担意外责任，但没有明确说明暂扣驾驶证的具体影响。",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "answer_compliance": 5,
+          "clause_fidelity": 5,
+          "response_formality": 5
+        },
+        "stage3": {
+          "answer_compliance": 1,
+          "clause_fidelity": 0,
+          "response_formality": 3
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline 严格依据条款进行专业解释，stage3 因未引用条款而缺乏合规性。"
+    }
+  },
+  {
+    "id": "27",
+    "question": "你是一名专业保险合同分析助手。\n\n【任务类型】\n客观判断\n\n【合同片段】\n合同：泰康重大疾病保险\n片段内容：若为轻症给付，合同继续有效；累计给付轻症次数不超过三次。\n\n【用户提问】\n第四次确诊轻症还能",
+    "baseline_ans": "不能赔。",
+    "stage3_ans": "[答案] 根据材料，轻症累计给付次数不超过三次，因此第四次确诊轻症将不再赔付。",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "answer_compliance": 3,
+          "clause_fidelity": 3,
+          "response_formality": 3
+        },
+        "stage3": {
+          "answer_compliance": 5,
+          "clause_fidelity": 5,
+          "response_formality": 5
+        }
+      },
+      "best": "stage3",
+      "comment": "stage3 完整引用了条款原文并规范说明了依据，而 baseline 仅给出简短结论，未体现条款依据。"
+    }
+  },
+  {
+    "id": "36",
+    "question": "你是一名专业保险合同分析助手。\n\n【任务类型】\n主观解释\n\n【合同名称】\n平安住院医疗险\n\n【合同片段】\n本合同对未遵医嘱擅自服药导致的损害不承担责任。\n\n【用户提问】\n为什么未遵医嘱会被免责？\n\n请",
+    "baseline_ans": "**结论**：根据合同条款，未遵医嘱擅自服药属于被保险人自身行为导致的损害，因此保险人不承担相应的责任。\n\n**证据**：合同中明确载明：“本合同对未遵医嘱擅自服药导致的损害不承担责任。”该条款直接说明了在未遵医嘱情况下，保险人不承担赔偿责任。\n\n**解释说明**：保险合同中的免责条款是保险人为了明确自身责任范围而设定的条款。未遵医嘱擅自服药属于被保险人未按照医疗专业人员的指导进行治疗的行为，可能",
+    "stage3_ans": "[答案] 未遵医嘱擅自服药属于被保险人自身原因造成的损害，保险合同中明确规定不承担赔偿责任。**未遵医嘱**是指没有按照医生的指示用药。\n\n* 来源：平安住院医疗险条款中提到“本合同对未遵医嘱擅自服药导致的损害不承担责任。”\n\n**专有名词解释：**\n* **被保险人：**购买保险并享有保险保障的人。\n* **赔偿：**保险公司根据保险合同的约定，对被保险人因保险事故造成的损失进行经济补偿的行为。",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "answer_compliance": 5,
+          "clause_fidelity": 5,
+          "response_formality": 5
+        },
+        "stage3": {
+          "answer_compliance": 3,
+          "clause_fidelity": 3,
+          "response_formality": 3
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline 在术语使用、条款引用和表述严谨性上均更符合保险专业规范，而 stage3 存在口语化概括和结构松散的问题。"
+    }
+  },
+  {
+    "id": "35",
+    "question": "你是一名专业保险合同分析助手。\n\n【任务类型】\n主观解释\n\n【合同名称】\n太平意外险\n\n【合同片段】\n若被保险人因酒后驾驶导致意外，保险人不承担给付责任。\n\n【用户提问】\n为什么酒驾属于免责？\n\n请生",
+    "baseline_ans": "**结论**：酒驾属于免责情形，是因为酒后驾驶属于违法行为，且与保险责任范围中的“意外”定义不符，因此保险人不承担给付责任。\n\n**证据**：合同中明确载明：“若被保险人因酒后驾驶导致意外，保险人不承担给付责任。”该条款直接说明了酒后驾驶属于保险免责范围。\n\n**解释说明**：保险合同中的免责条款是保险人为了控制风险、明确责任范围而设定的条款。酒后驾驶属于违法行为，且在法律上被认定为对自身安全和他",
+    "stage3_ans": "[答案] 酒驾属于免责，是因为保险合同中明确规定，如果被保险人在酒后驾驶的情况下发生意外，保险公司不承担赔偿责任。\n\n 来自材料的说明：“若被保险人因酒后驾驶导致意外，保险人不承担给付责任。”\n\n 酒后驾驶是指驾驶人员在饮酒后，血液中的酒精含量达到或超过法律规定的限度，此时驾驶车辆的行为已构成违法行为。在保险合同的框架内，这种行为被视为高风险活动，保险公司因此免除其赔偿责任。",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "answer_compliance": 5,
+          "clause_fidelity": 5,
+          "response_formality": 5
+        },
+        "stage3": {
+          "answer_compliance": 3,
+          "clause_fidelity": 3,
+          "response_formality": 3
+        }
+      },
+      "best": "baseline",
+      "comment": "baseline 在术语使用、条款引用和表述严谨性上均更符合保险专业规范，而 stage3 存在口语化表达和解释不够深入的问题。"
+    }
+  },
+  {
+    "id": "13",
+    "question": "…",
+    "baseline_ans": "您好，请提供您需要咨询的保险合同片段或具体问题，我将根据提供的信息为您解答。",
+    "stage3_ans": "[答案] 根据材料中“在合同约定领取年金期间，若被保险人身故，年金给付终止”的规定，如果被保险人在领取年金的过程中发生身故，那么年金给付将停止。",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "answer_compliance": 0,
+          "clause_fidelity": 0,
+          "response_formality": 5
+        },
+        "stage3": {
+          "answer_compliance": 5,
+          "clause_fidelity": 5,
+          "response_formality": 5
+        }
+      },
+      "best": "stage3",
+      "comment": "baseline 因无条款内容而无法进行专业回答，stage3 则严格依据条款原文使用专业术语并忠实转述。"
+    }
+  },
+  {
+    "id": "19",
+    "question": "…",
+    "baseline_ans": "您好，请提供您需要咨询的保险合同片段或具体问题，我将根据提供的信息为您解答。",
+    "stage3_ans": "[答案] **意外**：指外来的、突发的、非本意的事件。**酒后驾驶机动车**：指驾驶人员血液中的酒精含量达到或超过一定标准后驾驶机动车的行为。",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "answer_compliance": 0,
+          "clause_fidelity": 0,
+          "response_formality": 5
+        },
+        "stage3": {
+          "answer_compliance": 5,
+          "clause_fidelity": 5,
+          "response_formality": 5
+        }
+      },
+      "best": "stage3",
+      "comment": "baseline 因未提供具体答案而无法评估合规性，stage3 则严格使用保险条款原文术语并保持了高度忠实与规范。"
+    }
+  },
+  {
+    "id": "24",
+    "question": "你是一名专业保险合同分析助手。\n\n【任务类型】\n客观判断\n\n【合同片段】\n合同：新华长期寿险条款\n片段内容：若投保人故意杀害被保险人，保险公司不承担保险金责任；但返还现金价值。\n\n【用户提问】\n投保人",
+    "baseline_ans": "保险公司会返还现金价值。",
+    "stage3_ans": "[答案] 如果投保人故意杀害被保险人，保险公司将不承担保险金责任，但会返还**现金价值**。",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "answer_compliance": 5,
+          "clause_fidelity": 5,
+          "response_formality": 3
+        },
+        "stage3": {
+          "answer_compliance": 5,
+          "clause_fidelity": 5,
+          "response_formality": 5
+        }
+      },
+      "best": "stage3",
+      "comment": "两个模型均准确使用条款术语并忠实引用原文，但stage3在表述规范性上更严谨，完整复现了条款的完整逻辑结构。"
+    }
+  },
+  {
+    "id": "29",
+    "question": "你是一名专业保险合同分析助手。\n\n【任务类型】\n客观判断\n\n【合同片段】\n合同：平安学生意外保险\n片段内容：若意外事故发生时未佩戴安全头盔导致损失扩大，保险人对扩大部分不承担责任。\n\n【用户提问】\n未",
+    "baseline_ans": "不会赔付。",
+    "stage3_ans": "[答案] 根据材料，如果意外事故发生时未佩戴安全头盔导致损失扩大，保险人对扩大部分不承担责任。",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "answer_compliance": 1,
+          "clause_fidelity": 1,
+          "response_formality": 1
+        },
+        "stage3": {
+          "answer_compliance": 5,
+          "clause_fidelity": 5,
+          "response_formality": 5
+        }
+      },
+      "best": "stage3",
+      "comment": "stage3 严格引用条款原文表述，术语合规且表述严谨，而 baseline 仅为口语化概括，未体现保险专业表达规范。"
+    }
+  },
+  {
+    "id": "22",
+    "question": "你是一名专业保险合同分析助手。\n\n【任务类型】\n客观判断\n\n【合同片段】\n这段文字来自的合同是：国寿防癌疾病保险条款\n片段内容：第五条 本合同对被保险人初次确诊为合同约定癌症，给付基本保险金额。本合同",
+    "baseline_ans": "不能获得赔付。",
+    "stage3_ans": "[答案] 根据材料第五条，本合同对被保险人初次确诊为合同约定癌症给予赔付，但对既往确诊的癌症或癌症前病变不承担责任。因此，若投保前已确诊癌症，投保后再次确诊，**无法获得赔付**。",
+    "judge": {
+      "scores": {
+        "baseline": {
+          "answer_compliance": 3,
+          "clause_fidelity": 3,
+          "response_formality": 3
+        },
+        "stage3": {
+          "answer_compliance": 5,
+          "clause_fidelity": 5,
+          "response_formality": 5
+        }
+      },
+      "best": "stage3",
+      "comment": "stage3 完整引用了条款原文并严格使用专业术语，而 baseline 仅给出结论但未展示条款依据，表述规范性较弱。"
+    }
+  }
+]

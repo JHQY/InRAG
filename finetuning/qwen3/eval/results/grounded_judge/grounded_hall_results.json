@@ -1,0 +1,380 @@
+[
+  {
+    "id": "1",
+    "judge": {
+      "grounding": {
+        "baseline": {
+          "grounded": false,
+          "unverifiable_claims": [
+            "牙齿美白属于美容类行为"
+          ]
+        },
+        "stage3": {
+          "grounded": true,
+          "unverifiable_claims": []
+        }
+      },
+      "scores": {
+        "baseline": {
+          "correctness": 5,
+          "evidence_use": 0,
+          "no_hallucination": 0,
+          "structure": 5,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        }
+      },
+      "comment": "baseline 添加了证据未提及的“美容类行为”分类，stage3 严格依据证据中的“整形”进行推理。"
+    },
+    "outputs": {
+      "baseline": "<think>\n\n</think>\n\n根据合同片段内容，这款保险不包括体检、整形及其他非医疗行为。牙齿美白属于美容类行为，不属于医疗行为，因此不能报销。结论：不能报销。",
+      "stage3": "<think>\n\n</think>\n\n<Thought>\n问题类型: 判断类\n关键实体: 保险、报销\n证据匹配:\n  - 结果1（《本合同保障范围包括住院医疗费用与特定门诊...》）: 包含目标信息，可用\n推理路径: 明确判断标准 → 对照条款规定 → 得出是否结论\n</Thought>\n[答案] 根据材料，这款保险不包括整形，因此不保障牙齿美白。"
+    }
+  },
+  {
+    "id": "2",
+    "judge": {
+      "grounding": {
+        "baseline": {
+          "grounded": true,
+          "unverifiable_claims": []
+        },
+        "stage3": {
+          "grounded": false,
+          "unverifiable_claims": [
+            "引用了《中意人寿健康保险中意乐宝宝少儿重大疾病保险》等26个具体合同名称/版本",
+            "进行了20余次“与查询目标不匹配，不可用”的检索结果分析"
+          ]
+        }
+      },
+      "scores": {
+        "baseline": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 0,
+          "evidence_use": 0,
+          "no_hallucination": 0,
+          "structure": 2,
+          "fidelity": 1
+        }
+      },
+      "comment": "baseline严格基于证据得出“无法确定”的结论，stage3则引入了大量证据外无关的合同名称和检索过程，构成严重幻觉。"
+    },
+    "outputs": {
+      "baseline": "<think>\n\n</think>\n\n根据合同片段中的说明，本合同仅保障合同所列的100种重大疾病。由于合同中未明确列出抑郁症是否属于这100种疾病之一，因此无法确定抑郁症是否属于保障范围。结论：无法确定。",
+      "stage3": "<think>\n\n</think>\n\n<Thought>\n问题类型: 判断类\n关键实体: 范围\n证据匹配:\n  - 结果1（《中意人寿健康保险中意乐宝宝少儿重大疾病保险（202...》）: 与查询目标不匹配，不可用\n  - 结果2（《中意人寿健康保险中意乐宝宝少儿重大疾病保险（2...》）: 与查询目标不匹配，不可用\n  - 结果3（《中意人寿健康保险中意乐宝宝少儿重大疾病保险（2...》）: 与"
+    }
+  },
+  {
+    "id": "3",
+    "judge": {
+      "grounding": {
+        "baseline": {
+          "grounded": true,
+          "unverifiable_claims": []
+        },
+        "stage3": {
+          "grounded": false,
+          "unverifiable_claims": [
+            "高血压属于慢性疾病，其发作是逐渐发生的"
+          ]
+        }
+      },
+      "scores": {
+        "baseline": {
+          "correctness": 3,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 4,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 5,
+          "evidence_use": 0,
+          "no_hallucination": 0,
+          "structure": 5,
+          "fidelity": 5
+        }
+      },
+      "comment": "baseline严格依据证据拒答，stage3得出正确结论但引入了证据外的医学知识。"
+    },
+    "outputs": {
+      "baseline": "<think>\n\n</think>\n\n根据合同片段中的定义，意外事故是指外来的、突发的、非本意的事件。高血压突然发作是否属于意外事故，需判断是否符合上述三个要素。合同未明确高血压发作是否属于“外来”或“非本意”的事件，因此无法依据合同片段给出明确结论。",
+      "stage3": "<think>\n\n</think>\n\n<Thought>\n问题类型: 定义类\n关键实体: 意外、事故\n证据匹配:\n  - 结果1（《意外事故是指外来的、突发的、非本意的事件...》）: 包含目标信息，可用\n推理路径: 识别目标 → 分析证据 → 得出结论\n</Thought>\n[答案] 不属于。高血压属于慢性疾病，其发作是逐渐发生的，不符合意外事故中“突发”的要求。"
+    }
+  },
+  {
+    "id": "4",
+    "judge": {
+      "grounding": {
+        "baseline": {
+          "grounded": true,
+          "unverifiable_claims": []
+        },
+        "stage3": {
+          "grounded": true,
+          "unverifiable_claims": []
+        }
+      },
+      "scores": {
+        "baseline": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 4,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        }
+      },
+      "comment": "两模型均严格基于证据，未引入外部知识，但stage3在结构化输出和证据引用说明上更规范。"
+    },
+    "outputs": {
+      "baseline": "<think>\n\n</think>\n\n根据合同片段内容，本合同未提及既往症的相关规定。因此，无法确定既往症是否全部不赔。结论：无法确定。",
+      "stage3": "<think>\n\n</think>\n\n<Thought>\n问题类型: 判断类\n关键实体: 既往症、合同\n证据匹配:\n  - 结果1（《本合同未提及既往症的相关规定。》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答\n</Thought>\n[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说"
+    }
+  },
+  {
+    "id": "5",
+    "judge": {
+      "grounding": {
+        "baseline": {
+          "grounded": true,
+          "unverifiable_claims": []
+        },
+        "stage3": {
+          "grounded": false,
+          "unverifiable_claims": [
+            "公共交通意外通常指乘坐轮船、火车、公共汽车、出租车等公共交通工具发生的意外",
+            "步行被电动车撞到属于交通事故"
+          ]
+        }
+      },
+      "scores": {
+        "baseline": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 3,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 5,
+          "evidence_use": 0,
+          "no_hallucination": 0,
+          "structure": 4,
+          "fidelity": 5
+        }
+      },
+      "comment": "baseline严格基于证据片段作答，stage3添加了证据外的具体交通工具举例和事故分类定义。"
+    },
+    "outputs": {
+      "baseline": "<think>\n\n</think>\n\n否。",
+      "stage3": "<think>\n\n</think>\n\n<Thought>\n问题类型: 判断类\n关键实体: 保险、意外\n证据匹配:\n  - 结果1（《保障因使用公共交通工具导致的意外身故...》）: 包含目标信息，可用\n推理路径: 明确判断标准 → 对照条款规定 → 得出是否结论\n</Thought>\n[答案] 不属于。公共交通意外通常指乘坐轮船、火车、公共汽车、出租车等公共交通工具发生的意外。步行被电动车撞到属于"
+    }
+  },
+  {
+    "id": "6",
+    "judge": {
+      "grounding": {
+        "baseline": {
+          "grounded": true,
+          "unverifiable_claims": []
+        },
+        "stage3": {
+          "grounded": true,
+          "unverifiable_claims": []
+        }
+      },
+      "scores": {
+        "baseline": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 4,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        }
+      },
+      "comment": "两模型均严格基于证据拒答，未引入外部知识，但stage3在结构化输出和证据标注上更规范。"
+    },
+    "outputs": {
+      "baseline": "<think>\n\n</think>\n\n根据合同片段提供的信息，无法确定是否包含旅行期间报销退票费的责任。合同仅提及“保障因旅行过程中的意外事故和突发疾病”，未明确说明退票费是否在保障范围内。因此，不能得出唯一明确的结论。",
+      "stage3": "<think>\n\n</think>\n\n<Thought>\n问题类型: 判断类\n关键实体: 退票、报销\n证据匹配:\n  - 结果1（《保障因旅行过程中的意外事故和突发疾病。》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答\n</Thought>\n[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n["
+    }
+  },
+  {
+    "id": "7",
+    "judge": {
+      "grounding": {
+        "baseline": {
+          "grounded": false,
+          "unverifiable_claims": [
+            "不可以报销"
+          ]
+        },
+        "stage3": {
+          "grounded": true,
+          "unverifiable_claims": []
+        }
+      },
+      "scores": {
+        "baseline": {
+          "correctness": 0,
+          "evidence_use": 0,
+          "no_hallucination": 0,
+          "structure": 2,
+          "fidelity": 3
+        },
+        "stage3": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        }
+      },
+      "comment": "baseline 直接给出无证据支持的否定结论，属于幻觉；stage3 严格基于证据缺失而拒答，符合要求。"
+    },
+    "outputs": {
+      "baseline": "<think>\n\n</think>\n\n不可以报销。",
+      "stage3": "<think>\n\n</think>\n\n<Thought>\n问题类型: 判断类\n关键实体: 住院、报销\n证据匹配:\n  - 结果1（《本合同对经批准的住院医疗费用给予赔付。》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答\n</Thought>\n[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n["
+    }
+  },
+  {
+    "id": "8",
+    "judge": {
+      "grounding": {
+        "baseline": {
+          "grounded": true,
+          "unverifiable_claims": []
+        },
+        "stage3": {
+          "grounded": true,
+          "unverifiable_claims": []
+        }
+      },
+      "scores": {
+        "baseline": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 4,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        }
+      },
+      "comment": "两模型均严格基于证据拒答，未引入外部知识，但stage3在结构化输出和证据引用透明度上更优。"
+    },
+    "outputs": {
+      "baseline": "<think>\n\n</think>\n\n根据合同片段内容，本合同提供身故保障，但未包含免责条款说明。因此，无法确定酒驾是否属于免责情形。结论：无法确定是否赔付。",
+      "stage3": "<think>\n\n</think>\n\n<Thought>\n问题类型: 判断类\n关键实体: 身故、被保险人、赔付\n证据匹配:\n  - 结果1（本合同提供身故保障，但未包含免责条款说明。）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标信息，无法作答\n</Thought>\n[答案] 根据提供的检索结果，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n["
+    }
+  },
+  {
+    "id": "9",
+    "judge": {
+      "grounding": {
+        "baseline": {
+          "grounded": true,
+          "unverifiable_claims": []
+        },
+        "stage3": {
+          "grounded": false,
+          "unverifiable_claims": [
+            "检索结果1-8的具体合同名称（如《中意乐优享（次标版）医疗保险（费率可调）...》）",
+            "检索结果与查询目标不匹配的结论",
+            "提供的检索结果均不包含目标问题的有效信息"
+          ]
+        }
+      },
+      "scores": {
+        "baseline": {
+          "correctness": 5,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 4,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 3,
+          "evidence_use": 0,
+          "no_hallucination": 0,
+          "structure": 3,
+          "fidelity": 2
+        }
+      },
+      "comment": "baseline严格基于证据作答，stage3引入了证据中完全不存在的具体合同名称和检索过程，构成幻觉。"
+    },
+    "outputs": {
+      "baseline": "<think>\n\n</think>\n\n根据提供的合同片段，本合同保障合同约定的重大疾病。由于合同片段中未明确列出具体疾病范围，无法确定“轻微甲状腺结节”是否属于重大疾病。因此，无法给出唯一明确的结论。",
+      "stage3": "<think>\n\n</think>\n\n<Thought>\n问题类型: 判断类\n关键实体: 疾病、重大疾病\n证据匹配:\n  - 结果1（《中意乐优享（次标版）医疗保险（费率可调）...》）: 与查询目标不匹配，不可用\n  - 结果2（《中意乐宝宝少儿特定疾病保险（2021）...》）: 与查询目标不匹配，不可用\n  - 结果3（《中意乐温馨综合住院补偿医疗保险（A款）...》）: 与查询目标不匹配，"
+    }
+  },
+  {
+    "id": "10",
+    "judge": {
+      "grounding": {
+        "baseline": {
+          "grounded": false,
+          "unverifiable_claims": [
+            "不赔付。停电导致的损坏不属于火灾或爆炸责任范围。"
+          ]
+        },
+        "stage3": {
+          "grounded": true,
+          "unverifiable_claims": []
+        }
+      },
+      "scores": {
+        "baseline": {
+          "correctness": 5,
+          "evidence_use": 0,
+          "no_hallucination": 0,
+          "structure": 5,
+          "fidelity": 5
+        },
+        "stage3": {
+          "correctness": 0,
+          "evidence_use": 5,
+          "no_hallucination": 5,
+          "structure": 5,
+          "fidelity": 5
+        }
+      },
+      "comment": "baseline 基于外部知识给出了正确但无证据的答案，stage3 严格遵循证据而拒答。"
+    },
+    "outputs": {
+      "baseline": "<think>\n\n</think>\n\n不赔付。",
+      "stage3": "<think>\n\n</think>\n\n<Thought>\n问题类型: 定义类\n关键实体: 赔付\n证据匹配:\n  - 结果1（《本合同保障因火灾、爆炸引起的家庭财产损失...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答\n</Thought>\n[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n"
+    }
+  }
+]

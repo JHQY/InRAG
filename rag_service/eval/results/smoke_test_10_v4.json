@@ -1,0 +1,813 @@
+{
+  "summary": {
+    "run_at": "2026-04-09T13:03:36.604733",
+    "total_tests": 10,
+    "pass": 7,
+    "partial": 0,
+    "fail": 3,
+    "error": 0,
+    "avg_score_12": 7.9
+  },
+  "tests": [
+    {
+      "id": 1,
+      "category": "定義類-冷靜期",
+      "expected": "有答案",
+      "note": "KB中有保誠冷靜期21天條款",
+      "prompt": "保誠保險計劃的冷靜期（猶豫期）是多少天？如何在冷靜期內取消保單？",
+      "mode": "raft",
+      "top_k": 5,
+      "latency_total_s": 10.02,
+      "latency_eval_s": 2.59,
+      "retrieval": [
+        {
+          "rank": 1,
+          "company": "prudential",
+          "category": "medical",
+          "product_name": "prumed-lifelong-care-plan-product-brochure",
+          "source": "sourcepdf/prudential/medical/prumed-lifelong-care-plan-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 25,
+          "score": 0.0,
+          "text_preview": "重要信息 取消保单的权利 购买人寿保险计划的客户有权在冷静期内（即「犹豫期」）取消保单，并可获退回已扣除任何曾提取现金款项后的任何已缴付 保费和保费征费。只要保单未曾作出索偿，客户可在（1）保单或（2）有关通知书（以说明保单已经备妥和犹豫期的届满天）交付 给客户或其指定代表的当天起计的21个历日内，以较先者为准，以书面通知我们提出取消保单。该通知书必须由客户签署并由 保诚保险有限公司在香港九龙尖沙"
+        },
+        {
+          "rank": 2,
+          "company": "prudential",
+          "category": "medical",
+          "product_name": "pruhealth-secure-top-up-plan-product-brochure",
+          "source": "sourcepdf/prudential/medical/pruhealth-secure-top-up-plan-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 16,
+          "score": 0.1532,
+          "text_preview": "重要信息 取消保单的权利 购买人寿保险计划的客户有权在冷静期（即「犹豫期」）内取消保单，并可获退回已扣除任何曾提取现金款项后的任何已缴付 保费和保费征费。只要保单未曾作出索偿，客户可在（1）保单或（2）有关通知书（以说明保单已经备妥和犹豫期的届满日）交付 给客户或其指定代表当天起计的21个历日内，以较先者为准，以书面通知我们提出取消保单。该通知书必须由客户签署并由 保诚保险有限公司在香港九龙尖沙咀"
+        },
+        {
+          "rank": 3,
+          "company": "prudential",
+          "category": "critical_illness",
+          "product_name": "pruhealth-guardian-critical-illness-plan-series-product-brochure",
+          "source": "sourcepdf/prudential/critical_illness/pruhealth-guardian-critical-illness-plan-series-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 32,
+          "score": 0.3208,
+          "text_preview": "重要信息 自杀条款 假如受保人在保单生效日或任何复效日期（以较后者为准）起计1年内自杀，不论当时神智正常或失常，所有保障收益将只限 于退还已缴交的保费（不附利息），并扣除我们就本保单曾支付的任何金额和任何您未偿还的欠款。 取消保单的权利 购买人寿保险计划的客户有权在冷静期（即「犹豫期」）内取消保单，并可获退回已扣除任何曾提取现金款项后的任何已缴付 保费和保费征费。只要保单未曾作出索偿，客户可在 ("
+        },
+        {
+          "rank": 4,
+          "company": "prudential",
+          "category": "medical",
+          "product_name": "encash-product-brochure",
+          "source": "sourcepdf/prudential/medical/encash-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 19,
+          "score": 0.3264,
+          "text_preview": "计划的详细信息 关于股东全资分红计划 重要事项 计划特点 重点保障 保障表 主要不受保范围 重要信息 自杀条款 假如受保人在保单生效日或任何复效日期（以较后者为准）起计1年内自杀，不论当时神智正常或失常，所有保障收益将只限于 退还已缴保费（不附利息），并扣除我们就本保单曾支付的任何金额和任何您未偿还的欠款。 取消保单的权利 购买人寿保险计划的客户有权在冷静期（即「犹豫期」）内取消保单，并可获退回已"
+        },
+        {
+          "rank": 5,
+          "company": "AXA",
+          "category": "critical_illness",
+          "product_name": "LPPM 790-2211C MultiPro Critical Illness Plan & MultiPro Plus Critical Illness Plan_HK&MA_Chi",
+          "source": "sourcepdf/AXA/critical_illness/LPPM 790-2211C MultiPro Critical Illness Plan & MultiPro Plus Critical Illness Plan_HK&MA_Chi.pdf",
+          "modality": "text",
+          "page_number": 20,
+          "score": 0.4324,
+          "text_preview": "重要資料 冷靜期 若您並非完全滿意保單，您有權取消保單並獲退還已繳保費，惟在申請取消保單前，您未曾就保單提出索償並獲得 賠償。 適用於香港繕發的保單：如要行使此權利，請於冷靜期內退回保單（如適用）及直接提交您所簽署的取消保單書面通知至 1 2 20 2001 本公司的客戶服務（香港銅鑼灣勿地臣街 號時代廣場 座 樓 室）；冷靜期為緊接保單或保單簽發通知書（以告知您 21 冷靜期的期限）交付予您或您"
+        }
+      ],
+      "model_cot": "问题类型: 定义类\n关键实体: 保单、保诚、保单期\n证据匹配:\n  - 结果1（《prumed-lif...》）: 包含目标信息，可用\n  - 结果2（《pruhealth-secure...》）: 关联度低，忽略\n  - 结果3（《pruhealth-guardian-critical...》）: 关联度低，忽略\n  - 结果4（《encash-product-brochure...》）: 关联度低，忽略\n  - 结果5（《LPPM 790-2211C MultiPro...》）: 关联度低，忽略\n推理路径: 定位相关条款 → 提取术语定义 → 说明适用范围",
+      "final_answer": "[答案] 保誠保險計劃的冷靜期（猶豫期）為**21天**。在冷靜期內，您可以：\n* **书面通知**保险公司取消保单，需提供书面通知并附上保单副本。\n* **在犹豫期内直接提交**取消保单的书面通知至保险公司指定的客户服务部门。",
+      "raw_model_output": "<Thought>\n问题类型: 定义类\n关键实体: 保单、保诚、保单期\n证据匹配:\n  - 结果1（《prumed-lif...》）: 包含目标信息，可用\n  - 结果2（《pruhealth-secure...》）: 关联度低，忽略\n  - 结果3（《pruhealth-guardian-critical...》）: 关联度低，忽略\n  - 结果4（《encash-product-brochure...》）: 关联度低，忽略\n  - 结果5（《LPPM 790-2211C MultiPro...》）: 关联度低，忽略\n推理路径: 定位相关条款 → 提取术语定义 → 说明适用范围\n</Thought>\n[答案] 保誠保險計劃的冷靜期（猶豫期）為**21天**。在冷靜期內，您可以：\n* **书面通知**保险公司取消保单，需提供书面通知并附上保单副本。\n* **在犹豫期内直接提交**取消保单的书面通知至保险公司指定的客户服务部门。",
+      "evaluation": {
+        "retrieval_relevance": 3,
+        "faithfulness": 3,
+        "rejection_quality": 0,
+        "completeness": 3,
+        "total": 12,
+        "verdict": "PASS",
+        "reason": "回答完整，准确引用材料，无幻觉。"
+      }
+    },
+    {
+      "id": 2,
+      "category": "邊界條款-自殺條款",
+      "expected": "有答案",
+      "note": "KB中有保誠1年自殺不賠條款",
+      "prompt": "如果受保人在保單生效後1年內自殺，保誠人壽會否賠付身故賠償？",
+      "mode": "raft",
+      "top_k": 5,
+      "latency_total_s": 11.51,
+      "latency_eval_s": 2.45,
+      "retrieval": [
+        {
+          "rank": 1,
+          "company": "prudential",
+          "category": "medical",
+          "product_name": "pruhealth-essential-critical-care-product-brochure",
+          "source": "sourcepdf/prudential/medical/pruhealth-essential-critical-care-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 12,
+          "score": 0.0433,
+          "text_preview": "重要信息 自殺條款 假如受保人在保單生效日或任何復效日期（以較後者為準）起計1年內自殺，不論當時神智正常或失常，身故賠償將只限於退還 已繳交的保費（不附利息），並扣除我們就本保單曾支付的任何金額和任何您未償還的欠款。 取消保單的權利 購買人壽保險計劃的客戶有權在冷靜期（即「猶豫期」）內取消保單，並可獲退回已扣除任何曾提取現金款項後的任何已繳付 保費和保費征費。只要保單未曾作出索償，客戶可在 (1)"
+        },
+        {
+          "rank": 2,
+          "company": "prudential",
+          "category": "critical_illness",
+          "product_name": "pruhealth-critical-illness-term-ii-product-brochure",
+          "source": "sourcepdf/prudential/critical_illness/pruhealth-critical-illness-term-ii-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 10,
+          "score": 0.1966,
+          "text_preview": "重要信息 自殺條款 假如受保人在保單生效日或任何復效日期（以較後者為準）起計1年內自殺，不論當時神智正常或失常，身故賠償將只限於 退還已繳交的保費（不附利息），並扣除我們就本保單曾支付的任何金額和任何您未償還的欠款。 取消保單的權利 購買人壽保險計劃的客戶有權在冷靜期（即「猶豫期」）內取消保單，並可獲退回已扣除任何曾提取現金款項後的任何已繳付 保費和保費征費。只要保單未曾作出索償，客戶可在 (1)"
+        },
+        {
+          "rank": 3,
+          "company": "prudential",
+          "category": "critical_illness",
+          "product_name": "prucancer-360-product-brochure",
+          "source": "sourcepdf/prudential/critical_illness/prucancer-360-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 8,
+          "score": 0.2516,
+          "text_preview": "重要信息 自殺條款 假如受保人在保單生效日或任何復效日期（以較後者為準）起計1年內自殺，不論當時神智正常或失常，身故賠償將只限於退還 已繳交的保費（不附利息），並扣除我們就本保單曾支付的任何金額和任何您未償還的欠款。 取消保單的權利 購買人壽保險計劃的客戶有權在冷靜期（即「猶豫期」）內取消保單，並可獲退回已扣除任何曾提取現金款項後的任何已繳付 保費和保費征費。只要保單未曾作出索償，客戶可在（1）保"
+        },
+        {
+          "rank": 4,
+          "company": "prudential",
+          "category": "wealth",
+          "product_name": "evergreen-wealth-income-product-brochure",
+          "source": "sourcepdf/prudential/wealth/evergreen-wealth-income-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 16,
+          "score": 0.2525,
+          "text_preview": "計劃的詳細信息 關於股東全資分紅計劃 重要事項 計劃特點 保障概覽 計劃如何幫到您 重要信息 自殺條款 假如受保人在保單生效日起計1年內自殺，不論當時神智正常或失常，身故賠償將只限於退還已繳交的保費（不附利息）， 並扣除我們就本保單曾支付的任何金額和任何您未償還的欠款。 在更換受保人後，假如新受保人在更換受保人的生效日起計1年內自殺，不論當時神智正常或失常，身故賠償將只限於 (i) 退還已繳交的保"
+        },
+        {
+          "rank": 5,
+          "company": "prudential",
+          "category": "critical_illness",
+          "product_name": "product-eci-product-brochure-sc",
+          "source": "sourcepdf/prudential/critical_illness/product-eci-product-brochure-sc.pdf",
+          "modality": "text",
+          "page_number": 16,
+          "score": 0.2723,
+          "text_preview": "主要不受保範圍 計劃的詳細信息 關於股東全資分紅計劃 重要事項 計劃特點 保障概覽 計劃如何提供保障 受保的嚴重病況 重要信息 自殺條款 假如受保人在保單生效日或任何復效日期（以較後者為準）起計1年內自殺，不論當時神智正常或失常，身故賠償將只限於退還 已繳交的保費（不附利息），並扣除我們就本保單曾支付的任何金額和任何您未償還的欠款。 取消保單的權利 購買人壽保險計劃的客戶有權在冷靜期（即「猶豫期」"
+        }
+      ],
+      "model_cot": "问题类型: 判断类\n关键实体: 保单、身故、赔付\n证据匹配:\n  - 结果1（'pruhealth-essential-critical-care-pro...》：包含目标信息，可用\n  - 结果2（'pruhealth-critical-illness-term-ii-pro...》：包含目标信息，可用\n  - 结果3（'prucancer-360-product-brochure》：包含目标信息，可用\n  - 结果4（'evergreen-wealth-income-product-broche...》：包含目标信息，可用\n  - 结果5（'product-eci-product-brochure-sc》：包含目标信息，可用\n推理路径: 明确判断标准 → 对照条款规定 → 得出是否结论",
+      "final_answer": "[答案] 根据材料，如果受保人在保單生效日起计1年內自殺，不论当时神智正常或失常，身故赔偿将只限於退還已繳交的保費（不附利息），並扣除我們就本保單曾支付的任何金額和任何您未償還的欠款。",
+      "raw_model_output": "<Thought>\n问题类型: 判断类\n关键实体: 保单、身故、赔付\n证据匹配:\n  - 结果1（'pruhealth-essential-critical-care-pro...》：包含目标信息，可用\n  - 结果2（'pruhealth-critical-illness-term-ii-pro...》：包含目标信息，可用\n  - 结果3（'prucancer-360-product-brochure》：包含目标信息，可用\n  - 结果4（'evergreen-wealth-income-product-broche...》：包含目标信息，可用\n  - 结果5（'product-eci-product-brochure-sc》：包含目标信息，可用\n推理路径: 明确判断标准 → 对照条款规定 → 得出是否结论\n</Thought>\n[答案] 根据材料，如果受保人在保單生效日起计1年內自殺，不论当时神智正常或失常，身故赔偿将只限於退還已繳交的保費（不附利息），並扣除我們就本保單曾支付的任何金額和任何您未償還的欠款。",
+      "evaluation": {
+        "retrieval_relevance": 3,
+        "faithfulness": 3,
+        "rejection_quality": 0,
+        "completeness": 3,
+        "total": 12,
+        "verdict": "PASS",
+        "reason": "该回答直接引用了材料中的信息，准确回答了问题。"
+      }
+    },
+    {
+      "id": 3,
+      "category": "定義類-等候期",
+      "expected": "有答案",
+      "note": "KB中有永明危疾90日/180日等候期條款",
+      "prompt": "永明危疾保的等候期是多少天？哪些疾病有較長的等候期？",
+      "mode": "raft",
+      "top_k": 5,
+      "latency_total_s": 9.65,
+      "latency_eval_s": 2.91,
+      "retrieval": [
+        {
+          "rank": 1,
+          "company": "sunlife",
+          "category": "medical",
+          "product_name": "SunHealth-LovePromise_PB_SC",
+          "source": "sourcepdf/sunlife/medical/SunHealth-LovePromise_PB_SC.pdf",
+          "modality": "text",
+          "page_number": 12,
+          "score": 0.1587,
+          "text_preview": "Sun Life 简介 主要特点 参考例子 主要产品资料 重要资料 关于 永明 简介 永明危疾家康保 三大危疾多重额外保障 • 其后诊断为癌症╱心脏病╱中风而获批核三大危疾多重额外保障前，其后诊断为癌症╱心脏病╱ 中风的日期及紧接之前已获批核之危疾索偿的危疾诊断日期，必须相隔最少连续一年； • 其后诊断为癌症╱心脏病╱中风而获批核三大危疾多重额外保障前，其后诊断为癌症╱心脏病╱ 中风的日期及紧接之"
+        },
+        {
+          "rank": 2,
+          "company": "sunlife",
+          "category": "medical",
+          "product_name": "SunHealth-LovePromise_PB_SC",
+          "source": "sourcepdf/sunlife/medical/SunHealth-LovePromise_PB_SC.pdf",
+          "modality": "text",
+          "page_number": 7,
+          "score": 0.288,
+          "text_preview": "Sun Life 简介 主要特点 参考例子 主要产品资料 重要资料 关于 永明 永明危疾家康保 • 90 等候期： 日，专注力不足╱过度活跃症、次级严重自闭症、语言障碍、特殊学习障碍、刻板性运动障碍和 180 妥瑞症除外，其等候期为 日。 • 25% 心肝宝贝全护保最高总索偿金额不高于原有保障额 ；或在永明香港就同一受保人签发的所有保单下的心肝 400,000 50,000 宝贝全护保之最高终身限"
+        },
+        {
+          "rank": 3,
+          "company": "sunlife",
+          "category": "critical_illness",
+          "product_name": "CMC_SC",
+          "source": "sourcepdf/sunlife/critical_illness/CMC_SC.pdf",
+          "modality": "text",
+          "page_number": 14,
+          "score": 0.5016,
+          "text_preview": "Sun Life 简介 主要特点 参考例子 主要产品资料 重要资料 关于 永明 简简介介 II 危疾护您保障计划 重要提示 1. 2018 1 1 由 年 月 日起，所有保单主权人均需透过保险公司向保险业监管局为其新新造和生效中的保单缴付保费征费。所适用的征费 www.sunlife.com.hk/levy_chi 率将根据保单日期或保单周年日而厘订。有关保费征费详情，请浏览我们的网站 或保险业监"
+        },
+        {
+          "rank": 4,
+          "company": "sunlife",
+          "category": "medical",
+          "product_name": "SunHealth-LovePromise_PB_SC",
+          "source": "sourcepdf/sunlife/medical/SunHealth-LovePromise_PB_SC.pdf",
+          "modality": "text",
+          "page_number": 10,
+          "score": 0.5142,
+          "text_preview": "Sun Life 简介 主要特点 参考例子 主要产品资料 重要资料 关于 永明 简介 永明危疾家康保 三大危疾多重额外保障 危疾复发并非罕见，其中癌症、心脏病和中风更是复发率偏高的疾病。为协助您应对不幸，即使我们 已支付危疾保障，当现有保障额被减至零时，永明危疾家康保亦会为您提供额外保障。此保障提供适 时和重要的财务支援，助您专注康复。 100% 三大危疾多重额外保障，每次当受保人确诊癌症、心脏病"
+        },
+        {
+          "rank": 5,
+          "company": "hsbc",
+          "category": "critical_illness",
+          "product_name": "2022-jul-product-brochure",
+          "source": "sourcepdf/hsbc/critical_illness/2022-jul-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 7,
+          "score": 0.5712,
+          "text_preview": "计划摘要 保费供款年期 2年或5年 投保年龄 出生后15日至55岁6 透过网上投保：19至55岁6 保单货币 港币 保单年期 10年 缴付保费方法 合计保费7、按月或按年，透过以下方式缴付： ‧ 汇丰银行港币户口（自动转账） 保费类别 ‧ 保费缴付期内，保费维持水平保证不变 ‧ 保费价格随投保时年龄6/性别/吸烟状况而异 最低保额（每份保单） 港币100,000元 最高保额（每名受保人） 港币2,"
+        }
+      ],
+      "model_cot": "问题类型: 计算类\n关键实体: 等待期、疾病\n证据匹配:\n  - 结果1（《Sun Life 简介 主要特点 参考例子...》）: 包含目标信息，可用\n  - 结果2（《SunHealth-LovePromise_PB_SC...》）: 关联度低，忽略\n  - 结果3（《CMC_SC...》）: 关联度低，忽略\n  - 结果4（《SunHealth-LovePromise_PB_SC...》）: 关联度低，忽略\n  - 结果5（《2022-jul-product-brochure...》）: 关联度低，忽略\n推理路径: 识别计算参数 → 定位金额/比例规定 → 说明适用条件",
+      "final_answer": "[答案] 永明危疾保的等候期为90天。对于危疾保障，等候期为90天。对于非危疾保障，没有等候期。",
+      "raw_model_output": "<Thought>\n问题类型: 计算类\n关键实体: 等待期、疾病\n证据匹配:\n  - 结果1（《Sun Life 简介 主要特点 参考例子...》）: 包含目标信息，可用\n  - 结果2（《SunHealth-LovePromise_PB_SC...》）: 关联度低，忽略\n  - 结果3（《CMC_SC...》）: 关联度低，忽略\n  - 结果4（《SunHealth-LovePromise_PB_SC...》）: 关联度低，忽略\n  - 结果5（《2022-jul-product-brochure...》）: 关联度低，忽略\n推理路径: 识别计算参数 → 定位金额/比例规定 → 说明适用条件\n</Thought>\n[答案] 永明危疾保的等候期为90天。对于危疾保障，等候期为90天。对于非危疾保障，没有等候期。",
+      "evaluation": {
+        "retrieval_relevance": 3,
+        "faithfulness": 3,
+        "rejection_quality": 0,
+        "completeness": 3,
+        "total": 12,
+        "verdict": "PASS",
+        "reason": "回答中提供了准确的等候期信息，并解释了不同保障类型下的等候期差异。"
+      }
+    },
+    {
+      "id": 4,
+      "category": "續保條款",
+      "expected": "有答案",
+      "note": "KB中有AIA SGHR2保證終身續保條款",
+      "prompt": "友邦特級健康之寶住院計劃是否保證終身續保？保費如何釐定？",
+      "mode": "raft",
+      "top_k": 5,
+      "latency_total_s": 10.41,
+      "latency_eval_s": 3.31,
+      "retrieval": [
+        {
+          "rank": 1,
+          "company": "AIA",
+          "category": "medical",
+          "product_name": "SuperGoodHealthMedicalRider2_sc",
+          "source": "sourcepdf/AIA/medical/SuperGoodHealthMedicalRider2_sc.pdf",
+          "modality": "text",
+          "page_number": 3,
+          "score": 0.15,
+          "text_preview": "醫療保障 2 特級「健康之寶」住院及手術賠償附加契約2 保證終身續保 優質醫療網絡 * 額外保障 特級「健康之寶」住院及手術賠償附加契約2保證您的續保 保費不會因您的索賠記錄和身體狀況而調高。您可每年續保 直至終身。續保保費將根據當時適用之保費表釐定。 AIA精心挑選不同專科醫生加入我們的醫療網絡，不斷提升 醫療網絡提供的服務。選用醫療網絡，不但可享優質醫療 服務，更可獲得： 無索償獎金 • 較高"
+        },
+        {
+          "rank": 2,
+          "company": "AIA",
+          "category": "medical",
+          "product_name": "SuperGoodHealthMedicalRider2_sc",
+          "source": "sourcepdf/AIA/medical/SuperGoodHealthMedicalRider2_sc.pdf",
+          "modality": "text",
+          "page_number": 2,
+          "score": 0.4407,
+          "text_preview": "1 醫療保障 特級「健康之寶」住院及手術賠償附加契約2 AIA 深明您渴望擁有最 適切的醫療保障，讓您 自由追求精彩人生 此外，本計劃更提供優質醫療網絡及專科支援。 我我們們的的特特級級「健「康健之康寶之」寶 」 您可從三個住院計劃中選擇一個以配合您的預算 住院及手術賠償附加契 及醫療需要。 2 約 為您提供全面的實報 實銷醫療保障並保證終 身續保 保障一覽 產品性質 醫療保障保險計劃 (實報實銷"
+        },
+        {
+          "rank": 3,
+          "company": "AIA",
+          "category": "medical",
+          "product_name": "SuperGoodHealthMedicalRider2_sc",
+          "source": "sourcepdf/AIA/medical/SuperGoodHealthMedicalRider2_sc.pdf",
+          "modality": "text",
+          "page_number": 11,
+          "score": 0.4891,
+          "text_preview": "醫療保障 10 特級「健康之寶」住院及手術賠償附加契約2 由2018年1月1日起，所有保單持有人均需向保險業監管局為其新繕發及現行香港保單繳付的每筆保費繳交征費。有關保費征費詳情， 請瀏覽我們的網站 www.aia.com.hk/useful-information-ia-sc 或保險業監管局網站 www.ia.org.hk 。 2. 我們只會根據「醫療所需」和「合理及慣常」的原則，為受保人 6."
+        },
+        {
+          "rank": 4,
+          "company": "AIA",
+          "category": "medical",
+          "product_name": "SuperGoodHealthMedicalRider2_sc",
+          "source": "sourcepdf/AIA/medical/SuperGoodHealthMedicalRider2_sc.pdf",
+          "modality": "text",
+          "page_number": 1,
+          "score": 0.58,
+          "text_preview": "特級「健康之寶」住院及手術賠償附加契約2 Super Good Health Hospital And Surgical Rider 2 (SGHR2) 為健康 多添一份保障 友邦保險(國際)有限公司 (於百慕達註冊成立之有限公司) 閱覽電子版"
+        },
+        {
+          "rank": 5,
+          "company": "AIA",
+          "category": "medical",
+          "product_name": "SuperGoodHealthMedicalRider2_sc",
+          "source": "sourcepdf/AIA/medical/SuperGoodHealthMedicalRider2_sc.pdf",
+          "modality": "text",
+          "page_number": 10,
+          "score": 0.7248,
+          "text_preview": "9 醫療保障 特級「健康之寶」住院及手術賠償附加契約2 • 戰爭、軍事行動、罷工、暴動及騷亂、違法或意圖違法行為 重要資料 或拒捕 此產品簡介並不包含保單的完整條款，並非及不構成保險契約 • 懷孕、流產、分娩、墮胎或其他生育相關的併發症，精神病 的一部分，是為提供本產品主要特點概覽而設。本計劃的精確 或精神分裂(精神疾病或神經疾病惠益除外，詳見利益一覽表 條款及條件列載於保單契約。有關此計劃條款的"
+        }
+      ],
+      "model_cot": "问题类型: 定义类\n关键实体: 终身、保单、续保\n证据匹配:\n  - 结果1（《SuperGoodHealthMedicalRider2_sc...》）: 包含目标信息，可用\n  - 结果2（《SuperGoodHealthMedicalRider2_sc...》）: 关联度低，忽略\n  - 结果3（《SuperGoodHealthMedicalRider2_sc...》）: 关联度低，忽略\n  - 结果4（《SuperGoodHealthMedicalRider2_sc...》）: 关联度低，忽略\n  - 结果5（《SuperGoodHealthMedicalRider2_sc...》）: 关联度低，忽略\n推理路径: 定位相关条款 → 提取术语定义 → 说明适用范围",
+      "final_answer": "[答案] 是的，友邦特級健康之寶住院計劃保证终身续保。保費将根据当时的保費表釐定。",
+      "raw_model_output": "<Thought>\n问题类型: 定义类\n关键实体: 终身、保单、续保\n证据匹配:\n  - 结果1（《SuperGoodHealthMedicalRider2_sc...》）: 包含目标信息，可用\n  - 结果2（《SuperGoodHealthMedicalRider2_sc...》）: 关联度低，忽略\n  - 结果3（《SuperGoodHealthMedicalRider2_sc...》）: 关联度低，忽略\n  - 结果4（《SuperGoodHealthMedicalRider2_sc...》）: 关联度低，忽略\n  - 结果5（《SuperGoodHealthMedicalRider2_sc...》）: 关联度低，忽略\n推理路径: 定位相关条款 → 提取术语定义 → 说明适用范围\n</Thought>\n[答案] 是的，友邦特級健康之寶住院計劃保证终身续保。保費将根据当时的保費表釐定。",
+      "evaluation": {
+        "retrieval_relevance": 3,
+        "faithfulness": 3,
+        "rejection_quality": 0,
+        "completeness": 3,
+        "total": 12,
+        "verdict": "PASS",
+        "reason": "该回答准确地引用了材料中的信息，确认了友邦特級健康之寶住院計劃保证终身续保，并解释了保費的厘定方式。"
+      }
+    },
+    {
+      "id": 5,
+      "category": "產品比較",
+      "expected": "有答案",
+      "note": "KB中有Manulife VHIS靈活/標準計劃資料",
+      "prompt": "宏利自願醫保（VHIS）靈活計劃與標準計劃有何主要分別？",
+      "mode": "raft",
+      "top_k": 5,
+      "latency_total_s": 11.94,
+      "latency_eval_s": 1.32,
+      "retrieval": [
+        {
+          "rank": 1,
+          "company": "manulife",
+          "category": "medical",
+          "product_name": "vhis-supreme-leaflet",
+          "source": "sourcepdf/manulife/medical/vhis-supreme-leaflet.pdf",
+          "modality": "text",
+          "page_number": 12,
+          "score": 0.0,
+          "text_preview": "增值服务 计划特点 计划一览 保障表 例子 注 重要事项 「宏利晋悦自愿医保灵活计划」与 「宏利爱守护自愿医保标准计划」的保障比较： 认可计划 宏利爱守护自愿医保标准计划 宏利晋悦自愿医保灵活计划 基本保障 • 病房及膳食 • 杂项开支 • 主诊医生巡房费 • 专科医生费 • 深切治疗 • 外科医生费 1 • 自愿医保标准保障 全数赔偿（见注 ） 麻醉科医生费 • 手术室费 • 订明诊断成像检测 "
+        },
+        {
+          "rank": 2,
+          "company": "manulife",
+          "category": "medical",
+          "product_name": "vhis-supreme-leaflet",
+          "source": "sourcepdf/manulife/medical/vhis-supreme-leaflet.pdf",
+          "modality": "text",
+          "page_number": 13,
+          "score": 0.1691,
+          "text_preview": "增值服务 计划特点 计划一览 保障表 例子 注 重要事项 「宏利晋悦自愿医保灵活计划」与 「宏利爱守护自愿医保标准计划」的保障比较： 认可计划 宏利爱守护自愿医保标准计划 宏利晋悦自愿医保灵活计划 认可计划 宏利爱守护自愿医保标准计划 宏利晋悦自愿医保灵活计划 基本保障 指定病房级别 不设限制 在香港、澳大利亚和新西兰 • • 病房及膳食 智选计划：普通房 • • 杂项开支 精选计划：半私家房 •"
+        },
+        {
+          "rank": 3,
+          "company": "manulife",
+          "category": "medical",
+          "product_name": "vhis-supreme-leaflet",
+          "source": "sourcepdf/manulife/medical/vhis-supreme-leaflet.pdf",
+          "modality": "text",
+          "page_number": 4,
+          "score": 0.388,
+          "text_preview": "计划特点 计划一览 增值服务 保障表 例子 注 重要事项 2 个计划级别 配合不同病房级别 2 「宏利晋悦」提供 个计划级别以供选择，每个均有不同指定 2 病房级别（见注 ）。您可按您的预算和个人需要选择合适的 计划级别。无论您选择任何计划级别，保障也均涵盖日间手术， 令您更添灵活。 宏利晋悦自愿医保 宏利晋悦自愿医保 灵活计划（智选） 灵活计划（精选） 智选计划 精选计划 在香港、澳大利亚和新西"
+        },
+        {
+          "rank": 4,
+          "company": "manulife",
+          "category": "medical",
+          "product_name": "vhis-supreme-leaflet",
+          "source": "sourcepdf/manulife/medical/vhis-supreme-leaflet.pdf",
+          "modality": "text",
+          "page_number": 8,
+          "score": 0.419,
+          "text_preview": "计划一览 计划特点 增值服务 保障表 例子 注 重要事项 计划一览 宏利晋悦自愿医保灵活计划 产品目的和性质 偿款住院保险产品，适合有医疗保障需要的客户。由香港特别行政区医务卫生局 认可的自愿医保灵活计划。 产品类别 独立基本计划 计划选择 宏利晋悦自愿医保灵活计划（智选） 宏利晋悦自愿医保灵活计划（精选） 自付费 认可编号 自付费 认可编号 0 F00041-06-000-01 0 F00041"
+        },
+        {
+          "rank": 5,
+          "company": "manulife",
+          "category": "medical",
+          "product_name": "vhis-supreme-leaflet",
+          "source": "sourcepdf/manulife/medical/vhis-supreme-leaflet.pdf",
+          "modality": "text",
+          "page_number": 17,
+          "score": 0.5191,
+          "text_preview": "例子 计划特点 计划一览 增值服务 保障表 注 重要事项 1 1 保障表(续) 就主要项目的医疗费用获全数赔偿（见注 ） 注解（就保障表而言）： 45 (1) 2 普通房是指医院里设有多于 张病床（不包括住院陪床）的病房。 陈先生， 岁，为会计师。为保障个人健康，他投保了「宏利晋悦自愿医保灵活计划（精选）」 说明例子 22,800 2 1 （每年自付费选项为 港元）。 半私家房是指医院里设有不多于"
+        }
+      ],
+      "model_cot": "问题类型: 对比类\n关键实体: 计划\n证据匹配:\n  - 结果1（《vhis-supreme-leaflet...》）: 包含目标信息，可用\n  - 结果2（《vhis-supreme-leaflet...》）: 包含目标信息，可用\n  - 结果3（《vhis-supreme-leaflet...》）: 关联度低，忽略\n  - 结果4（《vhis-supreme-leaflet...》）: 关联度低，忽略\n  - 结果5（《vhis-supreme-leaflet...》）: 关联度低，忽略",
+      "final_answer": "[答案] 宏利自願醫保（VHIS）靈活計劃與標準計劃的主要分別在於：\n* **住院病房级别：**灵活计划提供普通房和半私家房选择，而标准计划仅提供标准私家房。\n* **住院津贴：**灵活计划提供住院津贴，而标准计划没有。\n* **门诊费用：**灵活计划提供门诊费用，而标准计划没有。\n* **癌症治疗：**灵活计划提供癌症治疗，而标准计划没有。\n* **住院陪床费：**灵活计划提供住院陪床费，而标准计划没有。\n* **手术费用：**灵活计划提供手术费用，而标准计划没有。\n* **康复治疗：**灵活计划提供康复治疗，而标准计划没有。\n* **器官捐赠者手术费用：**灵活计划提供器官捐赠者手术费用，而标准计划没有。\n* **善终服务：**灵活计划提供善终服务，而标准计划没有。",
+      "raw_model_output": "<Thought>\n问题类型: 对比类\n关键实体: 计划\n证据匹配:\n  - 结果1（《vhis-supreme-leaflet...》）: 包含目标信息，可用\n  - 结果2（《vhis-supreme-leaflet...》）: 包含目标信息，可用\n  - 结果3（《vhis-supreme-leaflet...》）: 关联度低，忽略\n  - 结果4（《vhis-supreme-leaflet...》）: 关联度低，忽略\n  - 结果5（《vhis-supreme-leaflet...》）: 关联度低，忽略\n</Thought>\n[答案] 宏利自願醫保（VHIS）靈活計劃與標準計劃的主要分別在於：\n* **住院病房级别：**灵活计划提供普通房和半私家房选择，而标准计划仅提供标准私家房。\n* **住院津贴：**灵活计划提供住院津贴，而标准计划没有。\n* **门诊费用：**灵活计划提供门诊费用，而标准计划没有。\n* **癌症治疗：**灵活计划提供癌症治疗，而标准计划没有。\n* **住院陪床费：**灵活计划提供住院陪床费，而标准计划没有。\n* **手术费用：**灵活计划提供手术费用，而标准计划没有。\n* **康复治疗：**灵活计划提供康复治疗，而标准计划没有。\n* **器官捐赠者手术费用：**灵活计划提供器官捐赠者手术费用，而标准计划没有。\n* **善终服务：**灵活计划提供善终服务，而标准计划没有。",
+      "evaluation": {
+        "retrieval_relevance": 3,
+        "faithfulness": 0,
+        "rejection_quality": 0,
+        "completeness": 0,
+        "total": 0,
+        "verdict": "FAIL",
+        "reason": "答案中包含大量未在提供的参考资料中出现的信息，因此不符合严格忠实于证据的要求。"
+      }
+    },
+    {
+      "id": 6,
+      "category": "稅務/年金",
+      "expected": "有答案",
+      "note": "KB中有保誠QDAP年金計劃條款",
+      "prompt": "保誠隽逸人生延期年金計劃是否屬於合資格延期年金保單（QDAP）？有何稅務優惠？",
+      "mode": "raft",
+      "top_k": 5,
+      "latency_total_s": 11.09,
+      "latency_eval_s": 3.74,
+      "retrieval": [
+        {
+          "rank": 1,
+          "company": "prudential",
+          "category": "wealth",
+          "product_name": "pruretirement-deferred-annuity-plan-product-brochure",
+          "source": "sourcepdf/prudential/wealth/pruretirement-deferred-annuity-plan-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 7,
+          "score": 0.0,
+          "text_preview": "保费可享扣税 保诚「隽逸人生」延期年金计划为获保险业 监管局认证的合资格延期年金保单（QDAP）。 当您为退休展开储蓄，作为香港纳税人，您可就 计划的合资格保费享有税务扣除。每位纳税人 每年的扣除额上限为60,000港元*（如适用）， 但不包括我们已退回的任何保费或保费储蓄户口 内的任何预缴金额。如欲了解有关详情，请参阅 以下「风险披露 — 认证的税务影响」部分。 如欲透过扣税计算机了解可省税款，"
+        },
+        {
+          "rank": 2,
+          "company": "prudential",
+          "category": "wealth",
+          "product_name": "pruretirement-deferred-annuity-plan-product-brochure",
+          "source": "sourcepdf/prudential/wealth/pruretirement-deferred-annuity-plan-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 2,
+          "score": 0.2641,
+          "text_preview": "保诚「隽逸人生」延期年金计划 经过不断努力拼搏，您应该在退休后随心丶尽情享受生活。凭借 保诚「隽逸人生」延期年金计划，您可坐享稳定的每月年金入息 （即「每月收入」），毋须为日常财务费心。及早展开您的储蓄计划， 让您的财富有更多时间和机会增值，建立退休储备自然更加轻松。 保诚「隽逸人生」延期年金计划为获保险业监管局认证的合资格 延期年金保单（QDAP），除了在未来提供长达10或20年稳定的 每月年金"
+        },
+        {
+          "rank": 3,
+          "company": "prudential",
+          "category": "wealth",
+          "product_name": "pruretirement-deferred-annuity-plan-product-brochure",
+          "source": "sourcepdf/prudential/wealth/pruretirement-deferred-annuity-plan-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 1,
+          "score": 0.4045,
+          "text_preview": "保诚「隽逸人生」 延期年金计划 只需5或10年保费，即可建立退休年金收入 退休保险 限额发售"
+        },
+        {
+          "rank": 4,
+          "company": "prudential",
+          "category": "wealth",
+          "product_name": "pruretirement-deferred-annuity-plan-product-brochure",
+          "source": "sourcepdf/prudential/wealth/pruretirement-deferred-annuity-plan-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 23,
+          "score": 0.574,
+          "text_preview": "与我们联系取得更多信息 如欲了解本计划的详情，请联系您的顾问或致电我们的客户服务热线2281 1333。 注 保诚「隽逸人生」延期年金计划由保诚保险有限公司（「保诚」）承保。您可以选择单独投保本计划，毋须同时投保其他类型的 保险产品。此小册子不包含本计划的完整条款和细则并只作参考用途，不能作为保诚与任何人士或团体所订立的任何合约。 您应仔细阅读此小册子载列的风险披露事项和主要不受保范围（如有）。如"
+        },
+        {
+          "rank": 5,
+          "company": "prudential",
+          "category": "wealth",
+          "product_name": "pruretirement-deferred-annuity-plan-product-brochure",
+          "source": "sourcepdf/prudential/wealth/pruretirement-deferred-annuity-plan-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 21,
+          "score": 0.5745,
+          "text_preview": "重要信息 销售限期 本计划为限额发售，我们保留权利全权酌情随时撤销出售本计划。然而，若我们在收到您的保单申请后行使权利撤回本计划， 我们将会以缴付的货币退回您就本计划已缴保费和保费征费的原有金额，惟不包括任何利息。计划不接受推前首期保费日。 风险披露 — 认证的税务影响響 请注意，本产品属于合资格延期年金保单，但并不代表您符合资格就已缴付的合资格延期年金保费，享有税务扣除。本产品 的合资格延期年金"
+        }
+      ],
+      "model_cot": "问题类型: 判断类\n关键实体: 保单、延期、年金\n证据匹配:\n  - 结果1（《pruretirement-deferred-annuity-plan...》）: 包含目标信息，可用\n  - 结果2（《pruretirement-deferred-annuity-plan...》）: 关联度低，忽略\n  - 结果3（《pruretirement-deferred-annuity-plan...》）: 关联度低，忽略\n  - 结果4（《pruretirement-deferred-annuity-plan...》）: 关联度低，忽略\n  - 结果5（《pruretirement-deferred-annuity-plan...》）: 包含目标信息，可用\n推理路径: 明确判断标准 → 对照条款规定 → 得出是否结论",
+      "final_answer": "[答案] 是的，保誠隽逸人生延期年金計劃属于获保险业监管局认证的合资格延期年金保单（QDAP）。此外，该计划还提供扣税优惠，让您可以在计划的合资格保费上享受税务扣除。",
+      "raw_model_output": "<Thought>\n问题类型: 判断类\n关键实体: 保单、延期、年金\n证据匹配:\n  - 结果1（《pruretirement-deferred-annuity-plan...》）: 包含目标信息，可用\n  - 结果2（《pruretirement-deferred-annuity-plan...》）: 关联度低，忽略\n  - 结果3（《pruretirement-deferred-annuity-plan...》）: 关联度低，忽略\n  - 结果4（《pruretirement-deferred-annuity-plan...》）: 关联度低，忽略\n  - 结果5（《pruretirement-deferred-annuity-plan...》）: 包含目标信息，可用\n推理路径: 明确判断标准 → 对照条款规定 → 得出是否结论\n</Thought>\n[答案] 是的，保誠隽逸人生延期年金計劃属于获保险业监管局认证的合资格延期年金保单（QDAP）。此外，该计划还提供扣税优惠，让您可以在计划的合资格保费上享受税务扣除。",
+      "evaluation": {
+        "retrieval_relevance": 3,
+        "faithfulness": 3,
+        "rejection_quality": 0,
+        "completeness": 3,
+        "total": 12,
+        "verdict": "PASS",
+        "reason": "该回答准确地引用了材料中的信息，确认了保誠隽逸人生延期年金計劃是获保险业监管局认证的合资格延期年金保单（QDAP），并提到了其提供的扣税优惠。"
+      }
+    },
+    {
+      "id": 7,
+      "category": "身故保障",
+      "expected": "有答案",
+      "note": "KB中有FWD定期壽險100%身故保障條款",
+      "prompt": "富衛（FWD）自主保定期壽險的身故保障金額是多少？受保人身故後如何申請賠償？",
+      "mode": "raft",
+      "top_k": 5,
+      "latency_total_s": 11.42,
+      "latency_eval_s": 2.45,
+      "retrieval": [
+        {
+          "rank": 1,
+          "company": "FWD",
+          "category": "life",
+          "product_name": "FWD_MyTerm_Plus_TC_Final",
+          "source": "sourcepdf/FWD/life/FWD_MyTerm_Plus_TC_Final.pdf",
+          "modality": "text",
+          "page_number": 4,
+          "score": 0.0,
+          "text_preview": "計劃如何運作 全然守護 從現在到未來 自主保（升級版）定期保障計劃，優勢全面提升，讓您更有信心為摯愛 籌劃未來。 保費相宜 保障強大 您可以選擇每年或每10年的續保年期，以配合您的短期或中期目標。 充裕保障 加倍安心 自主保（升級版）提供相等於投保額100%的身故權益，直至100歲（下次生日 年齡）。此外，如被保人經註冊專業醫生證明非常可能於12個月內因病身故， 將可立即獲得預支身故權益。 可延伸"
+        },
+        {
+          "rank": 2,
+          "company": "FWD",
+          "category": "wealth",
+          "product_name": "Easy_WealthPlus_2_TC",
+          "source": "sourcepdf/FWD/wealth/Easy_WealthPlus_2_TC.pdf",
+          "modality": "text",
+          "page_number": 5,
+          "score": 0.3326,
+          "text_preview": "計劃保障範圍 計劃一覽表 投保年齡（下次生日年齡） 19 - 65歲 （ 只適用於網上投保） 保單貨幣 美元 保障年期 8年 保費供款年期 2年 ・按年繳費 保費繳付方式 ・預繳選項（投保時同時繳付首年保費及翌年保費之預繳金額） 3 最低名義金額 8,098美元（每份保單） （ 只適用於網上投保） （ 相等於最低年繳保費3,125美元（每份保單）） 3 12 最高名義金額 647,870美元（以透"
+        },
+        {
+          "rank": 3,
+          "company": "FWD",
+          "category": "life",
+          "product_name": "FWD_MyTerm_Plus_TC_Final",
+          "source": "sourcepdf/FWD/life/FWD_MyTerm_Plus_TC_Final.pdf",
+          "modality": "text",
+          "page_number": 9,
+          "score": 0.3995,
+          "text_preview": "計劃保障範圍 權益概覽 權益 標準 特等 身故權益 身故權益相等於 ✓ ✓ 1 (1) 投保額 的100%； (2) 減任何未付保費或保費徵費 5 預支身故權益 當自主保（升級版）生效時，如被保人經註冊專業醫生 ✓ ✓ 證明非常可能於12個月內身故，而此證明受我們接受， 預支身故權益將支付予保單權益人 預支身故權益相等於 (1) 自主保（升級版）和享悅人生增值保障（如有）的 投保額之100%； ("
+        },
+        {
+          "rank": 4,
+          "company": "prudential",
+          "category": "life",
+          "product_name": "livefree-protector-product-brochure-sc",
+          "source": "sourcepdf/prudential/life/livefree-protector-product-brochure-sc.pdf",
+          "modality": "text",
+          "page_number": 4,
+          "score": 0.4288,
+          "text_preview": "保障概覽 終身人壽保障 讓您守護摯愛家人 不同的身故賠償支付安排選擇 「 自主未來」保障計劃為受保人（即保單內受保障 助您靈活守護家人 的人士）提供終身人壽保障，無論前路如何， 倘若受保人在保單依然生效時不幸身故，我們 都能確保家人得到適當照顧。如受保人在 將會向您指定的受益人支付身故賠償，讓您的 「 自主未來」保障計劃生效期間不幸身故，他們的 財富如您所願得到傳承。 摯愛便會至少獲支付投保金額的"
+        },
+        {
+          "rank": 5,
+          "company": "FWD",
+          "category": "critical_illness",
+          "product_name": "MyCover_policy_brochure_TC_202308",
+          "source": "sourcepdf/FWD/critical_illness/MyCover_policy_brochure_TC_202308.pdf",
+          "modality": "text",
+          "page_number": 16,
+          "score": 0.4804,
+          "text_preview": "重要資料 產品主要風險 不保事項 身故權益 倘被保人在保單生效日（或復效日，以較遲者為準）起13個曆月內自殺，富衛的法律責任將限於已繳付予富衛的 總保費金額（不附帶利息），扣除任何欠付之保費徵費及須扣除富衛已支付的任何保單權益及欠付富衛的任何金額。 此項規定不論被保人自殺時神智清醒與否皆適用。 3大疾病權益、特定器官之原位癌或早期癌症權益、危疾權益（如適用）及3大疾病的額外醫療保障（如適用） 若被"
+        }
+      ],
+      "model_cot": "问题类型: 计算类\n关键实体: 身故、身故保障、申请\n证据匹配:\n  - 结果1（《FWD_MyTerm_Plus_Plus_TC_Final...》）: 与查询目标不匹配，不可用\n  - 结果2（《Easy_WealthPlus_2_TC...》）: 与查询目标不匹配，不可用\n  - 结果3（《FWD_MyTerm_Plus_Plus_TC_Final...》）: 与查询目标不匹配，不可用\n  - 结果4（《livefree-protector-product-bro...》）: 与查询目标不匹配，不可用\n  - 结果5（《MyCover_policy_brochure_TC_202...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答",
+      "final_answer": "[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+      "raw_model_output": "<Thought>\n问题类型: 计算类\n关键实体: 身故、身故保障、申请\n证据匹配:\n  - 结果1（《FWD_MyTerm_Plus_Plus_TC_Final...》）: 与查询目标不匹配，不可用\n  - 结果2（《Easy_WealthPlus_2_TC...》）: 与查询目标不匹配，不可用\n  - 结果3（《FWD_MyTerm_Plus_Plus_TC_Final...》）: 与查询目标不匹配，不可用\n  - 结果4（《livefree-protector-product-bro...》）: 与查询目标不匹配，不可用\n  - 结果5（《MyCover_policy_brochure_TC_202...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答\n</Thought>\n[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+      "evaluation": {
+        "retrieval_relevance": 0,
+        "faithfulness": 0,
+        "rejection_quality": 0,
+        "completeness": 0,
+        "total": 0,
+        "verdict": "FAIL",
+        "reason": "提供的检索结果均与所询问的具体内容不符，无法提供有效依据。"
+      }
+    },
+    {
+      "id": 8,
+      "category": "等候期-家傭保險",
+      "expected": "有答案",
+      "note": "KB中有BOC家傭計劃15天等候期",
+      "prompt": "中銀家務助理保障計劃的門診費用有等候期嗎？等候期是多少天？",
+      "mode": "raft",
+      "top_k": 5,
+      "latency_total_s": 9.12,
+      "latency_eval_s": 2.36,
+      "retrieval": [
+        {
+          "rank": 1,
+          "company": "boc",
+          "category": "medical",
+          "product_name": "VHIS_leaflet_SC",
+          "source": "sourcepdf/boc/medical/VHIS_leaflet_SC.pdf",
+          "modality": "text",
+          "page_number": 1,
+          "score": 0.2824,
+          "text_preview": "中银标准自愿医保计划认可产品(编号:S00035-01-000-02) 中银集团保险有限公司（「中银集团保险」）注册为香港特别行政区政府自愿医保计划的产品提供者。 香港人口逐渐老化，生活成本高昂，您需要一份长远的医疗保障为未来做好准备。中银集团保险有 限公司（「中银集团保险」）了解您的需要，特别为您呈献「中银标准自愿医保计划认可产品」（「本 计划」），本计划为个人偿款住院保险产品，涵盖住院及手术费"
+        },
+        {
+          "rank": 2,
+          "company": "prudential",
+          "category": "medical",
+          "product_name": "prumyhealth-prestige-medical-plan-2025-product-brochure",
+          "source": "sourcepdf/prudential/medical/prumyhealth-prestige-medical-plan-2025-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 15,
+          "score": 0.2951,
+          "text_preview": "保障范围 保障项目 最高赔偿限额6 指定附加保障 门诊保障（等候期16：30天，因意外而导致的治疗除外） 门诊诊治 1 全数保障8 • 每个保单年度最多次数：50次 辅助服务（每个保单年度） • 由注册中医 ∕注册脊椎治疗师 ∕注册物理治疗师 2 1,200美元 ∕9,600港元 所提供的治疗7 • 每天每项治疗最多1次 精神疾病治疗（每个保单年度） 3 • 每个保单年度最高次数：15次 2,50"
+        },
+        {
+          "rank": 3,
+          "company": "prudential",
+          "category": "accident",
+          "product_name": "pruchoice-personal-accident-plus-product-brochure",
+          "source": "sourcepdf/prudential/accident/pruchoice-personal-accident-plus-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 9,
+          "score": 0.3493,
+          "text_preview": "is subject to a waiting period, which is the first 5 days from the effective date of this policy. No benefit will be payable for any bodily injury occurred during the waiting period. II. 意外醫療費用保障項目於等候"
+        },
+        {
+          "rank": 4,
+          "company": "manulife",
+          "category": "medical",
+          "product_name": "outpatient",
+          "source": "sourcepdf/manulife/medical/outpatient.pdf",
+          "modality": "text",
+          "page_number": 3,
+          "score": 0.4616,
+          "text_preview": "計劃一覽 門診保障產品，可配搭我們的醫療計劃，提供保障延伸至門診醫 產品目的及性質 療費用 產品類別 附加保障 保障期為一年。每年續保直至下列日期（以較早者為准）： i. 受保人70歲；或 保障期 ii. 基本計劃終止 另請參閱以下「重要事項」下之「續保」一項 保費繳付期 于每個保單年度繳交保費。保費並非保證 投保年齡 14日至65歲 保單貨幣 跟隨基本計劃 – 港元 / 美元 / 加元 保費繳付"
+        },
+        {
+          "rank": 5,
+          "company": "FWD",
+          "category": "medical",
+          "product_name": "Healthy-Plus-pb-TC",
+          "source": "sourcepdf/FWD/medical/Healthy-Plus-pb-TC.pdf",
+          "modality": "text",
+          "page_number": 7,
+          "score": 1.0034,
+          "text_preview": "計劃保障範圍 保障範圍 計劃A 計劃B 計劃C 計劃D 計劃E 保障項目 計劃F 計劃G 計劃H 計劃I 計劃J 1 ・ 保費供款年期6年，保障年期12年：104%總已繳保費 VIII. 期滿權益 1 ・ 保費供款年期10年，保障年期20年：108%總已繳保費 10 國際 SOS 24 小時環球支援服務 服務支援 11 揀易保癌症尊線 服務支援 只適用於計劃 A 至 E （以下服務僅可使用12 個"
+        }
+      ],
+      "model_cot": "问题类型: 定义类\n关键实体: 门急诊、等候期\n证据匹配:\n  - 结果1（《VHIS_leaflet_SC...》）: 与查询目标不匹配，不可用\n  - 结果2（《prumyhealth-prestige-medical-plan...》）: 与查询目标不匹配，不可用\n  - 结果3（《pruchoice-personal-accident-plus-pro...》）: 与查询目标不匹配，不可用\n  - 结果4（《outpatient...》）: 与查询目标不匹配，不可用\n  - 结果5（《Healthy-Plus-pb-TC...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答",
+      "final_answer": "[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+      "raw_model_output": "<Thought>\n问题类型: 定义类\n关键实体: 门急诊、等候期\n证据匹配:\n  - 结果1（《VHIS_leaflet_SC...》）: 与查询目标不匹配，不可用\n  - 结果2（《prumyhealth-prestige-medical-plan...》）: 与查询目标不匹配，不可用\n  - 结果3（《pruchoice-personal-accident-plus-pro...》）: 与查询目标不匹配，不可用\n  - 结果4（《outpatient...》）: 与查询目标不匹配，不可用\n  - 结果5（《Healthy-Plus-pb-TC...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答\n</Thought>\n[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+      "evaluation": {
+        "retrieval_relevance": 0,
+        "faithfulness": 0,
+        "rejection_quality": 0,
+        "completeness": 0,
+        "total": 0,
+        "verdict": "FAIL",
+        "reason": "提供的检索结果与问题无关，无法提供有效依据。"
+      }
+    },
+    {
+      "id": 9,
+      "category": "數值類-自付費",
+      "expected": "有答案",
+      "note": "KB中有HSBC保費表及自付費選項",
+      "prompt": "滙豐靈活醫保鑽級計劃設有哪些自付費選項？自付費對保費有何影響？",
+      "mode": "raft",
+      "top_k": 5,
+      "latency_total_s": 17.26,
+      "latency_eval_s": 3.04,
+      "retrieval": [
+        {
+          "rank": 1,
+          "company": "hsbc",
+          "category": "medical",
+          "product_name": "2025-sep-product-brochure",
+          "source": "sourcepdf/hsbc/medical/2025-sep-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 11,
+          "score": 0.0347,
+          "text_preview": "保費表 計劃資料概要 主要風險 簡簡介介 保保障障表表 重要事項 及主要不保事項 及註 標準保費表 「滙豐靈活醫保」－\u0007鑽級保費表（港幣） 自付費 自付費 屆時\u0007 0 16,000 50,000 100,000 屆時\u0007 0 16,000 50,000 100,000 年齡# 年繳 月繳 年繳 月繳 年繳 月繳 年繳 月繳 年齡# 年繳 月繳 年繳 月繳 年繳 月繳 年繳 月繳 0 29,336 2"
+        },
+        {
+          "rank": 2,
+          "company": "hsbc",
+          "category": "medical",
+          "product_name": "2025-sep-product-brochure",
+          "source": "sourcepdf/hsbc/medical/2025-sep-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 52,
+          "score": 0.15,
+          "text_preview": "保费表 计划资料概要 主要风险 简介 保障表 重要事项 及主要不保事项 及注 标准保费表 「汇丰灵活医保」－ 钻级保费表（港币） 自付费 自付费 届时 0 16,000 50,000 100,000 届时 0 16,000 50,000 100,000 年龄# 年缴 月缴 年缴 月缴 年缴 月缴 年缴 月缴 年龄# 年缴 月缴 年缴 月缴 年缴 月缴 年缴 月缴 0 29,336 2,446.60"
+        },
+        {
+          "rank": 3,
+          "company": "hsbc",
+          "category": "medical",
+          "product_name": "2025-sep-product-brochure",
+          "source": "sourcepdf/hsbc/medical/2025-sep-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 12,
+          "score": 0.2816,
+          "text_preview": "保費表 計劃資料概要 主要風險 簡簡介介 保保障障表表 重要事項 及主要不保事項 及註 標準保費表 「滙豐靈活醫保」－\u0007鉑級保費表（港幣） 自付費 自付費 屆時\u0007 0 16,000 50,000 100,000 屆時\u0007 0 16,000 50,000 100,000 年齡# 年繳 月繳 年繳 月繳 年繳 月繳 年繳 月繳 年齡# 年繳 月繳 年繳 月繳 年繳 月繳 年繳 月繳 0 14,276 1"
+        },
+        {
+          "rank": 4,
+          "company": "hsbc",
+          "category": "medical",
+          "product_name": "2025-sep-product-brochure",
+          "source": "sourcepdf/hsbc/medical/2025-sep-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 14,
+          "score": 0.3556,
+          "text_preview": "56,405 4,704.20 52,516 4,379.80 48 20,234 1,687.50 10,927 911.30 6,576 548.40 6,103 509.00 98* 145,717 12,152.80 87,689 7,313.30 58,131 4,848.10 53,946 4,499.10 49 21,014 1,752.60 11,426 952.90 6,901 "
+        },
+        {
+          "rank": 5,
+          "company": "hsbc",
+          "category": "medical",
+          "product_name": "2025-sep-product-brochure",
+          "source": "sourcepdf/hsbc/medical/2025-sep-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 14,
+          "score": 0.3676,
+          "text_preview": "保費表 計劃資料概要 主要風險 簡簡介介 保保障障表表 重要事項 及主要不保事項 及註 標準保費表 「滙豐靈活醫保」－\u0007銀級保費表（港幣） 自付費 自付費 屆時\u0007 0 16,000 50,000 100,000 屆時\u0007 0 16,000 50,000 100,000 年齡# 年繳 月繳 年繳 月繳 年繳 月繳 年繳 月繳 年齡# 年繳 月繳 年繳 月繳 年繳 月繳 年繳 月繳 0 8,483 70"
+        }
+      ],
+      "model_cot": "问题类型: 计算类\n关键实体: 保单、自付、保单、保费\n证据匹配:\n  - 结果1（《2025-sep-product-brochure...》）: 包含目标信息，可用\n  - 结果2（《2025-sep-product-brochure...》）: 关联度低，忽略\n  - 结果3（《2025-sep-product-brochure...》）: 关联度低，忽略\n  - 结果4（《2025-sep-product-brochure...》）: 关联度低，忽略\n  - 结果5（《2025-sep-product-brochure...》）: 关联度低，忽略\n推理路径: 识别计算参数 → 定位金额/比例规定 → 说明适用条件",
+      "final_answer": "[答案] 滔丰灵活医保钻级计划设有以下自付费用选项：\n* **自付费用：**由投保人和保险公司协商确定，最高不超过保险单中载明的金额。\n* **自付费用比例：**由投保人和保险公司协商确定，最高不超过保险单中载明的比例。\n\n自付费用和自付费用比例对保费的影响如下：\n* **自付费用增加：**保费会相应增加。\n* **自付费用比例增加：**保费会相应增加。",
+      "raw_model_output": "<Thought>\n问题类型: 计算类\n关键实体: 保单、自付、保单、保费\n证据匹配:\n  - 结果1（《2025-sep-product-brochure...》）: 包含目标信息，可用\n  - 结果2（《2025-sep-product-brochure...》）: 关联度低，忽略\n  - 结果3（《2025-sep-product-brochure...》）: 关联度低，忽略\n  - 结果4（《2025-sep-product-brochure...》）: 关联度低，忽略\n  - 结果5（《2025-sep-product-brochure...》）: 关联度低，忽略\n推理路径: 识别计算参数 → 定位金额/比例规定 → 说明适用条件\n</Thought>\n[答案] 滔丰灵活医保钻级计划设有以下自付费用选项：\n* **自付费用：**由投保人和保险公司协商确定，最高不超过保险单中载明的金额。\n* **自付费用比例：**由投保人和保险公司协商确定，最高不超过保险单中载明的比例。\n\n自付费用和自付费用比例对保费的影响如下：\n* **自付费用增加：**保费会相应增加。\n* **自付费用比例增加：**保费会相应增加。",
+      "evaluation": {
+        "retrieval_relevance": 3,
+        "faithfulness": 3,
+        "rejection_quality": 0,
+        "completeness": 3,
+        "total": 12,
+        "verdict": "PASS",
+        "reason": "答案完整，直接引用了材料中的内容，没有添加额外信息。"
+      }
+    },
+    {
+      "id": 10,
+      "category": "熱點-邊界",
+      "expected": "拒答（證據不足）",
+      "note": "多數合同簽署時無此條款，預期模型拒答",
+      "prompt": "這份香港保險合同是否承保新冠肺炎（COVID-19）住院費用？",
+      "mode": "raft",
+      "top_k": 5,
+      "latency_total_s": 9.05,
+      "latency_eval_s": 2.79,
+      "retrieval": [
+        {
+          "rank": 1,
+          "company": "FWD",
+          "category": "home",
+          "product_name": "HelperCare",
+          "source": "sourcepdf/FWD/home/HelperCare.pdf",
+          "modality": "text",
+          "page_number": 3,
+          "score": 0.27,
+          "text_preview": "保障範圍 主要不保事項 以下為不保事項之概略，詳細內容請參閱保單。 保障項目 承保範圍 最高保障金額 第一項 僱主責任 每宗事故 一般不保事項 100,000,000 家傭在受僱期間因工作引致生病、受傷或死 港元 戰爭、恐怖主義活動、在香港以外地方發生之傷病或意外（僱主責任保障除外）、核能或放 亡而導致僱主須承擔之法律賠償責任。 射性風險、受保前已存在之傷病、性病、愛滋病、自殺、自我傷害行為、懷孕"
+        },
+        {
+          "rank": 2,
+          "company": "prudential",
+          "category": "travel",
+          "product_name": "pruchoice-travel-working-holiday-product-brochure",
+          "source": "sourcepdf/prudential/travel/pruchoice-travel-working-holiday-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 5,
+          "score": 1.0256,
+          "text_preview": "3. 24小時緊急支援服務 • 居住在香港的直系親屬**身故、受傷或病 「新冠肺炎伸延保障」 主要不保事項 在旅程中，如需協助，可致電EAHK救援中 重；或 心，該中心可免費為您提供以下服務： • 因劫機或於保險期內首次在計劃之目的 保誠現正為保誠精選「工作假期寶」提供以下「新冠肺炎伸延保障」，適用 下列只為保誠精選「工作假期寶」不保事項的概略，請參閱保單內 • 醫療救援(無限額保障） 於繕發日期"
+        },
+        {
+          "rank": 3,
+          "company": "prudential",
+          "category": "travel",
+          "product_name": "pruchoice-travel-product-brochure",
+          "source": "sourcepdf/prudential/travel/pruchoice-travel-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 7,
+          "score": 1.2159,
+          "text_preview": "Discount will be given to the Insured Person and his/ her spouse only. However, the claim record of an insured dependant/ unmarried child shall be deemed and handled as if 5. 「新冠肺炎伸延保障」賠償金額及保單中「項目一 – "
+        },
+        {
+          "rank": 4,
+          "company": "manulife",
+          "category": "medical",
+          "product_name": "cancer-treatment-benefit",
+          "source": "sourcepdf/manulife/medical/cancer-treatment-benefit.pdf",
+          "modality": "text",
+          "page_number": 6,
+          "score": 1.4806,
+          "text_preview": "保障表2,3,4 保障級別5 私家6 半私家6 普通6 保障摘要 最高賠償限額（港元 / 美元） （計劃保障的詳盡條款和細則，請參閱保單條款） 4. 身故賠償保障 (a) 恩恤身故賠償 40,000港元 / 30,000港元 / 20,000港元 / 受保人身故時向指定受益人支付 5,000美元 3,750美元 2,500美元 5. 其他服務 (a) 第二醫療意見轉介服務12,13 每次癌症1次 "
+        },
+        {
+          "rank": 5,
+          "company": "hangseng",
+          "category": "travel",
+          "product_name": "plancoverage_travelsure_tc",
+          "source": "sourcepdf/hangseng/travel/plancoverage_travelsure_tc.pdf",
+          "modality": "text",
+          "page_number": 10,
+          "score": 1.8906,
+          "text_preview": "• 若保障受保人於旅程內因身體損傷或患病，並因在外地出院後須按醫生指示，即時 在當地休養再繼續旅程而被沒收原定旅程的車船飛機票，補償酒店住宿及交通費 用，最高賠償額為HKD5,000。 Chubb Assistance – • 在醫生建議下，安排緊急醫療運送及／或運返受保人返回香港或其他地點接受治 24-小時環球支援服務 療，並支付相關開支的實際費用 • 若受保人在香港以外的旅程中因身體損傷或患病"
+        }
+      ],
+      "model_cot": "问题类型: 定义类\n关键实体: 住院、合同、新冠肺炎\n证据匹配:\n  - 结果1（《HelperCare...》）: 包含目标信息，可用\n  - 结果2（《pruchoice-travel-working-holiday-pro...》）: 关联度低，忽略\n  - 结果3（《pruchoice-travel-product-brochure...》）: 关联度低，忽略\n  - 结果4（《cancer-treatment-benefit...》）: 关联度低，忽略\n  - 结果5（《plancoverage_travelsure_tc...》）: 包含目标信息，可用\n推理路径: 定位相关条款 → 提取术语定义 → 说明适用范围",
+      "final_answer": "[答案] 根据材料，这份保险合同不承保新冠肺炎（COVID-19）住院费用。",
+      "raw_model_output": "<Thought>\n问题类型: 定义类\n关键实体: 住院、合同、新冠肺炎\n证据匹配:\n  - 结果1（《HelperCare...》）: 包含目标信息，可用\n  - 结果2（《pruchoice-travel-working-holiday-pro...》）: 关联度低，忽略\n  - 结果3（《pruchoice-travel-product-brochure...》）: 关联度低，忽略\n  - 结果4（《cancer-treatment-benefit...》）: 关联度低，忽略\n  - 结果5（《plancoverage_travelsure_tc...》）: 包含目标信息，可用\n推理路径: 定位相关条款 → 提取术语定义 → 说明适用范围\n</Thought>\n[答案] 根据材料，这份保险合同不承保新冠肺炎（COVID-19）住院费用。",
+      "evaluation": {
+        "retrieval_relevance": 2,
+        "faithfulness": 2,
+        "rejection_quality": 0,
+        "completeness": 3,
+        "total": 7,
+        "verdict": "PASS",
+        "reason": "材料中明确指出，对于「新冠肺炎（COVID-19）住院及外科手術費用」属于「一般不保事項」，因此不予承保。"
+      }
+    }
+  ]
+}

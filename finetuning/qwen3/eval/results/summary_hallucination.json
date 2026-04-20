@@ -1,0 +1,61 @@
+{
+  "winner_count": {
+    "tie": 30
+  },
+  "avg_scores": {
+    "A": {
+      "format": 2.2666666666666666,
+      "style_professional": 1.9666666666666666,
+      "term_accuracy": 2.066666666666667,
+      "hallucination": 5.733333333333333,
+      "fidelity_to_context": 1.8,
+      "structure_completeness": 2.466666666666667
+    },
+    "B": {
+      "format": 2.2666666666666666,
+      "style_professional": 1.9666666666666666,
+      "term_accuracy": 2.066666666666667,
+      "hallucination": 5.733333333333333,
+      "fidelity_to_context": 1.8,
+      "structure_completeness": 2.466666666666667
+    }
+  },
+  "error_clusters": {
+    "存在幻觉或扩写": [
+      4,
+      5,
+      10,
+      3,
+      4,
+      5,
+      7,
+      9,
+      1,
+      4,
+      7,
+      10
+    ],
+    "不忠实材料": [
+      1,
+      4,
+      7,
+      10
+    ],
+    "格式不规范": [
+      4,
+      7
+    ],
+    "语言不够专业": [
+      4,
+      7
+    ],
+    "术语使用不准确": [
+      4,
+      7
+    ],
+    "结构不完整": [
+      4,
+      7
+    ]
+  }
+}

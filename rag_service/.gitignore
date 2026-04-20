@@ -1,0 +1,9 @@
+sourcepdf/
+.env
+.idea/
+__pycache__/
+*.pyc
+*.pyo
+*.zip
+IRAG-report.zip
+IRAG.zip

@@ -1,0 +1,813 @@
+{
+  "summary": {
+    "run_at": "2026-04-08T13:28:09.054401",
+    "total_tests": 10,
+    "pass": 2,
+    "partial": 0,
+    "fail": 8,
+    "error": 0,
+    "avg_score_12": 1.7
+  },
+  "tests": [
+    {
+      "id": 1,
+      "category": "定义类",
+      "expected": "有答案",
+      "note": "常见条款，多数重疾险有90天等待期",
+      "prompt": "重大疾病保险的等待期（观察期）是多长时间？",
+      "mode": "raft",
+      "top_k": 5,
+      "latency_total_s": 1.97,
+      "latency_eval_s": 3.0,
+      "retrieval": [
+        {
+          "rank": 1,
+          "company": "manulife",
+          "category": "critical_illness",
+          "product_name": "manulove-care-e16112018",
+          "source": "sourcepdf/manulife/critical_illness/manulove-care-e16112018.pdf",
+          "modality": "text",
+          "page_number": 5,
+          "score": 0.2893,
+          "text_preview": "10% 50%3 危疾复发并不罕见�以癌症为例�复发的机率为 至 �而中风的 持续守护保障 25% 35%4 复发率则为 至 �而心脏病的复发率占估计每年心脏病发率的 32 5 提供多重保障 ％ �因此�我们提供持续守护保障�帮助您应对危疾再度来袭�在 首次确诊任何严重危疾后�「心爱一家保」持续为受保人提供多重保障� 85 6 至受保人 岁 � — 100% 首次确诊患上任何严重危疾 保障 等候期"
+        },
+        {
+          "rank": 2,
+          "company": "manulife",
+          "category": "critical_illness",
+          "product_name": "manulove-care-e16112018",
+          "source": "sourcepdf/manulife/critical_illness/manulove-care-e16112018.pdf",
+          "modality": "text",
+          "page_number": 22,
+          "score": 0.3469,
+          "text_preview": "15. 缓接期 90 「受保人的缓接期」是指于下列日期（以较后者为准）起计 天内： i. 保单签发日; ii. 保单生效日;或 iii. 保单复效生效日� 若受保人患上之危疾乃是直接及完全因意外而导致�「受保人的缓接期」将不适用� 2 「受保父母的缓接期」或「受保子女的缓接期」是指于下列日期（以较后者为准）起计 年内： i. 保单签发日; ii. 保单生效日;或 iii. 保单复效生效日� 若受保"
+        },
+        {
+          "rank": 3,
+          "company": "manulife",
+          "category": "critical_illness",
+          "product_name": "careguard-critical-illness-benefit",
+          "source": "sourcepdf/manulife/critical_illness/careguard-critical-illness-benefit.pdf",
+          "modality": "text",
+          "page_number": 14,
+          "score": 0.4699,
+          "text_preview": "重要事项 11. 1. 缓接期 产品性质 缓接期是指在下列日期（以较晚者为准）起计90 天内： i. 本产品是一份没有储蓄成分的危疾保障计划，并为一项附加保障。本产品没有现金价值。本产品适合有保险产品需要（如本产品宣传单所述）及在 如果本附加保障是在保单签发时已包含在内，在保单签发日或保单生效日（以较晚者为准）；或 ii 有保障需要（如本产品宣传单所述）时有能力缴付保费的客户。因此，您应预备足够的"
+        },
+        {
+          "rank": 4,
+          "company": "manulife",
+          "category": "critical_illness",
+          "product_name": "careguard-critical-illness-benefit",
+          "source": "sourcepdf/manulife/critical_illness/careguard-critical-illness-benefit.pdf",
+          "modality": "text",
+          "page_number": 15,
+          "score": 0.4714,
+          "text_preview": "重要事项 11. 1. 缓接期 产品性质 缓接期是指在下列日期（以较晚者为准）起计90 天内： i. 本产品是一份没有储蓄成分的危疾保障计划，并为一项附加保障。本产品没有现金价值。本产品适合有保险产品需要（如本产品宣传单所述）及在 如果本附加保障是在保单签发时已包含在内，在保单签发日或保单生效日（以较晚者为准）；或 ii 有保障需要（如本产品宣传单所述）时有能力缴付保费的客户。因此，您应预备足够的"
+        },
+        {
+          "rank": 5,
+          "company": "manulife",
+          "category": "critical_illness",
+          "product_name": "manubright-care-2",
+          "source": "sourcepdf/manulife/critical_illness/manubright-care-2.pdf",
+          "modality": "text",
+          "page_number": 8,
+          "score": 0.6486,
+          "text_preview": "您知道吗？ 严重影响日常生活，获额外保障 固定保费，保证不变 4 10 20 不少危疾都会带来长远的健康影响，损害自理和进行日常生活 计划设有 个保费缴付期以供选择，包括 年、 年、 25 65 的能力。因此，我们提供财政援助以减轻因伤残所带来的长期 年或至受保人 岁。您的保费保证不变及不会在您 危疾后� 7 护理负担。 所选择的保费缴付期内增加(见注 )。 危疾后所出现的伤残，往往需要长期护理，"
+        }
+      ],
+      "model_cot": "问题类型: 定义类\n关键实体: 等待期、重大疾病\n证据匹配:\n  - 结果1（《manulove-care-e16112018...》）: 与查询目标不匹配，不可用\n  - 结果2（《manulove-care-e16112018...》）: 与查询目标不匹配，不可用\n  - 结果3（《careguard-critical-illness-benefit...》）: 与查询目标不匹配，不可用\n  - 结果4（《careguard-critical-illness-benefit...》）: 与查询目标不匹配，不可用\n  - 结果5（《manubright-care-2...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答",
+      "final_answer": "[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+      "raw_model_output": "<Thought>\n问题类型: 定义类\n关键实体: 等待期、重大疾病\n证据匹配:\n  - 结果1（《manulove-care-e16112018...》）: 与查询目标不匹配，不可用\n  - 结果2（《manulove-care-e16112018...》）: 与查询目标不匹配，不可用\n  - 结果3（《careguard-critical-illness-benefit...》）: 与查询目标不匹配，不可用\n  - 结果4（《careguard-critical-illness-benefit...》）: 与查询目标不匹配，不可用\n  - 结果5（《manubright-care-2...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答\n</Thought>\n[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+      "evaluation": {
+        "retrieval_relevance": 0,
+        "faithfulness": 0,
+        "rejection_quality": 0,
+        "completeness": 0,
+        "total": 0,
+        "verdict": "FAIL",
+        "reason": "提供的检索结果均与问题无关，无法提供有效依据。"
+      }
+    },
+    {
+      "id": 2,
+      "category": "流程类",
+      "expected": "有答案",
+      "note": "身故理赔流程，预期文档中有相关条款",
+      "prompt": "被保险人身故后，身故保险金应如何申请理赔？",
+      "mode": "raft",
+      "top_k": 5,
+      "latency_total_s": 0.54,
+      "latency_eval_s": 3.02,
+      "retrieval": [
+        {
+          "rank": 1,
+          "company": "manulife",
+          "category": "wealth",
+          "product_name": "manuglobal-saver-hk",
+          "source": "sourcepdf/manulife/wealth/manuglobal-saver-hk.pdf",
+          "modality": "text",
+          "page_number": 6,
+          "score": 0.0,
+          "text_preview": "计划特点 其他特色 计划概览 案例 注 重要事项 人寿保障 安心无忧 如果受保人不幸身故，我们将支付一笔过身故赔偿，金额相当于任何积存在 本公司的已锁定的终期红利连利息，并加上以下的较高者： • 1 保证现金价值和非保证终期红利的总和（见注 ）；或 • 7 应付并已缴的保费的总和（见注 ）。 多种工具 让您的财富世代承传 让您安枕无忧地把财富绵延下一代，您可选择更改受保人为您的另一位挚爱 家人，例"
+        },
+        {
+          "rank": 2,
+          "company": "manulife",
+          "category": "life",
+          "product_name": "universal-life",
+          "source": "sourcepdf/manulife/life/universal-life.pdf",
+          "modality": "text",
+          "page_number": 12,
+          "score": 0.326,
+          "text_preview": "注 1. 12.2 倘若受保人在宽限期期间（见以下「重要事项」部分第 项）身故，则会以受保人身故当日的户口价值计算身故赔偿，而寿险赔偿也会减去任何 到期未偿还的保单月费。 2. 5 更改身故赔偿选择将导致名义金额调减，并会按比例收取退保费用（请参阅本产品手册第 部分「保单收费」一项）。如果新的名义金额未能符合 最低名义金额要求，则本公司不会接纳该更改要求。更改至递增身故赔偿选择将导致保险费用增加。"
+        },
+        {
+          "rank": 3,
+          "company": "manulife",
+          "category": "wealth",
+          "product_name": "manuglobal-saver-hk",
+          "source": "sourcepdf/manulife/wealth/manuglobal-saver-hk.pdf",
+          "modality": "text",
+          "page_number": 7,
+          "score": 0.3677,
+          "text_preview": "其他特色 计划特点 计划概览 案例 注 重要事项 人寿保障 安心无忧 其他特色 如果受保人不幸身故，我们将支付一笔过身故赔偿，金额相当于任何积存在 本公司的已锁定的终期红利连利息，并加上以下的较高者： • 1 保证现金价值和非保证终期红利的总和（见注 ）；或 • 7 应付并已缴的保费的总和（见注 ）。 为您家人增添额外保障 附加保障 加倍安心 5 5 10 如果受保人在首 个保单年度内因意外身故，"
+        },
+        {
+          "rank": 4,
+          "company": "boc",
+          "category": "wealth",
+          "product_name": "Foreverwellbeing_Sc",
+          "source": "sourcepdf/boc/wealth/Foreverwellbeing_Sc.pdf",
+          "modality": "text",
+          "page_number": 7,
+          "score": 0.5049,
+          "text_preview": "餘額(如有)退回的金額需扣除預繳保費退回費用。此退 狀況或末期疾病當日起計三十(30)日內提出索償。除非證 括人壽保障便會被終止，而有關的現金價值總額有機會 ‧ 本計劃及附加利益保障(如有)受中銀人壽繕發的正式 回費用設有最低限額。有關預繳保費退回費用的計算及 ‧ 有關嚴重疾病及狀況組別5(入住深切治療部)之 明無法合理地在此期間內提出索償，並已在合理的情況下 少於已繳付的保費。保單終止後，客戶方"
+        },
+        {
+          "rank": 5,
+          "company": "manulife",
+          "category": "life",
+          "product_name": "universal-life",
+          "source": "sourcepdf/manulife/life/universal-life.pdf",
+          "modality": "text",
+          "page_number": 4,
+          "score": 0.5639,
+          "text_preview": "实现您的人生目标 人寿保障 保障 「万用寿险」提供全面寿险保障，让您和挚爱安心迈步向前，无后顾之忧。 您可根据您的财务需要，选择固定身故赔偿或递增身故赔偿选择。 • 1 固定身故赔偿选择：身故赔偿额相当于名义金额或户口价值中的较 高者，并扣除保单贷款。 • 1 递增身故赔偿选择：身故赔偿额相当于名义金额加上户口价值，并 扣除保单贷款。 您可在首个保单周年日后，随时从「固定身故赔偿选择」改为「递增身"
+        }
+      ],
+      "model_cot": "问题类型: 流程类\n关键实体: 身故、被保险人、理赔\n证据匹配:\n  - 结果1（'manuglobal-saver-hk...》）: 与查询目标不匹配，不可用\n  - 结果2（'universal-life...》）: 与查询目标不匹配，不可用\n  - 结果3（'manuglobal-saver-hk...》）: 与查询目标不匹配，不可用\n  - 结果4（'Foreverwellbeing_Sc...》）: 与查询目标不匹配，不可用\n  - 结果5（'universal-life...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答",
+      "final_answer": "[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+      "raw_model_output": "<Thought>\n问题类型: 流程类\n关键实体: 身故、被保险人、理赔\n证据匹配:\n  - 结果1（'manuglobal-saver-hk...》）: 与查询目标不匹配，不可用\n  - 结果2（'universal-life...》）: 与查询目标不匹配，不可用\n  - 结果3（'manuglobal-saver-hk...》）: 与查询目标不匹配，不可用\n  - 结果4（'Foreverwellbeing_Sc...》）: 与查询目标不匹配，不可用\n  - 结果5（'universal-life...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答\n</Thought>\n[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+      "evaluation": {
+        "retrieval_relevance": 0,
+        "faithfulness": 0,
+        "rejection_quality": 0,
+        "completeness": 0,
+        "total": 0,
+        "verdict": "FAIL",
+        "reason": "提供的检索结果均与问题无关，无法提供有效依据。"
+      }
+    },
+    {
+      "id": 3,
+      "category": "边界条款",
+      "expected": "有答案",
+      "note": "自杀免责条款，多数寿险合同有两年自杀不赔规定",
+      "prompt": "如果被保险人在保险合同生效后两年内自杀，保险公司是否赔付？",
+      "mode": "raft",
+      "top_k": 5,
+      "latency_total_s": 0.56,
+      "latency_eval_s": 3.53,
+      "retrieval": [
+        {
+          "rank": 1,
+          "company": "manulife",
+          "category": "critical_illness",
+          "product_name": "manulove-care-e16112018",
+          "source": "sourcepdf/manulife/critical_illness/manulove-care-e16112018.pdf",
+          "modality": "text",
+          "page_number": 23,
+          "score": 0.2922,
+          "text_preview": "17. 不保事项和限制 如果因以下任何一项导致危疾�本公司将不会作出任何在生利益赔偿� i. 在缓接期内或以前被诊断患上或出现有关病征或征状的先天性情况; ii. 直接或间接因后天免疫力缺乏症候群（艾滋病）�与艾滋病有关的幷发症�或感染人类免疫力缺乏症病毒而致�但注明于保单条款下「严重危疾 定义」一节内的「因职业引致之人类免疫力缺乏症病毒」�「因输血而感染爱滋病」及「因侵害而感染之人类免疫力缺乏症"
+        },
+        {
+          "rank": 2,
+          "company": "manulife",
+          "category": "life",
+          "product_name": "universal-life",
+          "source": "sourcepdf/manulife/life/universal-life.pdf",
+          "modality": "text",
+          "page_number": 12,
+          "score": 0.4318,
+          "text_preview": "注 1. 12.2 倘若受保人在宽限期期间（见以下「重要事项」部分第 项）身故，则会以受保人身故当日的户口价值计算身故赔偿，而寿险赔偿也会减去任何 到期未偿还的保单月费。 2. 5 更改身故赔偿选择将导致名义金额调减，并会按比例收取退保费用（请参阅本产品手册第 部分「保单收费」一项）。如果新的名义金额未能符合 最低名义金额要求，则本公司不会接纳该更改要求。更改至递增身故赔偿选择将导致保险费用增加。"
+        },
+        {
+          "rank": 3,
+          "company": "manulife",
+          "category": "critical_illness",
+          "product_name": "incomeguard-critical-illness-protector",
+          "source": "sourcepdf/manulife/critical_illness/incomeguard-critical-illness-protector.pdf",
+          "modality": "text",
+          "page_number": 22,
+          "score": 0.4471,
+          "text_preview": "重要事项 计划特点 其他特点 增值服务 案例 计划概览 注 12. 终止保单的条件 保单将会在下列情况终止: i. 如果保费在宽限期届满后仍未缴交，且未采用本公司的自动贷款代缴保费条款下的方式向本公司借贷缴付； ii. 受保人身故后本公司支付身故赔偿（如有）； iii. 保单持有人退保，并已根据本保单条款支付保证现金价值（如有）加上累积已锁定终期红利（如有）和本公司当时确定的终期红利（如有）； 1"
+        },
+        {
+          "rank": 4,
+          "company": "FWD",
+          "category": "life",
+          "product_name": "FWD_MyTerm_Plus_TC_Final",
+          "source": "sourcepdf/FWD/life/FWD_MyTerm_Plus_TC_Final.pdf",
+          "modality": "text",
+          "page_number": 9,
+          "score": 0.5139,
+          "text_preview": "計劃保障範圍 權益概覽 權益 標準 特等 身故權益 身故權益相等於 ✓ ✓ 1 (1) 投保額 的100%； (2) 減任何未付保費或保費徵費 5 預支身故權益 當自主保（升級版）生效時，如被保人經註冊專業醫生 ✓ ✓ 證明非常可能於12個月內身故，而此證明受我們接受， 預支身故權益將支付予保單權益人 預支身故權益相等於 (1) 自主保（升級版）和享悅人生增值保障（如有）的 投保額之100%； ("
+        },
+        {
+          "rank": 5,
+          "company": "boc",
+          "category": "accident",
+          "product_name": "china_exp_policy_chi",
+          "source": "sourcepdf/boc/accident/china_exp_policy_chi.pdf",
+          "modality": "text",
+          "page_number": 4,
+          "score": 0.5684,
+          "text_preview": "就此保障，本公司無須對以下項目負責： (i) 診治受保人的醫生認為可合理地延遲接受手術或診治，直至受保人返 回原居地； (ii) 醫院的單人或私家病房膳宿、診所或護理的費用，除非醫生認為受保 人必須要此等安排； (iii) 牙科護理或診治，除非在保障地區內因意外受傷導致天然健康牙齒受 創； (iv) 中醫及跌打治療費用；或 (v) 未能提供由主診醫生列明因意外受傷發出的正式收據、醫學證書及診 斷報"
+        }
+      ],
+      "model_cot": "问题类型: 定义类\n关键实体: 被保险人、保险公司、合同\n证据匹配:\n  - 结果1（《manulove-care-e16112018...》）: 包含目标信息，可用\n  - 结果2（《universal-life...》）: 关联度低，忽略\n  - 结果3（《incomeguard-critical-illness-protector...》）: 关联度低，忽略\n  - 结果4（《FWD_MyTerm_Plus_TC_Final...》）: 关联度低，忽略\n  - 结果5（《china_exp_policy_chi...》）: 关联度低，忽略\n推理路径: 定位相关条款 → 提取术语定义 → 说明适用范围",
+      "final_answer": "[答案] 否，如果被保险人在保险合同生效后两年内自杀，保险公司不会赔付身故保险金。",
+      "raw_model_output": "<Thought>\n问题类型: 定义类\n关键实体: 被保险人、保险公司、合同\n证据匹配:\n  - 结果1（《manulove-care-e16112018...》）: 包含目标信息，可用\n  - 结果2（《universal-life...》）: 关联度低，忽略\n  - 结果3（《incomeguard-critical-illness-protector...》）: 关联度低，忽略\n  - 结果4（《FWD_MyTerm_Plus_TC_Final...》）: 关联度低，忽略\n  - 结果5（《china_exp_policy_chi...》）: 关联度低，忽略\n推理路径: 定位相关条款 → 提取术语定义 → 说明适用范围\n</Thought>\n[答案] 否，如果被保险人在保险合同生效后两年内自杀，保险公司不会赔付身故保险金。",
+      "evaluation": {
+        "retrieval_relevance": 3,
+        "faithfulness": 3,
+        "rejection_quality": 0,
+        "completeness": 3,
+        "total": 9,
+        "verdict": "PASS",
+        "reason": "材料1明确指出，如果在缓接期内或以前被诊断患上或出现有关病征或征状的先天性情况，保险公司将不会作出任何在生利益赔偿。"
+      }
+    },
+    {
+      "id": 4,
+      "category": "定义类",
+      "expected": "有答案",
+      "note": "犹豫期（冷静期）条款，通常为10-15天",
+      "prompt": "投保人购买保险后可以反悔吗？犹豫期是多少天？",
+      "mode": "raft",
+      "top_k": 5,
+      "latency_total_s": 0.68,
+      "latency_eval_s": 3.2,
+      "retrieval": [
+        {
+          "rank": 1,
+          "company": "manulife",
+          "category": "medical",
+          "product_name": "manulife-supreme-medical-plan",
+          "source": "sourcepdf/manulife/medical/manulife-supreme-medical-plan.pdf",
+          "modality": "text",
+          "page_number": 19,
+          "score": 0.2679,
+          "text_preview": "重要事项 计划特点 计划一览 增值服务 保障表 例子 注 注 重要事项 1. 1. 全数赔偿是指不设分项赔偿限额， 而应付赔偿受余下的自付费（如适用）、 每年保障限额、 终身保障限额和其他限制所规限。 全数赔偿仅适用于 产品性质 指定保障项目， 而其他保障项目并不获全数赔偿且受限于相关项目的赔偿限额。 详情请参阅保障表和保单条款。 本产品是一份没有储蓄成分的偿款住院保险产品。 本产品没有现金价值。"
+        },
+        {
+          "rank": 2,
+          "company": "hsbc",
+          "category": "life",
+          "product_name": "2023-feb-product-brochure",
+          "source": "sourcepdf/hsbc/life/2023-feb-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 7,
+          "score": 0.3125,
+          "text_preview": "重要事项 冷静期 「汇家保」是一份没有储蓄成分的纯人寿保险计划，并非银行存款或银行储蓄计划。部分保费将 付作保险及相关之费用，包括但不限于开立保单，售后服务及索偿之费用。 如您对保单不满意，您有权透过发出书面通知取消保单及取回所有已缴交的保费及保费征费。 如要取消，您必须于「冷静期」内（即是为紧接人寿保险保单或冷静期通知书交付予保单持有人 或保单持有人的指定代表之日起计的21个历日的期间（以较早者"
+        },
+        {
+          "rank": 3,
+          "company": "manulife",
+          "category": "critical_illness",
+          "product_name": "careguard-critical-illness-benefit",
+          "source": "sourcepdf/manulife/critical_illness/careguard-critical-illness-benefit.pdf",
+          "modality": "text",
+          "page_number": 14,
+          "score": 0.419,
+          "text_preview": "重要事项 11. 1. 缓接期 产品性质 缓接期是指在下列日期（以较晚者为准）起计90 天内： i. 本产品是一份没有储蓄成分的危疾保障计划，并为一项附加保障。本产品没有现金价值。本产品适合有保险产品需要（如本产品宣传单所述）及在 如果本附加保障是在保单签发时已包含在内，在保单签发日或保单生效日（以较晚者为准）；或 ii 有保障需要（如本产品宣传单所述）时有能力缴付保费的客户。因此，您应预备足够的"
+        },
+        {
+          "rank": 4,
+          "company": "manulife",
+          "category": "critical_illness",
+          "product_name": "careguard-critical-illness-benefit",
+          "source": "sourcepdf/manulife/critical_illness/careguard-critical-illness-benefit.pdf",
+          "modality": "text",
+          "page_number": 15,
+          "score": 0.4248,
+          "text_preview": "重要事项 11. 1. 缓接期 产品性质 缓接期是指在下列日期（以较晚者为准）起计90 天内： i. 本产品是一份没有储蓄成分的危疾保障计划，并为一项附加保障。本产品没有现金价值。本产品适合有保险产品需要（如本产品宣传单所述）及在 如果本附加保障是在保单签发时已包含在内，在保单签发日或保单生效日（以较晚者为准）；或 ii 有保障需要（如本产品宣传单所述）时有能力缴付保费的客户。因此，您应预备足够的"
+        },
+        {
+          "rank": 5,
+          "company": "manulife",
+          "category": "life",
+          "product_name": "universal-life",
+          "source": "sourcepdf/manulife/life/universal-life.pdf",
+          "modality": "text",
+          "page_number": 9,
+          "score": 0.4458,
+          "text_preview": "早期保单失效保障 在首五个保单年度内，若净退保现金价值低至 零或以下水平，只要保单通过早期保单失效 7 保障累积保费测试 ，保障即可维持生效。 更改受保人 如果现有受保人不再受雇或参与有关公司， 「万用寿险」将提供更改受保人的灵活性， 但只适用于由公司持有的保单，并受我们确 定的条款和细则所限制。 保单持有人可在保单签发日一年后申请更改 受保人。我们有绝对酌情权接受新受保人的 申请，并按新受保人的"
+        }
+      ],
+      "model_cot": "问题类型: 条件类\n关键实体: 投保人、投保\n证据匹配:\n  - 结果1（《manulife-supreme-medical-plan...》）: 与查询目标不匹配，不可用\n  - 结果2（《2023-feb-product-brochure...》）: 与查询目标不匹配，不可用\n  - 结果3（《careguard-critical-illness-benefit...》）: 与查询目标不匹配，不可用\n  - 结果4（《careguard-critical-illness-benefit...》）: 与查询目标不匹配，不可用\n  - 结果5（《universal-life...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答",
+      "final_answer": "[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+      "raw_model_output": "<Thought>\n问题类型: 条件类\n关键实体: 投保人、投保\n证据匹配:\n  - 结果1（《manulife-supreme-medical-plan...》）: 与查询目标不匹配，不可用\n  - 结果2（《2023-feb-product-brochure...》）: 与查询目标不匹配，不可用\n  - 结果3（《careguard-critical-illness-benefit...》）: 与查询目标不匹配，不可用\n  - 结果4（《careguard-critical-illness-benefit...》）: 与查询目标不匹配，不可用\n  - 结果5（《universal-life...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答\n</Thought>\n[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+      "evaluation": {
+        "retrieval_relevance": 0,
+        "faithfulness": 0,
+        "rejection_quality": 0,
+        "completeness": 0,
+        "total": 0,
+        "verdict": "FAIL",
+        "reason": "提供的检索结果均与问题无关，无法回答所提出的问题。"
+      }
+    },
+    {
+      "id": 5,
+      "category": "英文-免责条款",
+      "expected": "有答案",
+      "note": "既往症免责条款，英文查询",
+      "prompt": "What are the exclusions for pre-existing medical conditions in the health insurance policy?",
+      "mode": "raft",
+      "top_k": 5,
+      "latency_total_s": 0.58,
+      "latency_eval_s": 3.46,
+      "retrieval": [
+        {
+          "rank": 1,
+          "company": "prudential",
+          "category": "medical",
+          "product_name": "pruhealth-vhis-easychoice-plan-product-brochure",
+          "source": "sourcepdf/prudential/medical/pruhealth-vhis-easychoice-plan-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 3,
+          "score": 0.2215,
+          "text_preview": "计划特点 保证终身续保 — 计划不设最高 癌症、肾衰竭和 与您健康同行 终身保障限额 意外受伤的保障 关顾由确诊到康复 的每一步 额外 医疗计划 保障未知的投保前已有病症 涵盖额外医疗计划 （包括未知的先天性疾病）， 赔偿额外 以及妊娠期并发症 合资格医疗费用 稅 合资格保费 治疗前可预计赔偿额 可享税务扣除 3"
+        },
+        {
+          "rank": 2,
+          "company": "hsbc",
+          "category": "life",
+          "product_name": "2023-feb-product-brochure",
+          "source": "sourcepdf/hsbc/life/2023-feb-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 8,
+          "score": 0.2812,
+          "text_preview": "附加保障的主要不受保项目 儿童保障 如受保人的子女已被诊断或被发现有以下情况，我们将不能为他们提供保障，当中包括但不限于: （1）早产或过期出生（2）投保前已存在的病症及（3）先天性疾病、生殖器疾病或因发育状况引 起的疾病。 危疾保障及癌症保障 以下情况我们将不能为受保人提供保障：（1）投保前已存在的病症（2）保单签发日期后90日 内诊断出的疾病及（3）因未处方药物或滥用酒精引致的疾病。 住院现金"
+        },
+        {
+          "rank": 3,
+          "company": "prudential",
+          "category": "critical_illness",
+          "product_name": "pruhealth-critical-illness-term-ii-product-brochure",
+          "source": "sourcepdf/prudential/critical_illness/pruhealth-critical-illness-term-ii-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 4,
+          "score": 0.4689,
+          "text_preview": "受保病況一覽表 疾病組別 早期嚴重病況 嚴重病況 癌症 1. 原位癌* 1. 癌症^ 2. 早期甲狀腺或前列腺癌# 與心臟相關的 3. 冠狀動脈血管成形術 2. 心肌病 疾病 3. 需要進行外科手術的冠狀動脈病 4. 心臟病發作 5. 心瓣及結構性手術 6. 感染性心內膜炎 7. 原發性肺動脈高血壓 8. 大動脈外科手術 與神經系統相關的 9. 阿耳滋海默氏症 疾病 10. 肌萎縮性脊髓側索硬化 "
+        },
+        {
+          "rank": 4,
+          "company": "prudential",
+          "category": "medical",
+          "product_name": "pruhealth-corechoice-medical-plan-product-brochure",
+          "source": "sourcepdf/prudential/medical/pruhealth-corechoice-medical-plan-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 3,
+          "score": 0.6947,
+          "text_preview": "計劃特點 保证续保到100岁 计划不设最高终身保障限额 保障未知的投保前 关顾由确诊到康复的 已有病症 每一步 （包括未知的先天性疾病） 合资格保费 治疗前可预计 可享税务扣除 赔偿额 增值服務以加強您的保障 住院、日间手术和 绿色医疗通道 — 安心医 — 诊断成像检测 优先预约中国内地的指定 国际专家提供的个人化医疗 医疗费用直付服务 医院就诊和／或住院 咨询服务，助您重拾健康 「智安排」预设保"
+        },
+        {
+          "rank": 5,
+          "company": "prudential",
+          "category": "medical",
+          "product_name": "pruhealth-flexichoice-medical-plan-r-product-brochure",
+          "source": "sourcepdf/prudential/medical/pruhealth-flexichoice-medical-plan-r-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 3,
+          "score": 0.7382,
+          "text_preview": "计划特点 保证终身续保 — 计划不设最高终身保障限额 癌症、肾衰竭和 与您健康同行 关顾由确诊到康复的 意外受伤的保障 每一步 $ $ 保障未知的投保前 透过额外医疗计划加强保障，即使 15%无索偿折扣 已有病症（包括未知的 合资格医疗费用超出计划的个别项目 鼓励健康生活 先天性疾病），以及 的赔偿限额，网络关怀保障将 妊娠期并发症 赔偿超出计划的合资格医疗费用的 100%，以及非网络关怀保障 将"
+        }
+      ],
+      "model_cot": "问题类型: 定义类\n关键实体: 条件、保险、健康\n证据匹配:\n  - 结果1（《pruhealth-vhis-easychoice-plan-produc...》）: 与查询目标不匹配，不可用\n  - 结果2（《2023-feb-product-brochure...》）: 与查询目标不匹配，不可用\n  - 结果3（《pruhealth-critical-illness-term-ii-pro...》）: 与查询目标不匹配，不可用\n  - 结果4（《pruhealth-corechoice-medical-plan-prod...》）: 与查询目标不匹配，不可用\n  - 结果5（《pruhealth-flexichoice-medical-plan-r-pro...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答",
+      "final_answer": "[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+      "raw_model_output": "<Thought>\n问题类型: 定义类\n关键实体: 条件、保险、健康\n证据匹配:\n  - 结果1（《pruhealth-vhis-easychoice-plan-produc...》）: 与查询目标不匹配，不可用\n  - 结果2（《2023-feb-product-brochure...》）: 与查询目标不匹配，不可用\n  - 结果3（《pruhealth-critical-illness-term-ii-pro...》）: 与查询目标不匹配，不可用\n  - 结果4（《pruhealth-corechoice-medical-plan-prod...》）: 与查询目标不匹配，不可用\n  - 结果5（《pruhealth-flexichoice-medical-plan-r-pro...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答\n</Thought>\n[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+      "evaluation": {
+        "retrieval_relevance": 0,
+        "faithfulness": 0,
+        "rejection_quality": 0,
+        "completeness": 0,
+        "total": 0,
+        "verdict": "FAIL",
+        "reason": "提供的检索结果与问题无关，无法提供有效依据。"
+      }
+    },
+    {
+      "id": 6,
+      "category": "权利义务",
+      "expected": "有答案",
+      "note": "合同变更权利，保险法基本条款",
+      "prompt": "保险公司可以单方面变更合同条款吗？投保人有哪些权利？",
+      "mode": "raft",
+      "top_k": 5,
+      "latency_total_s": 0.46,
+      "latency_eval_s": 3.33,
+      "retrieval": [
+        {
+          "rank": 1,
+          "company": "manulife",
+          "category": "life",
+          "product_name": "universal-life",
+          "source": "sourcepdf/manulife/life/universal-life.pdf",
+          "modality": "text",
+          "page_number": 9,
+          "score": 0.1607,
+          "text_preview": "早期保单失效保障 在首五个保单年度内，若净退保现金价值低至 零或以下水平，只要保单通过早期保单失效 7 保障累积保费测试 ，保障即可维持生效。 更改受保人 如果现有受保人不再受雇或参与有关公司， 「万用寿险」将提供更改受保人的灵活性， 但只适用于由公司持有的保单，并受我们确 定的条款和细则所限制。 保单持有人可在保单签发日一年后申请更改 受保人。我们有绝对酌情权接受新受保人的 申请，并按新受保人的"
+        },
+        {
+          "rank": 2,
+          "company": "manulife",
+          "category": "critical_illness",
+          "product_name": "manulove-care-e16112018",
+          "source": "sourcepdf/manulife/critical_illness/manulove-care-e16112018.pdf",
+          "modality": "text",
+          "page_number": 21,
+          "score": 0.4568,
+          "text_preview": "10. 保单贷款 90% 您可以申请不多于扣除欠款后的贷款价值作保单贷款�贷款价值为保证现金价值与累积已锁定终期红利的总和的 （由本公司确定幷不时修改而 不另行通知）�保单贷款需要支付利息�金额以每年复利计算（即利息会产生进一步利息）�利率由本公司确定幷有权不时加以修订�如果在任何时间 欠款相当于或超过保证现金价值与任何累积已锁定终期红利的总和�保单将会终止而我们不会给予您任何款项�保单贷款会减低"
+        },
+        {
+          "rank": 3,
+          "company": "manulife",
+          "category": "medical",
+          "product_name": "manulife-supreme-medical-plan",
+          "source": "sourcepdf/manulife/medical/manulife-supreme-medical-plan.pdf",
+          "modality": "text",
+          "page_number": 19,
+          "score": 0.4736,
+          "text_preview": "重要事项 计划特点 计划一览 增值服务 保障表 例子 注 注 重要事项 1. 1. 全数赔偿是指不设分项赔偿限额， 而应付赔偿受余下的自付费（如适用）、 每年保障限额、 终身保障限额和其他限制所规限。 全数赔偿仅适用于 产品性质 指定保障项目， 而其他保障项目并不获全数赔偿且受限于相关项目的赔偿限额。 详情请参阅保障表和保单条款。 本产品是一份没有储蓄成分的偿款住院保险产品。 本产品没有现金价值。"
+        },
+        {
+          "rank": 4,
+          "company": "manulife",
+          "category": "critical_illness",
+          "product_name": "incomeguard-critical-illness-protector",
+          "source": "sourcepdf/manulife/critical_illness/incomeguard-critical-illness-protector.pdf",
+          "modality": "text",
+          "page_number": 22,
+          "score": 0.5961,
+          "text_preview": "重要事项 计划特点 其他特点 增值服务 案例 计划概览 注 12. 终止保单的条件 保单将会在下列情况终止: i. 如果保费在宽限期届满后仍未缴交，且未采用本公司的自动贷款代缴保费条款下的方式向本公司借贷缴付； ii. 受保人身故后本公司支付身故赔偿（如有）； iii. 保单持有人退保，并已根据本保单条款支付保证现金价值（如有）加上累积已锁定终期红利（如有）和本公司当时确定的终期红利（如有）； 1"
+        },
+        {
+          "rank": 5,
+          "company": "manulife",
+          "category": "life",
+          "product_name": "universal-life",
+          "source": "sourcepdf/manulife/life/universal-life.pdf",
+          "modality": "text",
+          "page_number": 12,
+          "score": 0.6045,
+          "text_preview": "注 1. 12.2 倘若受保人在宽限期期间（见以下「重要事项」部分第 项）身故，则会以受保人身故当日的户口价值计算身故赔偿，而寿险赔偿也会减去任何 到期未偿还的保单月费。 2. 5 更改身故赔偿选择将导致名义金额调减，并会按比例收取退保费用（请参阅本产品手册第 部分「保单收费」一项）。如果新的名义金额未能符合 最低名义金额要求，则本公司不会接纳该更改要求。更改至递增身故赔偿选择将导致保险费用增加。"
+        }
+      ],
+      "model_cot": "问题类型: 定义类\n关键实体: 投保人、保险公司、合同\n证据匹配:\n  - 结果1（'universal-life...》）: 与查询目标不匹配，不可用\n  - 结果2（'manulove-care-e16112018...》）: 与查询目标不匹配，不可用\n  - 结果3（'manulife-supreme-medical-plan...》）: 与查询目标不匹配，不可用\n  - 结果4（'incomeguard-critical-illness-protector...》）: 与查询目标不匹配，不可用\n  - 结果5（'universal-life...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答",
+      "final_answer": "[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+      "raw_model_output": "<Thought>\n问题类型: 定义类\n关键实体: 投保人、保险公司、合同\n证据匹配:\n  - 结果1（'universal-life...》）: 与查询目标不匹配，不可用\n  - 结果2（'manulove-care-e16112018...》）: 与查询目标不匹配，不可用\n  - 结果3（'manulife-supreme-medical-plan...》）: 与查询目标不匹配，不可用\n  - 结果4（'incomeguard-critical-illness-protector...》）: 与查询目标不匹配，不可用\n  - 结果5（'universal-life...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答\n</Thought>\n[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+      "evaluation": {
+        "retrieval_relevance": 0,
+        "faithfulness": 0,
+        "rejection_quality": 0,
+        "completeness": 0,
+        "total": 0,
+        "verdict": "FAIL",
+        "reason": "提供的检索结果与问题无关，无法提供有效依据。"
+      }
+    },
+    {
+      "id": 7,
+      "category": "数值类",
+      "expected": "有答案",
+      "note": "免赔额和报销比例，可能因产品而异",
+      "prompt": "医疗保险的免赔额是多少？超过免赔额的部分按什么比例报销？",
+      "mode": "raft",
+      "top_k": 5,
+      "latency_total_s": 0.48,
+      "latency_eval_s": 3.53,
+      "retrieval": [
+        {
+          "rank": 1,
+          "company": "prudential",
+          "category": "medical",
+          "product_name": "pruhealth-flexichoice-medical-plan-r-product-brochure",
+          "source": "sourcepdf/prudential/medical/pruhealth-flexichoice-medical-plan-r-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 11,
+          "score": 0.1187,
+          "text_preview": "保障表 保诚灵活自主医保计划 最高赔偿限额 保障项目(1) 普通病房 半私家病房 私家病房 美元 港元 美元 港元 美元 港元 全球 保障地域范围 （惟精神科治疗只适用在香港） 每年保障限额和终身保障限额 不设上限 I. 住院保障 病房和膳食（每天） 1 155 1,200 323 2,500 581 4,500 每个保单年度的最高赔偿天数：180 2 杂项开支（每个保单年度） 2,323 18,"
+        },
+        {
+          "rank": 2,
+          "company": "manulife",
+          "category": "medical",
+          "product_name": "manuguard-medical-benefit-mktpp98e",
+          "source": "sourcepdf/manulife/medical/manuguard-medical-benefit-mktpp98e.pdf",
+          "modality": "text",
+          "page_number": 8,
+          "score": 0.2679,
+          "text_preview": "6,7,8 额外医疗保障或特级额外医疗保障（自选） / 每项伤病最高赔偿限额（港元 美元） 计划级别 私家 半私家 普通 基础 250,000 / 160,000 / 100,000 / 70,000 / 额外医疗保障的赔偿总额 港元 港元 港元 港元 31,250 20,000 12,500 8,750 美元 美元 美元 美元 525,000 / 305,000 / 175,000 / 100,"
+        },
+        {
+          "rank": 3,
+          "company": "manulife",
+          "category": "critical_illness",
+          "product_name": "manulove-care-e16112018",
+          "source": "sourcepdf/manulife/critical_illness/manulove-care-e16112018.pdf",
+          "modality": "text",
+          "page_number": 14,
+          "score": 0.2941,
+          "text_preview": "17 赔偿表 危疾赔偿 严重危疾的危疾赔偿 赔偿金额 保障期 60 • 100% 100 种严重危疾 基本计划名义金额的 至 岁 ( 扣除任何已支付的危疾赔偿） • 10 在首 个保单年度内�可获相当于基本计划名义 50% 金额 的额外赔偿 • 仅限一次赔偿 80 1 早期危疾的危疾赔偿（最高总赔偿为名义金额的 ％�详情请参阅注 ） • 20% 100 因冠状动脉疾病进行血管成形术和其他 基本计划"
+        },
+        {
+          "rank": 4,
+          "company": "manulife",
+          "category": "critical_illness",
+          "product_name": "manulove-care-e16112018",
+          "source": "sourcepdf/manulife/critical_illness/manulove-care-e16112018.pdf",
+          "modality": "text",
+          "page_number": 15,
+          "score": 0.3954,
+          "text_preview": "2 复原保障 赔偿金额 保障期 60 • 75 种严重危疾或身故赔偿 总赔偿额为已支付的合资格的早期危疾赔偿 至 岁 或儿童疾病危疾赔偿 • 仅限一次赔偿（在作出严重危疾赔偿或 身故赔偿时支付） 6.7 持续守护保障 • 100% 85 癌症 基本计划名义金额的 至 岁（前列腺癌和 • 70 仅限两次赔偿 甲状腺癌至 岁） / • 100% 85 突发性心脏病 中风 基本计划名义金额的 至 岁 •"
+        },
+        {
+          "rank": 5,
+          "company": "manulife",
+          "category": "medical",
+          "product_name": "manumaster-product-brochure",
+          "source": "sourcepdf/manulife/medical/manumaster-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 12,
+          "score": 0.3999,
+          "text_preview": "保障表 最高赔偿限额（港元／美元） * 计划 卓越计划 优越计划 标准计划 (a) (b) (a) (c) (a) (d) 保障地区 环球 环球美国除外 亚洲 保障地区范围外 全部地区均获保障 仅限紧急治疗 仅限紧急治疗 22,000,000 20,000,000 12,000,000 每年最高赔偿限额 港元／ 港元／ 港元／ 2,750,000 2,500,000 1,500,000 美元 美元"
+        }
+      ],
+      "model_cot": "问题类型: 计算类\n关键实体: 免赔额、报销\n证据匹配:\n  - 结果1（《pruhealth-flexichoice-medical-plan...》）: 包含目标信息，可用\n  - 结果2（《manuguard-medical-benefit-mktpp98e...》）: 关联度低，忽略\n  - 结果3（《manulove-care-e16112018...》）: 关联度低，忽略\n  - 结果4（《manumaster-product-brochure...》）: 关联度低，忽略\n  - 结果5（《manumaster-product-brochure...》）: 关联度低，忽略\n推理路径: 识别计算参数 → 定位金额/比例规定 → 说明适用条件",
+      "final_answer": "[答案] 本问题无法作答，提供的检索结果中没有关于医疗保险免赔额的信息。",
+      "raw_model_output": "<Thought>\n问题类型: 计算类\n关键实体: 免赔额、报销\n证据匹配:\n  - 结果1（《pruhealth-flexichoice-medical-plan...》）: 包含目标信息，可用\n  - 结果2（《manuguard-medical-benefit-mktpp98e...》）: 关联度低，忽略\n  - 结果3（《manulove-care-e16112018...》）: 关联度低，忽略\n  - 结果4（《manumaster-product-brochure...》）: 关联度低，忽略\n  - 结果5（《manumaster-product-brochure...》）: 关联度低，忽略\n推理路径: 识别计算参数 → 定位金额/比例规定 → 说明适用条件\n</Thought>\n[答案] 本问题无法作答，提供的检索结果中没有关于医疗保险免赔额的信息。",
+      "evaluation": {
+        "retrieval_relevance": 0,
+        "faithfulness": 0,
+        "rejection_quality": 3,
+        "completeness": 0,
+        "total": 0,
+        "verdict": "FAIL",
+        "reason": "检索结果中没有提供医疗保险免赔额的相关信息，导致无法回答问题。"
+      }
+    },
+    {
+      "id": 8,
+      "category": "热点-边界",
+      "expected": "拒答（证据不足）",
+      "note": "新冠相关条款，多数合同签署时无此条款，预期拒答",
+      "prompt": "新冠肺炎（COVID-19）是否属于该保险合同的重大疾病保障范围？",
+      "mode": "raft",
+      "top_k": 5,
+      "latency_total_s": 0.42,
+      "latency_eval_s": 3.6,
+      "retrieval": [
+        {
+          "rank": 1,
+          "company": "FWD",
+          "category": "travel",
+          "product_name": "MyTravel_Insurance_brochure_updated",
+          "source": "sourcepdf/FWD/travel/MyTravel_Insurance_brochure_updated.pdf",
+          "modality": "text",
+          "page_number": 1,
+          "score": 0.0,
+          "text_preview": "MyTravel Insurance 自寫意旅遊保 COVID-19 protection included 2019 已包括 冠狀病毒病保障"
+        },
+        {
+          "rank": 2,
+          "company": "manulife",
+          "category": "critical_illness",
+          "product_name": "manubright-care-2",
+          "source": "sourcepdf/manulife/critical_illness/manubright-care-2.pdf",
+          "modality": "text",
+          "page_number": 4,
+          "score": 0.601,
+          "text_preview": "您知道吗？ 延伸保障至危疾以外情况 2003 2019 疾病总是突如其来，难以预测。正如 年的严重急性呼吸系统综合症(SARS)及 年 2019 开始的 冠状病毒病，疫情的发展难以估计并迅速扩散，患者更可能需接受深切治疗。 2019 2 因此，活耀人生危疾保 除了涵盖常见危疾及疾病，更进一步就深切治疗住院提供保障， 年香港 1 而且包括受伤及将来未知的疾病。 主要致死原因 ： • 112 癌症 •"
+        },
+        {
+          "rank": 3,
+          "company": "manulife",
+          "category": "critical_illness",
+          "product_name": "manuprimo-care-manuprimo-care-beststart",
+          "source": "sourcepdf/manulife/critical_illness/manuprimo-care-manuprimo-care-beststart.pdf",
+          "modality": "text",
+          "page_number": 18,
+          "score": 0.6235,
+          "text_preview": "计划概览 计划特点 其他特点 个案 注 重要事项 计划概览 守护无间危疾保 守护无间危疾保 守护无间危疾保 守护无间危疾保 10 20 25 ( ) 计划选项 保宝未来 产品目的和性质 针对合资格的危疾提供一笔过赔偿的危疾保障产品 产品类别 基本计划 100 100 ( ) 保障年期 至 岁 至 岁 初生婴孩 10 20 25 25 保费缴付期 年 年 年 年 15 65 15 65 15 60 "
+        },
+        {
+          "rank": 4,
+          "company": "manulife",
+          "category": "critical_illness",
+          "product_name": "manubright-care-2",
+          "source": "sourcepdf/manulife/critical_illness/manubright-care-2.pdf",
+          "modality": "text",
+          "page_number": 5,
+          "score": 0.6545,
+          "text_preview": "您知道吗？ 延伸保障至危疾以外情况 2003 2019 疾病总是突如其来，难以预测。正如 年的严重急性呼吸系统综合症(SARS)及 年 2019 开始的 冠状病毒病，疫情的发展难以估计并迅速扩散，患者更可能需接受深切治疗。 2019 2 因此，活耀人生危疾保 除了涵盖常见危疾及疾病，更进一步就深切治疗住院提供保障， 年香港 1 而且包括受伤及将来未知的疾病。 主要致死原因 ： • 112 癌症 •"
+        },
+        {
+          "rank": 5,
+          "company": "manulife",
+          "category": "critical_illness",
+          "product_name": "incomeguard-critical-illness-protector",
+          "source": "sourcepdf/manulife/critical_illness/incomeguard-critical-illness-protector.pdf",
+          "modality": "text",
+          "page_number": 13,
+          "score": 0.7099,
+          "text_preview": "计划概览 计划特点 其他特点 增值服务 案例 注 重要事项 计划概览 宏健守护危疾入息保障 宏健守护危疾入息保障 宏健守护危疾入息保障 10 20 25 计划选项 产品目的和性质 针对合资格的危疾提供多次一笔过赔偿和中医癌症治疗费用实报实销的危疾保障产品 产品类别 基本计划 100 保障年期 至 岁 10 20 25 保费缴付期 年 年 年 15 65 15 65 15 60 投保年齡 日至 岁 "
+        }
+      ],
+      "model_cot": "问题类型: 判断类\n关键实体: 范围、合同\n证据匹配:\n  - 结果1（《MyTravel_Insurance_brochure_updated...》）: 与查询目标不匹配，不可用\n  - 结果2（《manubright-care-2...》）: 与查询目标不匹配，不可用\n  - 结果3（《manubright-care-2...》）: 与查询目标不匹配，不可用\n  - 结果4（《manubright-care-2...》）: 与查询目标不匹配，不可用\n  - 结果5（《incomeguard-critical-illness-prot...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答",
+      "final_answer": "[答案] 根据提供的检索资料，暂无法确认该保险合同是否涵盖新冠肺炎（COVID-19）重大疾病保障，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+      "raw_model_output": "<Thought>\n问题类型: 判断类\n关键实体: 范围、合同\n证据匹配:\n  - 结果1（《MyTravel_Insurance_brochure_updated...》）: 与查询目标不匹配，不可用\n  - 结果2（《manubright-care-2...》）: 与查询目标不匹配，不可用\n  - 结果3（《manubright-care-2...》）: 与查询目标不匹配，不可用\n  - 结果4（《manubright-care-2...》）: 与查询目标不匹配，不可用\n  - 结果5（《incomeguard-critical-illness-prot...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答\n</Thought>\n[答案] 根据提供的检索资料，暂无法确认该保险合同是否涵盖新冠肺炎（COVID-19）重大疾病保障，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+      "evaluation": {
+        "retrieval_relevance": 0,
+        "faithfulness": 0,
+        "rejection_quality": 0,
+        "completeness": 0,
+        "total": 0,
+        "verdict": "FAIL",
+        "reason": "提供的检索结果与问题无关，无法提供有效依据。"
+      }
+    },
+    {
+      "id": 9,
+      "category": "复杂流程",
+      "expected": "有答案",
+      "note": "多受益人及受益人先亡场景，条款较为复杂",
+      "prompt": "保险合同的受益人可以指定为多人吗？如果受益人先于被保险人身故怎么办？",
+      "mode": "raft",
+      "top_k": 5,
+      "latency_total_s": 0.45,
+      "latency_eval_s": 2.94,
+      "retrieval": [
+        {
+          "rank": 1,
+          "company": "manulife",
+          "category": "wealth",
+          "product_name": "manuglobal-saver-hk",
+          "source": "sourcepdf/manulife/wealth/manuglobal-saver-hk.pdf",
+          "modality": "text",
+          "page_number": 6,
+          "score": 0.095,
+          "text_preview": "计划特点 其他特色 计划概览 案例 注 重要事项 人寿保障 安心无忧 如果受保人不幸身故，我们将支付一笔过身故赔偿，金额相当于任何积存在 本公司的已锁定的终期红利连利息，并加上以下的较高者： • 1 保证现金价值和非保证终期红利的总和（见注 ）；或 • 7 应付并已缴的保费的总和（见注 ）。 多种工具 让您的财富世代承传 让您安枕无忧地把财富绵延下一代，您可选择更改受保人为您的另一位挚爱 家人，例"
+        },
+        {
+          "rank": 2,
+          "company": "manulife",
+          "category": "life",
+          "product_name": "whole-in-one-prime-3",
+          "source": "sourcepdf/manulife/life/whole-in-one-prime-3.pdf",
+          "modality": "text",
+          "page_number": 7,
+          "score": 0.2411,
+          "text_preview": "业务延续 为公司要员提供人寿保障，本计划可作为紧急的财务支持和业务风险 保障公司的 管理，保障公司未来。 持续性 3 如果现有受保人不再受雇或参与公司业务，盈传创富保障计划 将提供 更改受保人的灵活性，但仅适用于由公司持有的保单，并受我们确定 9 的条款和细则所限制（见注 ）。 财富承传 让您安枕无忧地把财富绵延下一代，我们更提供一系列增值服务， 让您的财富 为您的财富传承分配更添灵活，建立精彩未"
+        },
+        {
+          "rank": 3,
+          "company": "hangseng",
+          "category": "wealth",
+          "product_name": "IncomePower_Tc",
+          "source": "sourcepdf/hangseng/wealth/IncomePower_Tc.pdf",
+          "modality": "text",
+          "page_number": 5,
+          "score": 0.2904,
+          "text_preview": "意外身故保障(5) 如受保人於保單生效後首個保單年度內不幸因意外身故，除身故保障外，保單指定的受益人更可額 外獲得意外身故保障(5)，金額相等於基本計劃之已繳總保費(13)的10%，再扣除任何債項。當受益人 收取意外身故保障(5)後，本保單（包括基本計劃及所有附加保障（如有））即告終止。 有關以上的詳細條款及細則，請參閱保單條款。 人壽保障 倍添安心 本計劃助你提早計劃財富傳承，保障及維持摯愛家人"
+        },
+        {
+          "rank": 4,
+          "company": "AIA",
+          "category": "wealth",
+          "product_name": "GlobalFlexiSavingsInsurancePlan_sc",
+          "source": "sourcepdf/AIA/wealth/GlobalFlexiSavingsInsurancePlan_sc.pdf",
+          "modality": "text",
+          "page_number": 7,
+          "score": 0.2981,
+          "text_preview": "11 儲蓄及退休收入 儲蓄及退休收入 12 環宇盈活儲蓄保險計劃 環宇盈活儲蓄保險計劃 為摯愛設立理想的支付辦法 若受保人不幸身故及沒有第二受保人成為新的受保人，我們將向您於保單選定的受益人支付身故賠償，確保摯愛按您的規劃 透過「身故賠償支付辦法」，您可靈活決定賠償金額及領取形式 — 可以是每月、每季、每半年或每年支付，甚至指定首次或 得到保障。 最後領取賠償的日期，按每位受益人需求安排合適的身故"
+        },
+        {
+          "rank": 5,
+          "company": "manulife",
+          "category": "wealth",
+          "product_name": "manuglobal-saver-hk",
+          "source": "sourcepdf/manulife/wealth/manuglobal-saver-hk.pdf",
+          "modality": "text",
+          "page_number": 7,
+          "score": 0.426,
+          "text_preview": "其他特色 计划特点 计划概览 案例 注 重要事项 人寿保障 安心无忧 其他特色 如果受保人不幸身故，我们将支付一笔过身故赔偿，金额相当于任何积存在 本公司的已锁定的终期红利连利息，并加上以下的较高者： • 1 保证现金价值和非保证终期红利的总和（见注 ）；或 • 7 应付并已缴的保费的总和（见注 ）。 为您家人增添额外保障 附加保障 加倍安心 5 5 10 如果受保人在首 个保单年度内因意外身故，"
+        }
+      ],
+      "model_cot": "问题类型: 判断类\n关键实体: 被保险人、受益人、身故\n证据匹配:\n  - 结果1（《manuglobal-saver-hk...》）: 与查询目标不匹配，不可用\n  - 结果2（《whole-in-one-prime-3...》）: 与查询目标不匹配，不可用\n  - 结果3（《IncomePower_Tc...》）: 与查询目标不匹配，不可用\n  - 结果4（《GlobalFlexiSavingsInsurancePlan_sc...》）: 与查询目标不匹配，不可用\n  - 结果5（《manuglobal-saver-hk...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答",
+      "final_answer": "[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+      "raw_model_output": "<Thought>\n问题类型: 判断类\n关键实体: 被保险人、受益人、身故\n证据匹配:\n  - 结果1（《manuglobal-saver-hk...》）: 与查询目标不匹配，不可用\n  - 结果2（《whole-in-one-prime-3...》）: 与查询目标不匹配，不可用\n  - 结果3（《IncomePower_Tc...》）: 与查询目标不匹配，不可用\n  - 结果4（《GlobalFlexiSavingsInsurancePlan_sc...》）: 与查询目标不匹配，不可用\n  - 结果5（《manuglobal-saver-hk...》）: 与查询目标不匹配，不可用\n结论: 提供的检索结果均不包含目标问题的有效信息，无法作答\n</Thought>\n[答案] 根据提供的检索资料，暂无法确认该问题的答案，建议查阅对应的保险合同原文或咨询专业人员。\n[证据] 无\n[解释说明] 提供的检索结果与所询问的具体内容不符，无法提供有效依据。",
+      "evaluation": {
+        "retrieval_relevance": 0,
+        "faithfulness": 0,
+        "rejection_quality": 0,
+        "completeness": 0,
+        "total": 0,
+        "verdict": "FAIL",
+        "reason": "提供的检索结果与问题完全无关，无法提供任何有效依据。"
+      }
+    },
+    {
+      "id": 10,
+      "category": "基础信息",
+      "expected": "有答案",
+      "note": "保障期限和续保条款，基础信息查询",
+      "prompt": "这份保险合同的保险期限是多久？续保时保费会调整吗？",
+      "mode": "raft",
+      "top_k": 5,
+      "latency_total_s": 0.44,
+      "latency_eval_s": 3.31,
+      "retrieval": [
+        {
+          "rank": 1,
+          "company": "hsbc",
+          "category": "life",
+          "product_name": "2023-feb-product-brochure",
+          "source": "sourcepdf/hsbc/life/2023-feb-product-brochure.pdf",
+          "modality": "text",
+          "page_number": 6,
+          "score": 0.1615,
+          "text_preview": "计划摘要 保单货币 港币 投保年龄 19至60岁（年龄是指受保人下一次生日年龄） 保障年期 至80岁 最低投保额 港币1,000,000元 (以每保单计算) 最高投保额 19岁至50岁（下次生日年龄)：港币7,000,000元 (以每受保人计算) 51岁60岁（下次生日年龄)：港币3,500,000元 身故赔偿 相等于投保额扣除任何未缴保费后之金额（如有） 缴付保费方式 按月透过以下方式缴付: ‧"
+        },
+        {
+          "rank": 2,
+          "company": "manulife",
+          "category": "critical_illness",
+          "product_name": "careguard-critical-illness-benefit",
+          "source": "sourcepdf/manulife/critical_illness/careguard-critical-illness-benefit.pdf",
+          "modality": "text",
+          "page_number": 14,
+          "score": 0.2812,
+          "text_preview": "重要事项 11. 1. 缓接期 产品性质 缓接期是指在下列日期（以较晚者为准）起计90 天内： i. 本产品是一份没有储蓄成分的危疾保障计划，并为一项附加保障。本产品没有现金价值。本产品适合有保险产品需要（如本产品宣传单所述）及在 如果本附加保障是在保单签发时已包含在内，在保单签发日或保单生效日（以较晚者为准）；或 ii 有保障需要（如本产品宣传单所述）时有能力缴付保费的客户。因此，您应预备足够的"
+        },
+        {
+          "rank": 3,
+          "company": "manulife",
+          "category": "critical_illness",
+          "product_name": "careguard-critical-illness-benefit",
+          "source": "sourcepdf/manulife/critical_illness/careguard-critical-illness-benefit.pdf",
+          "modality": "text",
+          "page_number": 15,
+          "score": 0.2857,
+          "text_preview": "重要事项 11. 1. 缓接期 产品性质 缓接期是指在下列日期（以较晚者为准）起计90 天内： i. 本产品是一份没有储蓄成分的危疾保障计划，并为一项附加保障。本产品没有现金价值。本产品适合有保险产品需要（如本产品宣传单所述）及在 如果本附加保障是在保单签发时已包含在内，在保单签发日或保单生效日（以较晚者为准）；或 ii 有保障需要（如本产品宣传单所述）时有能力缴付保费的客户。因此，您应预备足够的"
+        },
+        {
+          "rank": 4,
+          "company": "FWD",
+          "category": "life",
+          "product_name": "FWD_MyTerm_Plus_TC_Final",
+          "source": "sourcepdf/FWD/life/FWD_MyTerm_Plus_TC_Final.pdf",
+          "modality": "text",
+          "page_number": 8,
+          "score": 0.5285,
+          "text_preview": "計劃保障範圍 基本資料 計劃類型 基本計劃 投保年齡（下次生日年齡） 19 - 66 保費供款年期 至被保人100歲（下次生日年齡） 保障年期 保證續保至被保人100歲（下次生日年齡） 3 續保年期 每年 / 10年 保費結構 - 保費因應包括但不限於被保人的下次生日年齡、性別、吸煙習慣、經常 3 居住地、職業、健康因素及續保年期 等因素而訂定 4 3 - 10年續保年期之保費率 於續保年期 內為"
+        },
+        {
+          "rank": 5,
+          "company": "AXA",
+          "category": "critical_illness",
+          "product_name": "LPPM 774-2211C Smart Living  Living  Extra Living CI Product Brochure_HK&MA_Chi",
+          "source": "sourcepdf/AXA/critical_illness/LPPM 774-2211C Smart Living  Living  Extra Living CI Product Brochure_HK&MA_Chi.pdf",
+          "modality": "text",
+          "page_number": 6,
+          "score": 0.5523,
+          "text_preview": "II II II 「真智康寧保險 」、「金裝康寧保險 」及「金裝康愉保險 」資料一覽表 II II II 「真智康寧保險 」 「金裝康寧保險 」 「金裝康愉保險 」 100 85 保費繳付年期 直至 歲 直至 歲 85 保險保障期 終身 直至 歲 0 – 65 繕發年齡 歲 保費 因應其附著的 不會根據被保人的 根據被保人的已屆年齡 基本計劃或定期保險 已屆年齡而調整 而於每個保單週年日調整 附加"
+        }
+      ],
+      "model_cot": "问题类型: 定义类\n关键实体: 保险期、续保、合同\n证据匹配:\n  - 结果1（《2023-feb-product-brochure...》）: 包含目标信息，可用\n  - 结果2（《careguard-critical-illness-benefit...》）: 关联度低，忽略\n  - 结果3（《careguard-critical-illness-benefit...》）: 关联度低，忽略\n  - 结果4（《FWD_MyTerm_Plus_TC_Final...》）: 包含目标信息，可用\n  - 结果5（《LPPM 774-2211C Smart Living...》）: 关联度低，忽略\n推理路径: 定位相关条款 → 提取术语定义 → 说明适用范围",
+      "final_answer": "[答案] 该保险合同的保险期限为至80岁。续保时保费将根据被保人的年龄和健康状况等因素进行调整。",
+      "raw_model_output": "<Thought>\n问题类型: 定义类\n关键实体: 保险期、续保、合同\n证据匹配:\n  - 结果1（《2023-feb-product-brochure...》）: 包含目标信息，可用\n  - 结果2（《careguard-critical-illness-benefit...》）: 关联度低，忽略\n  - 结果3（《careguard-critical-illness-benefit...》）: 关联度低，忽略\n  - 结果4（《FWD_MyTerm_Plus_TC_Final...》）: 包含目标信息，可用\n  - 结果5（《LPPM 774-2211C Smart Living...》）: 关联度低，忽略\n推理路径: 定位相关条款 → 提取术语定义 → 说明适用范围\n</Thought>\n[答案] 该保险合同的保险期限为至80岁。续保时保费将根据被保人的年龄和健康状况等因素进行调整。",
+      "evaluation": {
+        "retrieval_relevance": 2,
+        "faithfulness": 3,
+        "rejection_quality": 0,
+        "completeness": 3,
+        "total": 8,
+        "verdict": "PASS",
+        "reason": "该回答准确回答了问题，提供了保险期限和续保保费调整的相关信息。"
+      }
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+\documentclass[11pt]{article}
+\input{preamble}
+\addbibresource{refs.bib}
+\title{IRAG: An Insurance Domain Multi-Modal Knowledge Base with Efficient RAG Interfaces}
+\author{Your Name \and Collaborator Name}
+\date{\today}
+
+\newcommand{\mainbodyend}{%
+  \clearpage
+  \ifnum\value{page}>6
+    \GenericWarning{}{[PAGE LIMIT] Main content exceeds 6 pages (\thepage).}
+  \fi
+}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\input{sections/00_abstract}
+\end{abstract}
+
+\input{sections/01_introduction}
+\input{sections/02_related_work}
+\input{sections/03_system_architecture}
+\input{sections/04_ingestion_indexing}
+\input{sections/05_retrieval_api}
+\input{sections/06_evaluation}
+\input{sections/07_conclusion}
+
+\mainbodyend
+
+\printbibliography
+
+\appendix
+\clearpage
+\section*{Appendix A: Datasets and Parsers}
+\input{appendix/A_datasets_and_parsers}
+
+\clearpage
+\section*{Appendix B: Reproducibility Notes}
+\input{appendix/B_reproducibility_notes}
+
+\end{document}

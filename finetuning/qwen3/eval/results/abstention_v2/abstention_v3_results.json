@@ -1,0 +1,521 @@
+{
+  "hallucination": [
+    {
+      "id": "1",
+      "judge": {
+        "scores": {
+          "baseline": {
+            "correctness": 5,
+            "evidence_use": 5,
+            "no_hallucination": 5,
+            "structure": 5,
+            "fidelity": 5
+          },
+          "stage3_v2": {
+            "correctness": 0,
+            "evidence_use": 0,
+            "no_hallucination": 0,
+            "structure": 5,
+            "fidelity": 0
+          }
+        },
+        "best": "baseline",
+        "comment": "baseline正确依据条款作答，stage3_v2未能利用证据且结论错误。"
+      }
+    },
+    {
+      "id": "2",
+      "judge": {
+        "scores": {
+          "baseline": {
+            "correctness": 5,
+            "evidence_use": 5,
+            "no_hallucination": 5,
+            "structure": 5,
+            "fidelity": 5
+          },
+          "stage3_v2": {
+            "correctness": 5,
+            "evidence_use": 5,
+            "no_hallucination": 5,
+            "structure": 5,
+            "fidelity": 5
+          }
+        },
+        "best": "tie",
+        "comment": "两个模型均基于给定证据正确得出无法确定的结论，未产生幻觉。"
+      }
+    },
+    {
+      "id": "3",
+      "judge": {
+        "scores": {
+          "baseline": {
+            "correctness": 0,
+            "evidence_use": 5,
+            "no_hallucination": 5,
+            "structure": 5,
+            "fidelity": 5
+          },
+          "stage3_v2": {
+            "correctness": 0,
+            "evidence_use": 5,
+            "no_hallucination": 5,
+            "structure": 5,
+            "fidelity": 5
+          }
+        },
+        "best": "tie",
+        "comment": "两模型均正确识别证据不足，未给出明确结论，符合指令要求。"
+      }
+    },
+    {
+      "id": "4",
+      "judge": {
+        "scores": {
+          "baseline": {
+            "correctness": 5,
+            "evidence_use": 5,
+            "no_hallucination": 5,
+            "structure": 4,
+            "fidelity": 5
+          },
+          "stage3_v2": {
+            "correctness": 5,
+            "evidence_use": 5,
+            "no_hallucination": 5,
+            "structure": 5,
+            "fidelity": 5
+          }
+        },
+        "best": "tie",
+        "comment": "两个模型均正确识别证据不足，未产生幻觉，结论与标准答案一致。"
+      }
+    },
+    {
+      "id": "5",
+      "judge": {
+        "scores": {
+          "baseline": {
+            "correctness": 5,
+            "evidence_use": 5,
+            "no_hallucination": 5,
+            "structure": 5,
+            "fidelity": 5
+          },
+          "stage3_v2": {
+            "correctness": 0,
+            "evidence_use": 0,
+            "no_hallucination": 5,
+            "structure": 5,
+            "fidelity": 0
+          }
+        },
+        "best": "baseline",
+        "comment": "baseline模型正确依据条款给出明确结论，而stage3_v2未能回答问题。"
+      }
+    },
+    {
+      "id": "6",
+      "judge": {
+        "scores": {
+          "baseline": {
+            "correctness": 5,
+            "evidence_use": 5,
+            "no_hallucination": 5,
+            "structure": 5,
+            "fidelity": 5
+          },
+          "stage3_v2": {
+            "correctness": 5,
+            "evidence_use": 5,
+            "no_hallucination": 5,
+            "structure": 4,
+            "fidelity": 5
+          }
+        },
+        "best": "tie",
+        "comment": "两个模型均正确指出证据不足，未产生幻觉，但stage3_v2的思考过程格式不规范。"
+      }
+    },
+    {
+      "id": "7",
+      "judge": {
+        "scores": {
+          "baseline": {
+            "correctness": 0,
+            "evidence_use": 0,
+            "no_hallucination": 0,
+            "structure": 0,
+            "fidelity": 0
+          },
+          "stage3_v2": {
+            "correctness": 5,
+            "evidence_use": 5,
+            "no_hallucination": 5,
+            "structure": 5,
+            "fidelity": 5
+          }
+        },
+        "best": "stage3_v2",
+        "comment": "stage3_v2正确识别证据不足并给出不确定结论，而baseline直接给出错误判断。"
+      }
+    },
+    {
+      "id": "8",
+      "judge": {
+        "scores": {
+          "baseline": {
+            "correctness": 5,
+            "evidence_use": 5,
+            "no_hallucination": 5,
+            "structure": 4,
+            "fidelity": 5
+          },
+          "stage3_v2": {
+            "correctness": 5,
+            "evidence_use": 5,
+            "no_hallucination": 5,
+            "structure": 5,
+            "fidelity": 5
+          }
+        },
+        "best": "tie",
+        "comment": "两个模型均正确识别证据不足，未编造信息，但stage3_v2在格式结构上更优。"
+      }
+    },
+    {
+      "id": "9",
+      "judge": {
+        "scores": {
+          "baseline": {
+            "correctness": 5,
+            "evidence_use": 5,
+            "no_hallucination": 5,
+            "structure": 5,
+            "fidelity": 5
+          },
+          "stage3_v2": {
+            "correctness": 5,
+            "evidence_use": 5,
+            "no_hallucination": 5,
+            "structure": 5,
+            "fidelity": 5
+          }
+        },
+        "best": "tie",
+        "comment": "两个模型均正确识别证据不足，未产生幻觉，结论与标准答案一致。"
+      }
+    },
+    {
+      "id": "10",
+      "judge": {
+        "scores": {
+          "baseline": {
+            "correctness": 5,
+            "evidence_use": 1,
+            "no_hallucination": 5,
+            "structure": 5,
+            "fidelity": 5
+          },
+          "stage3_v2": {
+            "correctness": 5,
+            "evidence_use": 5,
+            "no_hallucination": 5,
+            "structure": 5,
+            "fidelity": 5
+          }
+        },
+        "best": "stage3_v2",
+        "comment": "stage3_v2在正确引用证据方面表现更优，而baseline结论正确但未展示依据。"
+      }
+    }
+  ],
+  "distractor": [
+    {
+      "id": "8",
+      "judge": {
+        "scores": {
+          "baseline": {
+            "rejection_correctness": 0,
+            "no_hallucination": 0,
+            "explanation_quality": 0
+          },
+          "stage3_v2": {
+            "rejection_correctness": 0,
+            "no_hallucination": 0,
+            "explanation_quality": 0
+          }
+        },
+        "best": "tie",
+        "comment": "两模型均未识别检索结果无关，直接编造了答案。"
+      }
+    },
+    {
+      "id": "2",
+      "judge": {
+        "scores": {
+          "baseline": {
+            "rejection_correctness": 0,
+            "no_hallucination": 0,
+            "explanation_quality": 0
+          },
+          "stage3_v2": {
+            "rejection_correctness": 5,
+            "no_hallucination": 5,
+            "explanation_quality": 4
+          }
+        },
+        "best": "stage3_v2",
+        "comment": "stage3_v2正确识别了检索结果不相关并拒绝作答，而baseline未提供输出无法评估。"
+      }
+    },
+    {
+      "id": "18",
+      "judge": {
+        "scores": {
+          "baseline": {
+            "rejection_correctness": 5,
+            "no_hallucination": 5,
+            "explanation_quality": 3
+          },
+          "stage3_v2": {
+            "rejection_correctness": 0,
+            "no_hallucination": 0,
+            "explanation_quality": 0
+          }
+        },
+        "best": "baseline",
+        "comment": "baseline正确拒答，stage3_v2在无关证据下编造了幻觉答案。"
+      }
+    },
+    {
+      "id": "16",
+      "judge": {
+        "scores": {
+          "baseline": {
+            "rejection_correctness": 0,
+            "no_hallucination": 0,
+            "explanation_quality": 0
+          },
+          "stage3_v2": {
+            "rejection_correctness": 0,
+            "no_hallucination": 0,
+            "explanation_quality": 0
+          }
+        },
+        "best": "tie",
+        "comment": "两模型均未识别检索结果无关，直接编造了答案。"
+      }
+    },
+    {
+      "id": "15",
+      "judge": {
+        "scores": {
+          "baseline": {
+            "rejection_correctness": 0,
+            "no_hallucination": 0,
+            "explanation_quality": 0
+          },
+          "stage3_v2": {
+            "rejection_correctness": 5,
+            "no_hallucination": 5,
+            "explanation_quality": 4
+          }
+        },
+        "best": "stage3_v2",
+        "comment": "stage3_v2正确识别了检索结果不相关并拒绝作答，而baseline未提供任何输出无法评估。"
+      }
+    },
+    {
+      "id": "9",
+      "judge": {
+        "scores": {
+          "baseline": {
+            "rejection_correctness": 5,
+            "no_hallucination": 5,
+            "explanation_quality": 3
+          },
+          "stage3_v2": {
+            "rejection_correctness": 0,
+            "no_hallucination": 0,
+            "explanation_quality": 0
+          }
+        },
+        "best": "baseline",
+        "comment": "baseline正确拒答，stage3_v2在无关证据下编造了答案。"
+      }
+    },
+    {
+      "id": "7",
+      "judge": {
+        "scores": {
+          "baseline": {
+            "rejection_correctness": 5,
+            "no_hallucination": 5,
+            "explanation_quality": 3
+          },
+          "stage3_v2": {
+            "rejection_correctness": 0,
+            "no_hallucination": 0,
+            "explanation_quality": 0
+          }
+        },
+        "best": "baseline",
+        "comment": "baseline正确拒答，stage3_v2在无关证据下编造答案"
+      }
+    },
+    {
+      "id": "6",
+      "judge": {
+        "scores": {
+          "baseline": {
+            "rejection_correctness": 5,
+            "no_hallucination": 5,
+            "explanation_quality": 4
+          },
+          "stage3_v2": {
+            "rejection_correctness": 5,
+            "no_hallucination": 5,
+            "explanation_quality": 3
+          }
+        },
+        "best": "baseline",
+        "comment": "两个模型均正确拒答且无幻觉，但baseline的解释更具体清晰。"
+      }
+    },
+    {
+      "id": "28",
+      "judge": {
+        "scores": {
+          "baseline": {
+            "rejection_correctness": 5,
+            "no_hallucination": 5,
+            "explanation_quality": 4
+          },
+          "stage3_v2": {
+            "rejection_correctness": 0,
+            "no_hallucination": 0,
+            "explanation_quality": 0
+          }
+        },
+        "best": "baseline",
+        "comment": "baseline正确拒答，stage3_v2编造了不存在的检索结果并给出幻觉答案。"
+      }
+    },
+    {
+      "id": "39",
+      "judge": {
+        "scores": {
+          "baseline": {
+            "rejection_correctness": 5,
+            "no_hallucination": 5,
+            "explanation_quality": 0
+          },
+          "stage3_v2": {
+            "rejection_correctness": 0,
+            "no_hallucination": 0,
+            "explanation_quality": 0
+          }
+        },
+        "best": "baseline",
+        "comment": "baseline正确拒答，stage3_v2编造了不存在的检索结果并给出幻觉答案。"
+      }
+    },
+    {
+      "id": "1",
+      "judge": {
+        "scores": {
+          "baseline": {
+            "rejection_correctness": 0,
+            "no_hallucination": 0,
+            "explanation_quality": 0
+          },
+          "stage3_v2": {
+            "rejection_correctness": 0,
+            "no_hallucination": 0,
+            "explanation_quality": 0
+          }
+        },
+        "best": "tie",
+        "comment": "两个模型均未正确拒答，直接基于无关检索结果给出了幻觉答案。"
+      }
+    },
+    {
+      "id": "3",
+      "judge": {
+        "scores": {
+          "baseline": {
+            "rejection_correctness": 5,
+            "no_hallucination": 5,
+            "explanation_quality": 0
+          },
+          "stage3_v2": {
+            "rejection_correctness": 0,
+            "no_hallucination": 0,
+            "explanation_quality": 0
+          }
+        },
+        "best": "baseline",
+        "comment": "baseline正确拒答，stage3_v2编造了不存在的检索结果并给出幻觉答案。"
+      }
+    },
+    {
+      "id": "34",
+      "judge": {
+        "scores": {
+          "baseline": {
+            "rejection_correctness": 0,
+            "no_hallucination": 0,
+            "explanation_quality": 0
+          },
+          "stage3_v2": {
+            "rejection_correctness": 5,
+            "no_hallucination": 5,
+            "explanation_quality": 4
+          }
+        },
+        "best": "stage3_v2",
+        "comment": "stage3_v2正确识别了检索结果不相关并拒绝作答，而baseline未提供输出无法评估。"
+      }
+    },
+    {
+      "id": "40",
+      "judge": {
+        "scores": {
+          "baseline": {
+            "rejection_correctness": 0,
+            "no_hallucination": 0,
+            "explanation_quality": 0
+          },
+          "stage3_v2": {
+            "rejection_correctness": 5,
+            "no_hallucination": 5,
+            "explanation_quality": 5
+          }
+        },
+        "best": "stage3_v2",
+        "comment": "stage3_v2正确识别了检索结果与问题无关并拒绝作答，而baseline直接编造了幻觉答案。"
+      }
+    },
+    {
+      "id": "17",
+      "judge": {
+        "scores": {
+          "baseline": {
+            "rejection_correctness": 5,
+            "no_hallucination": 5,
+            "explanation_quality": 0
+          },
+          "stage3_v2": {
+            "rejection_correctness": 0,
+            "no_hallucination": 0,
+            "explanation_quality": 0
+          }
+        },
+        "best": "baseline",
+        "comment": "baseline正确拒答，stage3_v2错误使用无关证据作答。"
+      }
+    }
+  ]
+}

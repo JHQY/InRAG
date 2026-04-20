@@ -1,0 +1,25 @@
+{
+  "clause_winrate": {
+    "A": 0,
+    "B": 0,
+    "tie": 0
+  },
+  "hallucination_winrate": {
+    "A": 0,
+    "B": 0,
+    "tie": 0
+  },
+  "seq2seq_winrate": {
+    "A": 0,
+    "B": 0,
+    "tie": 0
+  },
+  "avg_clause_scores": {
+    "A": {},
+    "B": {}
+  },
+  "avg_seq_scores": {
+    "A": {},
+    "B": {}
+  }
+}

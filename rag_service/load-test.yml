@@ -1,0 +1,19 @@
+config:
+  target: "http://localhost:8000"  # API服务地址（固定）
+  phases:
+    - duration: 60  # 测试总时长（60秒）
+      arrivalRate: 1 # 每秒新增1个虚拟用户（本地环境适配，避免压垮服务）
+  defaults:
+    headers:
+      Content-Type: "application/json"  # 固定请求头（JSON格式）
+
+scenarios:
+  - name: "测试 RAG 接口 /api/ask"
+    flow:
+      - post:  # 请求方式：POST（与接口一致）
+          url: "/api/ask"  # 真实接口路径（已验证正确，避免404）
+          json:  # 接口参数（与FastAPI文档完全匹配，无冗余/缺失）
+            question: "丰逸行是什么"
+            top_k: 3
+            mode: "expert"
+            history: []
